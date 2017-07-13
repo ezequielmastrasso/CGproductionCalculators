@@ -1,0 +1,91 @@
+{"lightingProduction": {
+  "lighters": 30,
+  "juniorLighters": 6,
+  "leadLighters": 8,
+  "lightersWorkingCapacity": 1.0,
+  "juniorLightersWorkingCapacity": 0.6,
+  "leadLightersWorkingCapacity": 0.2,
+  "teamCapacity": 0,
+  
+  "dailyworkingHours": 8,
+  "dailyReviewHours": 1,
+  "yearWorkingDays": 260,
+  "yearHolidays": 21,
+  "yearSickDays": 5,
+  
+  "shotCount": 2000,
+  "sequenceCount": 120,
+  "heroShots": {
+    "difficult": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    "medium": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    
+    "easy": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+  }
+  "establishingShots": {
+    "difficult": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    "medium": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    
+    "easy": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+  }
+  "masterShots": {
+    "difficult": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    "medium": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    
+    "easy": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+  }
+  "childShots": {
+    "difficult": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    "medium": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+    
+    "easy": [
+      {"best": 9},
+      {"mostLikely": 12},
+      {"worst": 15}
+    ]
+  }
+  
+}}
