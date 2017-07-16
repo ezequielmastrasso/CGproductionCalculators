@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboards.css" />
-  <link rel="stylesheet" type="text/css" href="connected-devices.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/connected-devices.css" />
   <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
   
@@ -36,9 +36,12 @@ input{
 .btn{
   padding: 0 0 0 0;
   padding-left: 5px;
-  padding-left: 5px;
-  margin-left: 10px;
+  padding-right: 5px;
+  margin-left: 5px;
   font-size: 13px;
+}
+.form-control{
+  min-width: 65px;
 }
 
 
@@ -76,6 +79,9 @@ input{
   color: #fff;
   border-radius: 2px;
 }
+.chart-wrapper{
+  min-height: 310px;
+}
 
 /* Creates a small triangle extender for the tooltip */
 .d3-tip:after {
@@ -95,6 +101,9 @@ input{
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+.form-horizontal .form-group{
+  margin-bottom: 0px;
 }
    </style>
 </head>
@@ -116,8 +125,8 @@ input{
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="https://keen.io">Home</a></li>
-          <li><a href="https://keen.io/team">visity my Site</a></li>
+          <li><a href="http://www.ezequielm.com">visity my Site</a></li>
+          <li><a href="https://github.com/ezequielmastrasso/CGproductionCalculators">sorceCode</a></li>
           
         </ul>
       </div>
@@ -129,8 +138,32 @@ input{
 
   <div class="container-fluid">
     <div class="row">
-
-      <div class="col-sm-12 col-md-6 col-lg-4">
+       <div class="col-sm-12 col-md-3 col-lg-2">
+        <div class="chart-wrapper" style="min-height:200px;padding:15px">
+       <div class="chart-title">
+            start Date
+          </div>
+       <div class="input-group">
+        <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+        
+        <input class="form-control" id="startDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+       </div>
+      <div class="chart-title">
+            end Date
+          </div>
+      <div class="input-group">
+        <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+        <input class="form-control" id="endDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+       </div>
+</div>
+</div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -311,7 +344,7 @@ input{
       </div>  
 
 
-      <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="col-sm-12 col-md-6 col-lg-3">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -436,7 +469,7 @@ input{
 
 
 
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col-sm-12 col-md-6 col-lg-4">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -646,29 +679,7 @@ input{
       </div>
         <div class="row" >
          
-     <div class="col-sm-12 col-md-12 col-lg-2">
-        <div class="chart-wrapper" style="min-height:200px;padding:15px">
-       <div class="chart-title">
-            start Date
-          </div>
-       <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        
-        <input class="form-control" id="startDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
-       </div>
-      <div class="chart-title">
-            end Date
-          </div>
-      <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        <input class="form-control" id="endDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
-       </div>
+    
 
 
      
@@ -677,22 +688,29 @@ input{
 </div>
 
 
-      <div class="col-sm-12 col-md-12 col-lg-2">
-        <div class="chart-wrapper" style="min-height:200px">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
           <div class="chart-title">
             % probabilities on your end date
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-2">
-        <div class="chart-wrapper" style="min-height:200px">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
+          <div class="chart-title">
+            some useful stats
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
           <div class="chart-title">
             the 80%
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-2">
-        <div class="chart-wrapper" style="min-height:200px">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
           <div class="chart-title">
             the 95% chances
           </div>
@@ -702,8 +720,17 @@ input{
     </div>
 
         <div class="row" >
+         <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="chart-wrapper "style="min-height:130px">
+          <div class="chart-title">
+            Shots difficulty count overlay
+          </div>
+               <div id="chart_div" style="width: 100%; height: 120px;"></div>
+
          
-      <div class="col-sm-12 col-md-12 col-lg-4">
+
+        </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
             Shots subtypes %/count
@@ -711,12 +738,12 @@ input{
              <div id="piechart" style="width: 340px; height: 250px;"></div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
             Shots  Types %/count
           </div>
-             <div id="piechart2" style="width: 230px; height: 200px;"></div>
+             <div id="piechart2" style="width: 340px; height: 250px;"></div>
 
          
 
@@ -733,16 +760,7 @@ input{
 
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="chart-wrapper "style="min-height:230px">
-          <div class="chart-title">
-            Shots difficulty count overlay
-          </div>
-               <div id="chart_div" style="width: 100%; height: 200px;"></div>
-
-         
-
-        </div>
+      
       </div>
 
     </div>
@@ -756,7 +774,7 @@ input{
       </div>
       <div class="col-sm-6 col-md-3 col-lg-2">
 
-        <div class="chart-wrapper" style="min-height:510px">
+        <div class="chart-wrapper" style="min-height:370px">
           <div class="chart-title">
             means
           </div>
@@ -766,27 +784,27 @@ input{
               <div class="chart-title"> </div>
               total mean hero<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanHeroInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              hero Difficult mean<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultMeanInfo"role="button">---</a><br>
-              hero Medium mean<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumMeanInfo"role="button">---</a><br>
-              hero easy mean<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyMeanInfo"role="button">---</a><br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyMeanInfo"role="button">---</a>
               <div class="chart-title"> </div>
               total mean establ<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanEstablishingHeroInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              establ diff mean<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultMeanInfo"role="button">---</a><br>
-              establ med mean<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumMeanInfo"role="button">---</a><br>
-              establ eas mean<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyMeanInfo"role="button">---</a><br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyMeanInfo"role="button">---</a>
               <div class="chart-title"> </div>
               total mean master<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanMasterHeroInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              master diff mean<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultMeanInfo"role="button">---</a><br>
-              master med mean<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumMeanInfo"role="button">---</a><br>
-              master eas mean<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyMeanInfo"role="button">---</a><br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyMeanInfo"role="button">---</a>
               <div class="chart-title"> </div>
               total mean child<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanChildHeroInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              child diff mean<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultMeanInfo"role="button">---</a><br>
-              child med mean<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumMeanInfo"role="button">---</a><br>
-              child eas mean<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyMeanInfo"role="button">---</a><br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyMeanInfo"role="button">---</a>
 
               
               
@@ -802,7 +820,7 @@ input{
       </div>
           <div class="col-sm-6 col-md-3 col-lg-2">
 
-        <div class="chart-wrapper" style="min-height:510px">
+        <div class="chart-wrapper" style="min-height:370px">
           <div class="chart-title">
             information
           </div>
@@ -830,7 +848,7 @@ input{
       </div>
           <div class="col-sm-6 col-md-3 col-lg-2">
 
-        <div class="chart-wrapper" style="min-height:510px">
+        <div class="chart-wrapper" style="min-height:370px">
           <div class="chart-title">
             information
           </div>
@@ -838,31 +856,28 @@ input{
             <div class="row" style="margin:0px;">
               <legend>shotcount</legend>
                     shotCount<a href="#" class="btn btn-primary btn-lg disabled" id="shotCountInfo"role="button">---</a><br>
-                  sequenceCount<a href="#" class="btn btn-primary btn-lg disabled" id="sequenceCountInfo">---</a><br>
-                  establishingShotsPerSequence<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPerSequenceInfo">0</a><br>
-
-                  
+                  sequences<a href="#" class="btn btn-primary btn-lg disabled" id="sequenceCountInfo">---</a><br>
+                  establ per seq<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPerSequenceInfo">0</a><br>
 
                   hero Shots<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyCountInfo"role="button">---</a><br>
+
                   establishing Shots<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyCountInfo"role="button">---</a><br>
+                  
                   master Shots<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyCountInfo"role="button">---</a><br>
+                  
                   child Shots<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsCountInfo"role="button">---</a><br>
-                  
-                  hero Shots Difficult<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultCountInfo"role="button">---</a><br>
-                  hero Shots Medium<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumCountInfo"role="button">---</a><br>
-                  hero Shots Easy<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyCountInfo"role="button">---</a><br>
-                  
-                  establishing ShotsDifficult<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultCountInfo"role="button">---</a><br>
-                  establishing ShotsMedium<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumCountInfo"role="button">---</a><br>
-                  establishing ShotsEasy<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyCountInfo"role="button">---</a><br>
-
-                  master  Shots Difficult<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultCountInfo"role="button">---</a><br>
-                  masterShots Medium<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumCountInfo"role="button">---</a><br>
-                  master Shots Easy<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyCountInfo"role="button">---</a><br>
-
-                  childShotsDifficult<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultCountInfo"role="button">---</a><br>
-                  childShotsMedium<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumCountInfo"role="button">---</a><br>
-                  childShotsEasy<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyCountInfo"role="button">---</a><br>
 
               </div>
             </div>
@@ -870,7 +885,7 @@ input{
       </div>
           <div class="col-sm-6 col-md-3 col-lg-2">
 
-        <div class="chart-wrapper"  style="min-height:510px">
+        <div class="chart-wrapper"  style="min-height:370px">
           <div class="chart-title">
             information
           </div>
@@ -879,24 +894,24 @@ input{
               <legend>shot Percentages</legend>
 
                   hero <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsPercentageInfo"role="button">---</a><br>
-                  hero diff<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultPercentageInfo"role="button">---</a><br>
-                  hero med<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumPercentageInfo"role="button">---</a><br>
-                  hero easy<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyPercentageInfo"role="button">---</a><br>                  
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultPercentageInfo"role="button">---</a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumPercentageInfo"role="button">---</a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyPercentageInfo"role="button">---</a><br>                
 
                   establishing <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPercentageInfo"role="button">---</a><br>
-                  establishing diff<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultPercentageInfo"role="button">---</a><br>
-                  establishing med<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumPercentageInfo"role="button">---</a><br>
-                  establishing easy <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyPercentageInfo"role="button">---</a><br>
 
                   master <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsPercentageInfo"role="button">---</a><br>
-                  master diff<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultPercentageInfo"role="button">---</a><br>
-                  master medium<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumPercentageInfo"role="button">---</a><br>
-                  master easy<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyPercentageInfo"role="button">---</a><br>
 
                   child <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsPercentageInfo"role="button">---</a><br>
-                  child diff<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultPercentageInfo"role="button">---</a><br>
-                  child medium<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumPercentageInfo"role="button">---</a><br>
-                  child easy <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyPercentageInfo"role="button">---</a><br>
 
               </div>
             </div>
@@ -906,7 +921,7 @@ input{
 
       <div class="col-sm-6 col-md-3 col-lg-2">
  
-        <div class="chart-wrapper"  style="min-height:510px">
+        <div class="chart-wrapper"  style="min-height:370px">
           <div class="chart-title">
             information
           </div>
@@ -915,21 +930,21 @@ input{
               <div class="chart-title">
             Variance
           </div>
-              hero Difficult variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroDifficultInfo"role="button">---</a><br>
-              hero medium variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroMediumInfo"role="button">---</a><br>
-              hero easy variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroEasyInfo"role="button">---</a><br>
-<div class="chart-title"> </div>
-              establ Difficult variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingDifficultInfo"role="button">---</a><br>
-              establ medium variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingMediumInfo"role="button">---</a><br>
-              establ easy variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingEasyInfo"role="button">---</a><br>
-<div class="chart-title"> </div>
-              master difficult variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterDifficultInfo"role="button">---</a><br>
-              master medium variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterMediumInfo"role="button">---</a><br>
-              master easy variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterEasyInfo"role="button">---</a><br>
-<div class="chart-title"> </div>
-              child difficut variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildDifficultInfo"role="button">---</a><br>
-              child medium  variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildMediumInfo"role="button">---</a><br>
-              child easy variance<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildEasyInfo"role="button">---</a><br>
+              hero<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroEasyInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              establ<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              master<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              child<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildEasyInfo"role="button">---</a><br>
 
               </div>
             </div>
@@ -938,7 +953,7 @@ input{
 
       <div class="col-sm-6 col-md-3 col-lg-2">
 
-        <div class="chart-wrapper"  style="min-height:510px">
+        <div class="chart-wrapper"  style="min-height:370px">
           <div class="chart-title">
             information
           </div>
@@ -947,27 +962,27 @@ input{
               <div class="chart-title">
             3 point
           </div>
-              hero Difficult 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroDifficultInfo"role="button">---</a><br>
-              hero Medium 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroMediumInfo"role="button">---</a><br>
-              hero Easy 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroEasyInfo"role="button">---</a><br>
+              hero est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroEasyInfo"role="button">---</a><br>
 
-              Establishing Difficult 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingDifficultInfo"role="button">---</a><br>
-              Establishing Medium 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingMediumInfo"role="button">---</a><br>
-              Establishing Easy 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingEasyInfo"role="button">---</a><br>
+              Establishing est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingEasyInfo"role="button">---</a><br>
 
-              Master Difficult 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterDifficultInfo"role="button">---</a><br>
-              Master Medium 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterMediumInfo"role="button">---</a><br>
-              Master Easy 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterEasyInfo"role="button">---</a><br>
+              Master est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterEasyInfo"role="button">---</a><br>
 
-              Child Difficult 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildDifficultInfo"role="button">---</a><br>
-              Child Medium 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildMediumInfo"role="button">---</a><br>
-              Child Easy 3 point est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildEasyInfo"role="button">---</a><br>
+              Child<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildEasyInfo"role="button">---</a><br>
 
               </div>
             </div>
             </div>
       </div>
-           <div class="col-sm-6 col-md-6 col-lg-4">
+           <div class="col-sm-6 col-md-6 col-lg-2">
 
         <div class="chart-wrapper" style="min-height:510px">
           <div class="chart-title">
@@ -981,60 +996,49 @@ input{
               hero total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroTotalInfo"role="button">---</a><br>
 
               <div class="chart-title"> </div>
-              hero Difficult StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultInfo"role="button">---</a><br>
-              
-              hero Meidum StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumInfo"role="button">---</a><br>
-              
-              hero Easy StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyInfo"role="button">---</a><br>
+              hero per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyInfo"role="button">---</a>
               <div class="chart-title"> </div>
-              hero Difficult total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultTotalInfo"role="button">---</a><br>
-              hero Meidum total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumTotalInfo"role="button">---</a><br>
-              hero Easy total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyTotalInfo"role="button">---</a><br>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyTotalInfo"role="button">---</a>
  <div class="chart-title">
             Standard Deviation stab
           </div>
               Establishing total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingTotalInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              
-              Establishing Difficult StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultInfo"role="button">---</a><br>
-              
-              Establishing Meidum StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumInfo"role="button">---</a><br>
-              
-              Establishing Easy StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyInfo"role="button">---</a><br>
+              Estab per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyInfo"role="button">---</a><br>
               <div class="chart-title"> </div>
-              Establishing Difficult total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultTotalInfo"role="button">---</a><br>
-              Establishing Meidum total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumTotalInfo"role="button">---</a><br>
-              Establishing Easy total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyTotalInfo"role="button">---</a><br>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyTotalInfo"role="button">---</a>
  <div class="chart-title">
             Standard Deviation master
           </div>
               Master total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterTotalInfo"role="button">---</a><br>
           <div class="chart-title"> </div>
-
-              Master Difficult StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultInfo"role="button">---</a><br>
-              
-              Master Meidum StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumInfo"role="button">---</a><br>
-              
-              Master Easy StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyInfo"role="button">---</a><br>
+              master per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyInfo"role="button">---</a>
             <div class="chart-title"> </div>
-              Master Difficult total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultTotalInfo"role="button">---</a><br>
-              Master Meidum total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumTotalInfo"role="button">---</a><br>
-              Master Easy total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyTotalInfo"role="button">---</a><br>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyTotalInfo"role="button">---</a>
  <div class="chart-title">
             Standard Deviation child
           </div>
               Child total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildTotalInfo"role="button">---</a><br>
-
               <div class="chart-title"> </div>
-              Child Difficult StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultInfo"role="button">---</a><br>
-              
-              Child Meidum StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumInfo"role="button">---</a><br>
-              
-              Child Easy StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyInfo"role="button">---</a><br>
+              Child Per Task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultInfo"role="button">---</a>              
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyInfo"role="button">---</a>
               <div class="chart-title"> </div>
-              Child Difficult total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultTotalInfo"role="button">---</a><br>
-              Child Meidum total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumTotalInfo"role="button">---</a><br>
-              Child Easy total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyTotalInfo"role="button">---</a><br>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyTotalInfo"role="button">---</a>
 
               </div>
             </div>
@@ -1071,7 +1075,7 @@ input{
   
   
 
-  <script type="text/javascript" src="connected-devices.js"></script>
+  <script type="text/javascript" src="assets/js/connected-devices.js"></script>
 
 <script>
 function getInputValue(id){
@@ -1400,10 +1404,10 @@ function updateInformationPanel (){
     document.getElementById("varianceChildEasyInfo").innerHTML=varianceChildEasy.toFixed(2);
 
     var heroShotsCount= (shotCount*heroShotsPercentage)/100;
-    document.getElementById("heroShotsCountInfo").innerHTML=heroShotsCount.toFixed(2);
+    document.getElementById("heroShotsCountInfo").innerHTML=heroShotsCount.toFixed(0);
     
     var establishingShotsCount= establishingShotsPerSequence*sequenceCount;
-    document.getElementById("establishingShotsCountInfo").innerHTML=establishingShotsCount.toFixed(2);
+    document.getElementById("establishingShotsCountInfo").innerHTML=establishingShotsCount.toFixed(0);
     console.log("-----establishingShotsCount, seq count: ", establishingShotsCount,sequenceCount)
 
 
@@ -1412,10 +1416,10 @@ function updateInformationPanel (){
     console.log("establishingShotsPercentage: ", establishingShotsPercentage)
 
     var masterShotsCount= (shotCount*masterShotsPercentage)/100;
-    document.getElementById("masterShotsCountInfo").innerHTML=masterShotsCount.toFixed(2);
+    document.getElementById("masterShotsCountInfo").innerHTML=masterShotsCount.toFixed(0);
     
     var childShotsCount= (shotCount*childShotsPercentage)/100;
-    document.getElementById("childShotsCountInfo").innerHTML=childShotsCount.toFixed(2);
+    document.getElementById("childShotsCountInfo").innerHTML=childShotsCount.toFixed(0);
 
 
     //INPUT %
@@ -1469,65 +1473,65 @@ function updateInformationPanel (){
 
     //calculate each shot type/difficulty Count
     var heroShotsDifficultCount=(getInputValue("heroShotsDifficultPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsDifficultCountInfo").innerHTML=heroShotsDifficultCount;
+    document.getElementById("heroShotsDifficultCountInfo").innerHTML=heroShotsDifficultCount.toFixed(0);
     console.log("heroShotsDifficultCount: ", heroShotsDifficultCount)
 
     var heroShotsMediumCount=(getInputValue("heroShotsMediumPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsMediumCountInfo").innerHTML=heroShotsMediumCount;
+    document.getElementById("heroShotsMediumCountInfo").innerHTML=heroShotsMediumCount.toFixed(0);
     console.log("heroShotsMediumCount: ", heroShotsMediumCount)
 
     var heroShotsEasyCount=(getInputValue("heroShotsEasyPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsEasyCountInfo").innerHTML=heroShotsEasyCount;
+    document.getElementById("heroShotsEasyCountInfo").innerHTML=heroShotsEasyCount.toFixed(0);
     console.log("heroShotsEasyCount: ", heroShotsEasyCount)
 
     var establishingShotsDifficultCount=(getInputValue("establishingShotsDifficultPercentageInput")*establishingShotsCount)/100;
-    document.getElementById("establishingShotsDifficultCountInfo").innerHTML=establishingShotsDifficultCount;
+    document.getElementById("establishingShotsDifficultCountInfo").innerHTML=establishingShotsDifficultCount.toFixed(0);
     console.log("establishingShotsDifficultCount: ", establishingShotsDifficultCount)
 
     var establishingShotsMediumCount=(getInputValue("establishingShotsMediumPercentageInput")*establishingShotsCount)/100;
-    document.getElementById("establishingShotsMediumCountInfo").innerHTML=establishingShotsMediumCount;
+    document.getElementById("establishingShotsMediumCountInfo").innerHTML=establishingShotsMediumCount.toFixed(0);
     console.log("establishingShotsMediumCount: ", establishingShotsMediumCount)
 
     var establishingShotsEasyCount=(getInputValue("establishingShotsEasyPercentageInput")*establishingShotsCount)/100;
-    document.getElementById("establishingShotsEasyCountInfo").innerHTML=establishingShotsEasyCount;
+    document.getElementById("establishingShotsEasyCountInfo").innerHTML=establishingShotsEasyCount.toFixed(0);
     console.log("establishingShotsEasyCount: ", establishingShotsEasyCount)
 
     var masterShotsDifficultCount=(getInputValue("masterShotsDifficultPercentageInput")*masterShotsCount)/100;
-    document.getElementById("masterShotsDifficultCountInfo").innerHTML=masterShotsDifficultCount;
+    document.getElementById("masterShotsDifficultCountInfo").innerHTML=masterShotsDifficultCount.toFixed(0);
     console.log("masterShotsDifficultCount: ", masterShotsDifficultCount)
 
     var masterShotsMediumCount=(getInputValue("masterShotsMediumPercentageInput")*masterShotsCount)/100;
-    document.getElementById("masterShotsMediumCountInfo").innerHTML=masterShotsMediumCount;
+    document.getElementById("masterShotsMediumCountInfo").innerHTML=masterShotsMediumCount.toFixed(0);
     console.log("masterShotsMediumCount: ", masterShotsMediumCount)
 
     var masterShotsEasyCount=(getInputValue("masterShotsEasyPercentageInput")*masterShotsCount)/100;
-    document.getElementById("masterShotsEasyCountInfo").innerHTML=masterShotsEasyCount;
+    document.getElementById("masterShotsEasyCountInfo").innerHTML=masterShotsEasyCount.toFixed(0);
     console.log("masterShotsEasyCount: ", masterShotsEasyCount)
 
     var childShotsDifficultCount=(getInputValue("childShotsDifficultPercentageInput")*childShotsCount)/100;
-    document.getElementById("childShotsDifficultCountInfo").innerHTML=childShotsDifficultCount;
+    document.getElementById("childShotsDifficultCountInfo").innerHTML=childShotsDifficultCount.toFixed(0);
     console.log("childShotsDifficultCount: ", childShotsDifficultCount)
 
     var childShotsMediumCount=(getInputValue("childShotsMediumPercentageInput")*childShotsCount)/100;
-    document.getElementById("childShotsMediumCountInfo").innerHTML=childShotsMediumCount;
+    document.getElementById("childShotsMediumCountInfo").innerHTML=childShotsMediumCount.toFixed(0);
     console.log("childShotsMediumCount: ", childShotsMediumCount)
 
     var childShotsEasyCount=(getInputValue("childShotsEasyPercentageInput")*childShotsCount)/100;
-    document.getElementById("childShotsEasyCountInfo").innerHTML=childShotsEasyCount;
+    document.getElementById("childShotsEasyCountInfo").innerHTML=childShotsEasyCount.toFixed(0);
     console.log("childShotsEasyCount: ", childShotsEasyCount)
 
 
     //means
     var heroShotsDifficultMean=threePointHeroDifficult*heroShotsDifficultCount
-    document.getElementById("heroShotsDifficultMeanInfo").innerHTML=heroShotsDifficultMean.toFixed(2);
+    document.getElementById("heroShotsDifficultMeanInfo").innerHTML=heroShotsDifficultMean.toFixed(0);
     console.log("heroShotsDifficultMean: ", heroShotsDifficultMean)
 
     var heroShotsMediumMean=threePointHeroMedium*heroShotsMediumCount
-    document.getElementById("heroShotsMediumMeanInfo").innerHTML=heroShotsMediumMean.toFixed(2);
+    document.getElementById("heroShotsMediumMeanInfo").innerHTML=heroShotsMediumMean.toFixed(0);
     console.log("heroShotsMediumMean: ", heroShotsMediumMean)
 
     var heroShotsEasyMean=threePointHeroEasy*heroShotsEasyCount
-    document.getElementById("heroShotsEasyMeanInfo").innerHTML=heroShotsEasyMean.toFixed(2);
+    document.getElementById("heroShotsEasyMeanInfo").innerHTML=heroShotsEasyMean.toFixed(0);
     console.log("threePointHeroEasy:heroShotsCount ", threePointHeroEasy,heroShotsCount);
 
     var heroShotsMean=heroShotsDifficultMean+heroShotsMediumMean+heroShotsEasyMean
@@ -1537,48 +1541,48 @@ function updateInformationPanel (){
 
 
     var establishingShotsDifficultMean=threePointEstablishingDifficult*establishingShotsDifficultCount
-    document.getElementById("establishingShotsDifficultMeanInfo").innerHTML=establishingShotsDifficultMean.toFixed(2);
+    document.getElementById("establishingShotsDifficultMeanInfo").innerHTML=establishingShotsDifficultMean.toFixed(0);
     console.log("establishingShotsDifficultMean: ", establishingShotsDifficultMean)
 
     var establishingShotsMediumMean=threePointEstablishingMedium*establishingShotsMediumCount
-    document.getElementById("establishingShotsMediumMeanInfo").innerHTML=establishingShotsMediumMean.toFixed(2);
+    document.getElementById("establishingShotsMediumMeanInfo").innerHTML=establishingShotsMediumMean.toFixed(0);
     console.log("establishingShotsMediumMean: ", establishingShotsMediumMean)
 
     var establishingShotsEasyMean=threePointEstablishingEasy*establishingShotsEasyCount
-    document.getElementById("establishingShotsEasyMeanInfo").innerHTML=establishingShotsEasyMean.toFixed(2);
+    document.getElementById("establishingShotsEasyMeanInfo").innerHTML=establishingShotsEasyMean.toFixed(0);
     console.log("threePointestablishingEasy:establishingShotsCount ", threePointEstablishingEasy,establishingShotsCount);
 
     var establishingShotsMean=establishingShotsDifficultMean+establishingShotsMediumMean+establishingShotsEasyMean
-    document.getElementById("totalMeanEstablishingHeroInfo").innerHTML=establishingShotsMean.toFixed(2);
+    document.getElementById("totalMeanEstablishingHeroInfo").innerHTML=establishingShotsMean.toFixed(0);
     console.log("totalMeanestablishingInfo: ", establishingShotsMean)
 
     
 
 
     var masterShotsDifficultMean=threePointMasterDifficult*masterShotsDifficultCount
-    document.getElementById("masterShotsDifficultMeanInfo").innerHTML=masterShotsDifficultMean.toFixed(2);
+    document.getElementById("masterShotsDifficultMeanInfo").innerHTML=masterShotsDifficultMean.toFixed(0);
     console.log("masterShotsDifficultMean: ", masterShotsDifficultMean)
 
     var masterShotsMediumMean=threePointMasterMedium*masterShotsMediumCount
-    document.getElementById("masterShotsMediumMeanInfo").innerHTML=masterShotsMediumMean.toFixed(2);
+    document.getElementById("masterShotsMediumMeanInfo").innerHTML=masterShotsMediumMean.toFixed(0);
     console.log("masterShotsMediumMean: ", masterShotsMediumMean)
 
     var masterShotsEasyMean=threePointMasterEasy*masterShotsEasyCount
-    document.getElementById("masterShotsEasyMeanInfo").innerHTML=masterShotsEasyMean.toFixed(2);
+    document.getElementById("masterShotsEasyMeanInfo").innerHTML=masterShotsEasyMean.toFixed(0);
     console.log("threePointmasterEasy:masterShotsCount ", threePointMasterEasy,masterShotsCount);
 
     var masterShotsMean=masterShotsDifficultMean+masterShotsMediumMean+masterShotsEasyMean
-    document.getElementById("totalMeanMasterHeroInfo").innerHTML=masterShotsMean.toFixed(2);
+    document.getElementById("totalMeanMasterHeroInfo").innerHTML=masterShotsMean.toFixed(0);
     console.log("totalMeanmasterInfo: ", masterShotsMean)
 
 
 
     var childShotsDifficultMean=threePointChildDifficult*childShotsDifficultCount
-    document.getElementById("childShotsDifficultMeanInfo").innerHTML=childShotsDifficultMean.toFixed(2);
+    document.getElementById("childShotsDifficultMeanInfo").innerHTML=childShotsDifficultMean.toFixed(0);
     console.log("childShotsDifficultMean: ", childShotsDifficultMean)
 
     var childShotsMediumMean=threePointChildMedium*childShotsMediumCount
-    document.getElementById("childShotsMediumMeanInfo").innerHTML=childShotsMediumMean.toFixed(2);
+    document.getElementById("childShotsMediumMeanInfo").innerHTML=childShotsMediumMean.toFixed(0);
     console.log("childShotsMediumMean: ", childShotsMediumMean)
 
     var childShotsEasyMean=threePointChildEasy*childShotsEasyCount
@@ -1586,12 +1590,12 @@ function updateInformationPanel (){
     console.log("childShotsEasyMean ", childShotsEasyMean);
 
     var childShotsMean=childShotsDifficultMean+childShotsMediumMean+childShotsEasyMean
-    document.getElementById("totalMeanChildHeroInfo").innerHTML=childShotsMean.toFixed(2);
+    document.getElementById("totalMeanChildHeroInfo").innerHTML=childShotsMean.toFixed(0);
     console.log("totalMeanchildInfo: ", childShotsMean)
 
     //total Mean
     var totalShotMean=heroShotsMean+establishingShotsMean+masterShotsMean+childShotsMean;
-    document.getElementById("totalMeanInfo").innerHTML=totalShotMean.toFixed(2);
+    document.getElementById("totalMeanInfo").innerHTML=totalShotMean.toFixed(0);
     console.log("totalShotMean: ", totalShotMean)
 
     //Standard deviation totals Hero
@@ -1664,7 +1668,7 @@ function updateInformationPanel (){
     console.log("totalTeamSickDays: ", totalTeamSickDays)
 
     var teamCapacity=((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
-    document.getElementById("teamCapacityInfo").innerHTML=teamCapacity;
+    document.getElementById("teamCapacityInfo").innerHTML=teamCapacity.toFixed(2);;
     console.log("teamCapacity: ", teamCapacity)
     
     var totalManDaysBest =0;  //total manDays the production will take - best case
@@ -1674,7 +1678,7 @@ function updateInformationPanel (){
 
     //projectManDaysInfo
     var projectManDays =totalShotMean/teamCapacity;  //totalmean/teamCapacity
-    document.getElementById("projectManDaysInfo").innerHTML=projectManDays;
+    document.getElementById("projectManDaysInfo").innerHTML=projectManDays.toFixed(2);;
     console.log("projectManDays: ", projectManDays)
     
     
