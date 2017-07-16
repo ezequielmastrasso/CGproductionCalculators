@@ -1,2 +1,5 @@
 # CGproductionCalculators
-D3+Keen CG/3D production calculators based on my excel/calc sheets, mainly for lighting
+Pert based production calculators for CG productions
+
+
+Keen io, Keen Dashboard, Jquery, JS.
