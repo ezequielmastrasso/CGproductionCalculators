@@ -5,11 +5,11 @@ function updateInformationPanel (){
     
 
     var leadArtists =getInputValue("leadsArtistsCountInput");
-    document.getElementById("leadsArtistsCountInfo").innerHTML=leadArtists;
-    console.log("leadArtists: ", leadArtists);
+    writeToPage("leadsArtistsCountInfo",leadArtists)
+    
 
   	var artist =getInputValue("artistCountInput");
-    document.getElementById("artistCountInfo").innerHTML=artist;
+    writeToPage("artistCountInfo",artist)
     console.log("artistsCount: ", artist)
 
 		var juniorArtists=getInputValue("juniorArtistsCountInput");

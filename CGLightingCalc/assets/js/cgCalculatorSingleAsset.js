@@ -1,262 +1,193 @@
 function updateInformationPanel (){
-    
 
+
+    /*mind dump
+    Critical path calculation:
+      Shots Lighting:
+        For shots Lighting the critical path will be giving by the longest Artist task list.
+        This could be approximatted* by calculating the amount of hero, establishing,
+        master, and child shots that each artist will have in their queue.
+        Critical path mean=
+        (heroDifficultMean(heroDifficultCount/teamCapacity)+
+        (heroMediumMean(heroMediumCount/teamCapacity)+
+        (heroEasyMean(heroEasyCount/teamCapacity)+
+        (establishingDifficultMean(establishingDifficultCount/teamCapacity)+
+        (establishingMediumMean(establishingMediumCount/teamCapacity)+
+        (establishingEasyMean(establishingEasyCount/teamCapacity)+
+        (masterDifficultMean(masterDifficultShotCount/TeamCapacity))+
+        (masterMediumMean(masterMediumShotCount/TeamCapacity))+
+        (masterEasyMean(masterEasyShotCount/TeamCapacity))+
+        (childDifficultMean(childDifficultShotCount/TeamCapacity))+
+        (childMediumMean(childMediumShotCount/TeamCapacity))+
+        (childEasyMean(childEasyShotCount/TeamCapacity));
+
+      Asset Single
+        Critical path will be given by the amount of assets diff, med, and easy and artist will have in its queue
+        Approximated by:
+        Critical path mean=
+        (assetDifficultMean(assetDifficultCount/teamCapacity)+
+        (assetMediumMean(assetMediumCount/teamCapacity)+
+        (assetEasyMean(assetEasyCount/teamCapacity)+
+
+    */
     var leadArtists =getInputValue("leadsArtistsCountInput");
-    document.getElementById("leadsArtistsCountInfo").innerHTML=leadArtists;
-    console.log("leadArtists: ", leadArtists);
-
-  	var artist =getInputValue("artistCountInput");
-    document.getElementById("artistCountInfo").innerHTML=artist;
-    console.log("artistsCount: ", artist)
-
+    var artist =getInputValue("artistCountInput");
 		var juniorArtists=getInputValue("juniorArtistsCountInput");
-    document.getElementById("juniorArtistsCountInfo").innerHTML=juniorArtists;
-    console.log("juniorArtists: ", juniorArtists)
-
-    var shotCount =getInputValue("shotCountInput");
-    document.getElementById("shotCountInfo").innerHTML=shotCount;
-    console.log("shotCount: ", shotCount);
-
-  	var sequenceCount =getInputValue("sequenceCountInput");
-    document.getElementById("sequenceCountInfo").innerHTML=sequenceCount;
-    console.log("artistsCount: ", sequenceCount)
-
-
-		var establishingShotsPerSequence=getInputValue("establishingShotsPerSequenceInput");
-    document.getElementById("establishingShotsPerSequenceInfo").innerHTML=establishingShotsPerSequence;
-    console.log("establishingShotsPerSequence: ", establishingShotsPerSequence)
-		
     var artistsCapacity=getInputValue("artistsCapacityInput");
-    document.getElementById("artistsCapacityInfo").innerHTML=artistsCapacity;
-    console.log("artistsWorkingCapacity: ", artistsCapacity)
-
     var juniorArtistsCapacity=getInputValue("juniorArtistsCapacityInput");
-    document.getElementById("juniorArtistsCapacityInfo").innerHTML=juniorArtistsCapacity;
-    console.log("juniorArtistsWorkingCapacity: ", juniorArtistsCapacity)
-
     var leadArtistsCapacity=getInputValue("leadArtistsCapacityInput");
-    document.getElementById("leadArtistsCapacityInfo").innerHTML=leadArtistsCapacity;
-    console.log("leadArtistsWorkingCapacity: ", leadArtistsCapacity)
+    var assetCount =getInputValue("assetCountInput");
+    
+    var assetDifficultPercentage =getInputValue("assetDifficultPercentageInput");
+    var assetMediumPercentage =getInputValue("assetMediumPercentageInput");
+    var assetEasyPercentage =getInputValue("assetEasyPercentageInput");
+    var dailyworkingHours =getInputValue("dailyWorkingHoursInput");
+    var dailyReviewHours =getInputValue("dailyReviewHoursInput");
+    var yearWorkingDays =getInputValue("yearWorkingDaysInput");
+    var entitledHolidays =getInputValue("entitledHolidaysInput");
+    var averageSickDays =getInputValue("averageSickDaysInput");
+
+    var assetEstimateDifficultBest =getInputValue("assetEstimateDifficultBestInput");
+    var assetEstimateDifficultMostLikely =getInputValue("assetEstimateDifficultMostLikelyInput");
+    var assetEstimateDifficultWorst =getInputValue("assetEstimateDifficultWorstInput");
+
+    var assetEstimateMediumBest =getInputValue("assetEstimateMediumBestInput");
+    var assetEstimateMediumMostLikely =getInputValue("assetEstimateMediumMostLikelyInput");
+    var assetEstimateMediumWorst =getInputValue("assetEstimateMediumWorstInput");
+
+    var assetEstimateEasyBest =getInputValue("assetEstimateEasyBestInput");
+    var assetEstimateEasyMostLikely =getInputValue("assetEstimateEasyMostLikelyInput");
+    var assetEstimateEasyWorst =getInputValue("assetEstimateEasyWorstInput");
+
+
+
+
+    //toCalculate
+
+    //Asset count
+    var assetDifficultCount = (assetCount*assetDifficultPercentage)/100;
+    writeToPage("assetDifficultCountInfo",assetDifficultCount);
+    var assetMediumCount = (assetCount*assetMediumPercentage)/100;
+    writeToPage("assetMediumCountInfo",assetMediumCount);
+    var assetEasyCount = (assetCount*assetEasyPercentage)/100;
+    writeToPage("assetEasyCountInfo",assetEasyCount);
 
     
-		
-    //estimates Hero
-    //difficult
-    var estimateHeroDifficultBest=threePointChild=getInputValue("estimateHeroDifficultBestInput");
-    console.log("estimateHeroDifficultBest: ", estimateHeroDifficultBest)
-    var estimateHeroDifficultMostLikely=threePointChild=getInputValue("estimateHeroDifficultMostLikelyInput");
-    console.log("estimateHeroDifficultMostLikely: ", estimateHeroDifficultMostLikely)
-    var estimateHeroDifficultWorst=threePointChild=getInputValue("estimateHeroDifficultWorstInput");
-    console.log("estimateHeroDifficultWorst: ", estimateHeroDifficultWorst)
-    //medium
-    var estimateHeroMediumBest=threePointChild=getInputValue("estimateHeroMediumBestInput");
-    console.log("estimateHeroMediumBest: ", estimateHeroMediumBest)
-    var estimateHeroMediumMostLikely=threePointChild=getInputValue("estimateHeroMediumMostLikelyInput");
-    console.log("estimateHeroMediumMostLikely: ", estimateHeroMediumMostLikely)
-    var estimateHeroMediumWorst=threePointChild=getInputValue("estimateHeroMediumWorstInput");
-    console.log("estimateHeroMediumWorst: ", estimateHeroMediumWorst)
-    //easy
-    var estimateHeroEasyBest=threePointChild=getInputValue("estimateHeroEasyBestInput");
-    console.log("estimateHeroEasyBest: ", estimateHeroEasyBest)
-    var estimateHeroEasyMostLikely=threePointChild=getInputValue("estimateHeroEasyMostLikelyInput");
-    console.log("estimateHeroEasyMostLikely: ", estimateHeroEasyMostLikely)
-    var estimateHeroEasyWorst=threePointChild=getInputValue("estimateHeroEasyWorstInput");
-    console.log("estimateHeroEasyWorst: ", estimateHeroEasyWorst)
-
-
-    //3 point means
-    var threePointHeroDifficult=threePointWeighted(estimateHeroDifficultBest, estimateHeroDifficultMostLikely,estimateHeroDifficultWorst);
-    var threePointHeroMedium=threePointWeighted(estimateHeroMediumBest, estimateHeroMediumMostLikely,estimateHeroMediumWorst);
-    var threePointHeroEasy=threePointWeighted(estimateHeroEasyBest, estimateHeroEasyMostLikely,estimateHeroEasyWorst);
-    document.getElementById("threePointHeroDifficultInfo").innerHTML=threePointHeroDifficult.toFixed(2);
-    document.getElementById("threePointHeroMediumInfo").innerHTML=threePointHeroMedium.toFixed(2);
-    document.getElementById("threePointHeroEasyInfo").innerHTML=threePointHeroEasy.toFixed(2);
-
-    //standard Deviation hero
-    var standardDeviationHeroDifficult=stardardDeviation(estimateHeroDifficultBest,estimateHeroDifficultWorst);
-    var standardDeviationHeroMedium=stardardDeviation(estimateHeroMediumBest,estimateHeroMediumWorst);
-    var standardDeviationHeroEasy=stardardDeviation(estimateHeroEasyBest,estimateHeroEasyWorst);
-    document.getElementById("standardDeviationHeroDifficultInfo").innerHTML=standardDeviationHeroDifficult.toFixed(2);
-    document.getElementById("standardDeviationHeroMediumInfo").innerHTML=standardDeviationHeroMedium.toFixed(2);
-    document.getElementById("standardDeviationHeroEasyInfo").innerHTML=standardDeviationHeroEasy.toFixed(2);
-
-
-    //variance hero
-    var varianceHeroDifficult=variance(estimateHeroDifficultBest,estimateHeroDifficultWorst);
-    var varianceHeroMedium=variance(estimateHeroMediumBest,estimateHeroMediumWorst);
-    var varianceHeroEasy=variance(estimateHeroEasyBest,estimateHeroEasyWorst);
-    document.getElementById("varianceHeroDifficultInfo").innerHTML=varianceHeroDifficult.toFixed(2);
-    document.getElementById("varianceHeroMediumInfo").innerHTML=varianceHeroMedium.toFixed(2);
-    document.getElementById("varianceHeroEasyInfo").innerHTML=varianceHeroEasy.toFixed(2);
-
-    var heroShotsCount= (shotCount*heroShotsPercentage)/100;
-    document.getElementById("heroShotsCountInfo").innerHTML=heroShotsCount.toFixed(0);
+    //mean
+    var assetThreePointDifficult =threePointWeighted(assetEstimateDifficultBest,assetEstimateDifficultMostLikely,assetEstimateDifficultWorst)
+    writeToPage("assetThreePointDifficultInfo",assetThreePointDifficult.toFixed(2));
+    var assetThreePointMedium = threePointWeighted(assetEstimateMediumBest,assetEstimateMediumMostLikely,assetEstimateMediumWorst)
+    writeToPage("assetThreePointMediumInfo",assetThreePointMedium.toFixed(2));
+    var assetThreePointEasy = threePointWeighted(assetEstimateEasyBest, assetEstimateEasyMostLikely,assetEstimateEasyWorst);
+    writeToPage("assetThreePointEasyInfo",assetThreePointEasy.toFixed(2));
+    //totals
+    var assetDifficultMean = assetThreePointDifficult*assetDifficultCount;
+    writeToPage("assetDifficultMeanInfo",assetDifficultMean.toFixed(2));
+    var assetMediumMean =assetThreePointMedium*assetMediumCount;
+    writeToPage("assetMediumMeanInfo",assetMediumMean.toFixed(2));
+    var assetEasyMean =assetThreePointEasy*assetEasyCount;
+    writeToPage("assetEasyMeanInfo",assetEasyMean.toFixed(2));
+    var totalMean = assetDifficultMean+ assetMediumMean+assetEasyMean ;
+    writeToPage("totalMeanInfo",totalMean.toFixed(2));
     
-
-    //INPUT %
-    var heroDifficultShotsPercentage=getInputValue("heroShotsDifficultPercentageInput");
-    document.getElementById("heroShotsDifficultPercentageInfo").innerHTML=heroDifficultShotsPercentage;
-    console.log("heroDifficultShotsPercentage: ", heroDifficultShotsPercentage)
-
-    var heroMediumShotsPercentage=getInputValue("heroShotsMediumPercentageInput");
-    document.getElementById("heroShotsMediumPercentageInfo").innerHTML=heroMediumShotsPercentage;
-    console.log("heroMediumShotsPercentage: ", heroMediumShotsPercentage)
-
-    var heroEasyShotsPercentage=getInputValue("heroShotsEasyPercentageInput");
-    document.getElementById("heroShotsEasyPercentageInfo").innerHTML=heroEasyShotsPercentage;
-    console.log("heroEasyShotsPercentage: ", heroEasyShotsPercentage)
-
-    //calculate each shot type/difficulty Count
-    var heroShotsDifficultCount=(getInputValue("heroShotsDifficultPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsDifficultCountInfo").innerHTML=heroShotsDifficultCount.toFixed(0);
-    console.log("heroShotsDifficultCount: ", heroShotsDifficultCount)
-
-    var heroShotsMediumCount=(getInputValue("heroShotsMediumPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsMediumCountInfo").innerHTML=heroShotsMediumCount.toFixed(0);
-    console.log("heroShotsMediumCount: ", heroShotsMediumCount)
-
-    var heroShotsEasyCount=(getInputValue("heroShotsEasyPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsEasyCountInfo").innerHTML=heroShotsEasyCount.toFixed(0);
-    console.log("heroShotsEasyCount: ", heroShotsEasyCount)
-
-
-    //means
-    var heroShotsDifficultMean=threePointHeroDifficult*heroShotsDifficultCount
-    document.getElementById("heroShotsDifficultMeanInfo").innerHTML=heroShotsDifficultMean.toFixed(0);
-    console.log("heroShotsDifficultMean: ", heroShotsDifficultMean)
-
-    var heroShotsMediumMean=threePointHeroMedium*heroShotsMediumCount
-    document.getElementById("heroShotsMediumMeanInfo").innerHTML=heroShotsMediumMean.toFixed(0);
-    console.log("heroShotsMediumMean: ", heroShotsMediumMean)
-
-    var heroShotsEasyMean=threePointHeroEasy*heroShotsEasyCount
-    document.getElementById("heroShotsEasyMeanInfo").innerHTML=heroShotsEasyMean.toFixed(0);
-    console.log("threePointHeroEasy:heroShotsCount ", threePointHeroEasy,heroShotsCount);
-
-    var heroShotsMean=heroShotsDifficultMean+heroShotsMediumMean+heroShotsEasyMean
-    document.getElementById("totalMeanHeroInfo").innerHTML=heroShotsMean;
-    console.log("totalMeanHeroInfo: ", heroShotsMean)
-
-
-    //total Mean
-    var totalShotMean=heroShotsMean+establishingShotsMean+masterShotsMean+childShotsMean;
-    document.getElementById("totalMeanInfo").innerHTML=totalShotMean.toFixed(0);
-    console.log("totalShotMean: ", totalShotMean)
-
-    //Standard deviation totals Hero
-    var standardDeviationHeroDifficultTotal=Math.sqrt(standardDeviationHeroDifficult*heroShotsDifficultCount);
-    document.getElementById("standardDeviationHeroDifficultTotalInfo").innerHTML=standardDeviationHeroDifficultTotal.toFixed(2);
-    var standardDeviationHeroMediumTotal=Math.sqrt(standardDeviationHeroMedium*heroShotsMediumCount);
-    document.getElementById("standardDeviationHeroMediumTotalInfo").innerHTML=standardDeviationHeroMediumTotal.toFixed(2);
-    var standardDeviationHeroEasyTotal=Math.sqrt(standardDeviationHeroEasy*heroShotsEasyCount);
-    document.getElementById("standardDeviationHeroEasyTotalInfo").innerHTML=standardDeviationHeroEasyTotal.toFixed(2);
-    
-    
-    var standardDeviationHeroTotal=standardDeviationHeroDifficultTotal+standardDeviationHeroMediumTotal+standardDeviationHeroEasyTotal;
-    document.getElementById("standardDeviationHeroTotalInfo").innerHTML=standardDeviationHeroTotal.toFixed(2);
-
-    
-    
-    var startingDate  =0;
-    var endDate  =0;
-
-  
-    
-    var dailyworkingHours=getInputValue("dailyWorkingHoursInput");
-    document.getElementById("dailyworkingHoursInfo").innerHTML=dailyworkingHours;
-    console.log("dailyworkingHours: ", dailyworkingHours)
-
-    var dailyReviewHours=getInputValue("dailyReviewHoursInput");
-    document.getElementById("dailyReviewHoursInfo").innerHTML=dailyReviewHours;
-    console.log("dailyReviewHours: ", dailyReviewHours)
-    var yearWorkingDays=getInputValue("yearWorkingDaysInput");
-    document.getElementById("yearWorkingDaysInfo").innerHTML=yearWorkingDays;
-    console.log("yearWorkingDays: ", yearWorkingDays)
-
-    var entitledHolidays=getInputValue("entitledHolidaysInput");
-    document.getElementById("entitledHolidaysInfo").innerHTML=entitledHolidays;
-    console.log("entitledHolidays: ", entitledHolidays)
-
-    var averageSickDays=getInputValue("averageSickDaysInput");
-    document.getElementById("averageSickDaysInfo").innerHTML=averageSickDays;
-    console.log("averageSickDays: ", averageSickDays)
-
+    //team capacity
     actualWorkingHoursPerDay=dailyworkingHours-dailyReviewHours;
     dayMultiplier=actualWorkingHoursPerDay/dailyworkingHours
     console.log("actualWorkingHoursPerDay: ", actualWorkingHoursPerDay)
     console.log("dayMultiplier: ", dayMultiplier)
 
+    var teamCapacity =((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
+    writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
     
 
+    //criticalPathMean
+    var criticalPathDifficultAssets=assetDifficultMean*(assetThreePointDifficult/teamCapacity);
+    var criticalPathMediumAssets=assetMediumMean*(assetThreePointMedium/teamCapacity);
+    var criticalPathEasyAssets=assetEasyMean*(assetThreePointEasy/teamCapacity);
+    criticalPathMean=criticalPathDifficultAssets+criticalPathMediumAssets+criticalPathEasyAssets;
+    console.log("criticalPathDifficultAssets: ", criticalPathDifficultAssets)
+    console.log("criticalPathMediumAssets: ", criticalPathMediumAssets)
+    console.log("criticalPathEasyAssets: ", criticalPathEasyAssets)
+    console.log("criticalPathMean: ", criticalPathMean)        
 
+    
 
+    
+    var projectManDays = assetDifficultMean+assetMediumMean+assetEasyMean;
+    writeToPage("projectManDaysInfo",projectManDays.toFixed(2));
 
-    //total holiday and sick days 
+    //variance
+    var varianceAssetDifficult = variance(assetEstimateDifficultBest,assetEstimateDifficultWorst);
+    writeToPage("varianceAssetDifficultInfo",varianceAssetDifficult.toFixed(2));
+    var varianceAssetMedium = variance(assetEstimateMediumBest,assetEstimateMediumWorst);    
+    writeToPage("varianceAssetMediumInfo",varianceAssetMedium.toFixed(2));
+    var varianceAssetEasy = variance(assetEstimateEasyBest,assetEstimateEasyWorst);
+    writeToPage("varianceAssetEasyInfo",varianceAssetEasy.toFixed(2));
+
+    //Standard Deviation
+    var assetStandardDeviationDifficult = stardardDeviation(assetEstimateDifficultBest,assetEstimateDifficultWorst);
+    writeToPage("assetStandardDeviationDifficultInfo",assetStandardDeviationDifficult.toFixed(2));
+    var assetStandardDeviationMedium =stardardDeviation(assetEstimateMediumBest,assetEstimateMediumWorst); 
+    writeToPage("assetStandardDeviationMediumInfo",assetStandardDeviationMedium.toFixed(2));
+    var assetStandardDeviationEasy =stardardDeviation(assetEstimateEasyBest,assetEstimateEasyWorst);
+    writeToPage("assetStandardDeviationEasyInfo",assetStandardDeviationEasy.toFixed(2));
+
+    //days and working year
     var totalTeamHolidays=(leadArtists+artist+juniorArtists)*entitledHolidays;
-    document.getElementById("totalTeamHolidaysInfo").innerHTML=totalTeamHolidays;
-    console.log("totalTeamHolidays: ", totalTeamHolidays)
-
+    writeToPage("totalTeamHolidaysInfo",totalTeamHolidays);
     var totalTeamSickDays=(leadArtists+artist+juniorArtists)*averageSickDays;
-    document.getElementById("totalTeamSickDaysInfo").innerHTML=totalTeamSickDays;
-    console.log("totalTeamSickDays: ", totalTeamSickDays)
+    writeToPage("totalTeamSickDaysInfo",totalTeamSickDays);    
 
-    var teamCapacity=((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
-    document.getElementById("teamCapacityInfo").innerHTML=teamCapacity.toFixed(2);;
-    console.log("teamCapacity: ", teamCapacity)
-    
-    var totalManDaysBest =0;  //total manDays the production will take - best case
-    var totalManDaysMostLikely  =0; //total manDays the production will take - most Likely
-    var totalManDaysWorst  =0; //total manDays the production will take - worst case
-    
+    var startDate = getInputDate("startDate");
+    var proposedDate = getInputDate("endDate");
 
-    //projectManDaysInfo
-    var projectManDays =totalShotMean/teamCapacity;  //totalmean/teamCapacity
-    document.getElementById("projectManDaysInfo").innerHTML=projectManDays.toFixed(2);;
-    console.log("projectManDays: ", projectManDays)
+    proposedDuration= dateDifference(startDate,proposedDate);
+    
+    console.log(proposedDuration);
+
+    //criticalPathVariance
+    var criticalPathVarianceDifficultAssets=varianceAssetDifficult*assetDifficultCount;
+    var criticalPathVarianceMediumAssets=varianceAssetMedium*assetMediumCount;
+    var criticalPathVarianceEasyAssets=varianceAssetEasy*assetEasyCount;
+    criticalPathVariance=criticalPathVarianceDifficultAssets+criticalPathVarianceMediumAssets+criticalPathVarianceEasyAssets;
+    criticalPathStandardDeviation=Math.sqrt(criticalPathVariance,2);
+    console.log("criticalPathVarianceDifficultAssets: ", criticalPathVarianceDifficultAssets)
+
+    var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
+    console.log("Z",Z);
+
+    probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
+    console.log("probabilities",probabilities);
+    writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");    
     
     
+  
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Shots', 'Percentage'],
-          ['Hero Difficult',     heroShotsDifficultCount],
-          ['Hero Medium',  heroShotsMediumCount],
-          ['Hero Easy', heroShotsEasyCount],
-          ['Establishing Difficult',     establishingShotsDifficultCount],
-          ['Establishing Medium',  establishingShotsMediumCount],
-          ['Establishing Easy', establishingShotsEasyCount],
-          ['Master Difficult',    masterShotsDifficultCount],
-          ['Master Medium',    masterShotsMediumCount],
-          ['Master Easy',    masterShotsEasyCount],
-          ['Child Difficult',    childShotsDifficultCount],
-          ['Child Medium',    childShotsMediumCount],
-          ['Child Easy',    childShotsEasyCount]
+          ['Assets', 'Percentage'],
+          ['Difficult',  assetDifficultPercentage],
+          ['Medium',  assetMediumPercentage],
+          ['Easy',  assetEasyPercentage]
+         
           
         ]);
         var data2 = google.visualization.arrayToDataTable([
-          ['Shots', 'Percentage'],
-          ['Hero',     heroShotsCount],
-          ['Establishing',     establishingShotsCount],
-          ['Master',    masterShotsCount],
-          ['Child',    childShotsCount],
+          ['Assets', 'Percentage'],
+          ['Difficult',  assetDifficultCount],
+          ['Medium',  assetMediumCount],
+          ['Easy',  assetEasyCount]
+          
         ]);
         var data3 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['Hero Difficult',     heroShotsDifficultMean],
-          ['Hero Medium',  heroShotsMediumMean],
-          ['Hero Easy', heroShotsEasyMean],
-          ['Establishing Difficult',     establishingShotsDifficultMean],
-          ['Establishing Medium',  establishingShotsMediumMean],
-          ['Establishing Easy', establishingShotsEasyMean],
-          ['Master Difficult',    masterShotsDifficultMean],
-          ['Master Medium',    masterShotsMediumMean],
-          ['Master Easy',    masterShotsEasyMean],
-          ['Child Difficult',    childShotsDifficultMean],
-          ['Child Medium',    childShotsMediumMean],
-          ['Child Easy',    childShotsEasyMean]
+          ['difficult mandays',     assetDifficultMean],
+          ['medium man days',     assetMediumMean],
+          ['easy man days',     assetEasyMean]
+
           
         ]);
 
@@ -279,10 +210,7 @@ function updateInformationPanel (){
         
       var data4 = google.visualization.arrayToDataTable([
         ['Genre', 'difficult', 'Medium', 'Easy',{ role: 'annotation' } ],
-        ['hero', heroShotsDifficultCount, heroShotsMediumCount, heroShotsEasyCount, "Total: "+heroShotsCount],
-        ['establishing', establishingShotsDifficultCount, establishingShotsMediumCount, establishingShotsEasyCount, "Total: "+establishingShotsCount],
-        ['Master', masterShotsDifficultCount, masterShotsMediumCount, masterShotsEasyCount, "Total: "+masterShotsCount],
-        ['Child', childShotsDifficultCount, childShotsMediumCount, childShotsEasyCount, "Total: "+childShotsCount]
+        ['assets', assetDifficultCount, assetMediumCount, assetEasyCount, "Total: "+assetCount],
       ]);
 
       var options = {
@@ -299,20 +227,14 @@ function updateInformationPanel (){
       }
 
       google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawMultSeries);
-
-function drawMultSeries() {
+      google.charts.setOnLoadCallback(drawMultSeries);
+    
+    function drawMultSeries() {
     }
 
 
-}
 
-//Usage
 
-var startDate = new Date('07/05/2017');
-var endDate = new Date('07/20/2017');
-var numOfDates = getBusinessDatesCount(startDate,endDate);
-console.log("numOfDates",numOfDates)
 
 
 	$(document).ready(function(){
@@ -325,3 +247,4 @@ console.log("numOfDates",numOfDates)
 			autoclose: true,
 		})
 	})
+}

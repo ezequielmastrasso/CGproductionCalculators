@@ -28,7 +28,7 @@
         <a class="navbar-brand" href="../">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-        <a class="navbar-brand" href="./">Lighting Production Calculator</a>
+        <a class="navbar-brand" href="./">Single Asset type Production Calculator</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
@@ -56,7 +56,7 @@
          </i>
         </div>
         
-        <input class="form-control" id="startDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+        <input onchange="updateInformationPanel()" class="form-control" id="startDate" name="date" placeholder="07/03/2017" type="text" style="min-width:120px"/>
        </div>
       <div class="chart-title">
             end Date
@@ -66,7 +66,7 @@
          <i class="fa fa-calendar">
          </i>
         </div>
-        <input class="form-control" id="endDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+        <input onchange="updateInformationPanel()" class="form-control" id="endDate" name="date" placeholder="06/14/2018" type="text" style="min-width:120px"/>
        </div>
 </div>
 </div>
@@ -98,19 +98,19 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Leads Artists Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="2" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Artist Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="15" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="6" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Junior Artists Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="6" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    
                       </div>
                     </div>
 
@@ -186,7 +186,7 @@
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotCounttt">sick days per year</label>  
+                          <label class="col-md-4 control-label" for="shotCounttt">Sick days per year</label>  
                           <div class="col-md-2">
                           <input   onchange="updateInformationPanel()" id="averageSickDaysInput" name="shotCounttt" type="text" placeholder="5" class="form-control input-md" required="">    
                           </div>
@@ -199,7 +199,7 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">Asset Count</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="assetCountInput" name="shotCounttt" type="text" placeholder="2000" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="assetCountInput" name="shotCounttt" type="text" placeholder="40" class="form-control input-md" required="">
                             
                           </div>
                         </div>
@@ -216,7 +216,7 @@
       </div>  
 
 
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-4">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -227,91 +227,63 @@
               <div class="col-xs-3">
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
-                    <li class="active"><a href="#heroShotsInfo" data-toggle="tab">asset</a></li>
+                    <li class="active"><a href="#assetShotsInfo" data-toggle="tab">asset</a></li>
+                    <li ><a href="#assetShotsEst" data-toggle="tab">asset</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-xs-9">
                 <div class="tab-content">
                  
-                 <div class="tab-pane active" id="heroShotsInfo">
-                    <!-- Hero Shot input-->
+                 <div class="tab-pane active" id="assetShotsInfo">
+                    <!-- Asset Shot input-->
                     <legend>asset difficulty information</legend>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">percentageDifficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="75" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">percentageMedium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">percentageEasy</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     
 
                  </div>
-                 
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="col-sm-12 col-md-6 col-lg-4">
-
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            asset Days Estimates
-          </div>
-          <div class="chart-stage">
-            <div class="row">
-              <div class="col-xs-3">
-                <div class="tabbable tabs-left">
-                  <ul class="nav nav-tabs">
-                    <li class="active"><a href="#heroShotsEst" data-toggle="tab">asset</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-xs-9">
-                <div class="tab-content">
-                 
-                 <div class="tab-pane active" id="heroShotsEst">
-                    <!-- Hero Shot input-->
+                 <div class="tab-pane " id="assetShotsEst">
+                    <!-- Asset Shot input-->
                     <legend>asset Days estimates</legend>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultBestInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="9" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="15" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="assetEstimateMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateMediumBestInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="assetEstimateMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                       <input   onchange="updateInformationPanel()" id="assetEstimateMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
@@ -320,20 +292,19 @@
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyBestInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEstimateEasyWorstInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
                       </div>
                     </div>
                     
 
                  </div>
-                  
-        
+                 
 
                 </div>
               </div>
@@ -341,6 +312,10 @@
           </div>
         </div>
       </div>
+
+
+
+      
         <div class="row" >
          
     
@@ -355,7 +330,8 @@
       <div class="col-sm-12 col-md-3 col-lg-3">
         <div class="chart-wrapper" style="min-height:100px">
           <div class="chart-title">
-            % probabilities on your end date
+            % probabilities on your end date<br>
+            <a style="font-size:20px" href="#" class="btn btn-primary btn-lg disabled" id="probEndDateInfo"role="button"></a>
           </div>
         </div>
       </div>
@@ -444,31 +420,25 @@
           </div>
           <div class="chart-stage">
             <div class="row" style="margin:0px;">
-              total mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button">---</a><br>
+              total mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button"></a><br>
               <div class="chart-title"> </div>
-              total mean hero<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanHeroInfo"role="button">---</a><br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultMeanInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumMeanInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyMeanInfo"role="button"></a>
               <div class="chart-title"> </div>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyMeanInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              total mean establ<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanEstablishingHeroInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyMeanInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              total mean master<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanMasterHeroInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyMeanInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              total mean child<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanChildHeroInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumMeanInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyMeanInfo"role="button">---</a>
+
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultBestInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultMostLikelyInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultWorstInfo"role="button"></a>
+              <br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumBestInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumMostLikelyInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumWorstInfo"role="button"></a>
+              <br>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyBestInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyMostLikelyInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyWorstInfo"role="button"></a>
+             
               </div>
             </div>
             </div>
@@ -481,21 +451,21 @@
           </div>
           <div class="chart-stage">
             <div class="row" style="margin:0px;">
-              leadsArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="leadsArtistsCountInfo"role="button">---</a><br>
-                  artistCount<a href="#" class="btn btn-primary btn-lg disabled" id="artistCountInfo"role="button">---</a><br>
-                  juniorArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCountInfo"role="button">---</a><br>
-                  artistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="artistsCapacityInfo"role="button">---</a><br>
-                  junioArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCapacityInfo">---</a><br>
-                  leadArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="leadArtistsCapacityInfo">---</a><br>
-                  dailyworkingHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyworkingHoursInfo"role="button">---</a><br>
-                  dailyReviewHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyReviewHoursInfo">---</a><br>
-                  yearWorkingDays<a href="#" class="btn btn-primary btn-lg disabled" id="yearWorkingDaysInfo"role="button">---</a><br>
-                  entitledHolidays<a href="#" class="btn btn-primary btn-lg disabled" id="entitledHolidaysInfo">---</a><br>
-                  averageSickDays<a href="#" class="btn btn-primary btn-lg disabled" id="averageSickDaysInfo"role="button">---</a><br>
-                  totalTeamHolidaysInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamHolidaysInfo"role="button">---</a><br>         
-                  totalTeamsickInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamSickDaysInfo"role="button">---</a><br>         
-                  team m/day Capacity<a href="#" class="btn btn-primary btn-lg disabled" id="teamCapacityInfo"role="button">---</a><br>
-                  project m/days<a href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button">---</a><br>
+              leadsArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="leadsArtistsCountInfo"role="button"></a><br>
+                  artistCount<a href="#" class="btn btn-primary btn-lg disabled" id="artistCountInfo"role="button"></a><br>
+                  juniorArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCountInfo"role="button"></a><br>
+                  artistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="artistsCapacityInfo"role="button"></a><br>
+                  junioArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCapacityInfo"></a><br>
+                  leadArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="leadArtistsCapacityInfo"></a><br>
+                  dailyworkingHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyWorkingHoursInfo"role="button"></a><br>
+                  dailyReviewHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyReviewHoursInfo"></a><br>
+                  yearWorkingDays<a href="#" class="btn btn-primary btn-lg disabled" id="yearWorkingDaysInfo"role="button"></a><br>
+                  entitledHolidays<a href="#" class="btn btn-primary btn-lg disabled" id="entitledHolidaysInfo"></a><br>
+                  averageSickDays<a href="#" class="btn btn-primary btn-lg disabled" id="averageSickDaysInfo"role="button"></a><br>
+                  totalTeamHolidaysInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamHolidaysInfo"role="button"></a><br>         
+                  totalTeamsickInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamSickDaysInfo"role="button"></a><br>         
+                  team m/day Capacity<a href="#" class="btn btn-primary btn-lg disabled" id="teamCapacityInfo"role="button"></a><br>
+                  project m/days<a href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button"></a><br>
 
               </div>
             </div>
@@ -509,30 +479,11 @@
           </div>
           <div class="chart-stage">
             <div class="row" style="margin:0px;">
-              <legend>shotcount</legend>
-                    shotCount<a href="#" class="btn btn-primary btn-lg disabled" id="shotCountInfo"role="button">---</a><br>
-                  sequences<a href="#" class="btn btn-primary btn-lg disabled" id="sequenceCountInfo">---</a><br>
-                  establ per seq<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPerSequenceInfo">0</a><br>
-
-                  hero Shots<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsCountInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyCountInfo"role="button">---</a><br>
-
-                  establishing Shots<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsCountInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyCountInfo"role="button">---</a><br>
-                  
-                  master Shots<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsCountInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyCountInfo"role="button">---</a><br>
-                  
-                  child Shots<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsCountInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumCountInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyCountInfo"role="button">---</a><br>
+              <legend>asset count</legend>
+                  asset<a href="#" class="btn btn-primary btn-lg disabled" id="assetCountInfo"role="button"></a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultCountInfo"role="button"></a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumCountInfo"role="button"></a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyCountInfo"role="button"></a><br>
 
               </div>
             </div>
@@ -546,27 +497,12 @@
           </div>
           <div class="chart-stage">
             <div class="row" style="margin:0px;">
-              <legend>shot Percentages</legend>
+              <legend>asset Percentages</legend>
 
-                  hero <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsPercentageInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultPercentageInfo"role="button">---</a>
-                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumPercentageInfo"role="button">---</a>
-                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyPercentageInfo"role="button">---</a><br>                
-
-                  establishing <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPercentageInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyPercentageInfo"role="button">---</a><br>
-
-                  master <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsPercentageInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyPercentageInfo"role="button">---</a><br>
-
-                  child <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsPercentageInfo"role="button">---</a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumPercentageInfo"role="button">---</a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyPercentageInfo"role="button">---</a><br>
+                  asset
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultPercentageInfo"role="button"></a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumPercentageInfo"role="button"></a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyPercentageInfo"role="button"></a><br>                
 
               </div>
             </div>
@@ -585,22 +521,11 @@
               <div class="chart-title">
             Variance
           </div>
-              hero<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroEasyInfo"role="button">---</a><br>
+              asset<a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetDifficultInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetMediumInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetEasyInfo"role="button"></a><br>
               <div class="chart-title"> </div>
-              establ<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingEasyInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              master<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterEasyInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              child<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildEasyInfo"role="button">---</a><br>
-
+             
               </div>
             </div>
             </div>
@@ -617,21 +542,9 @@
               <div class="chart-title">
             3 point
           </div>
-              hero est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroEasyInfo"role="button">---</a><br>
-
-              Establishing est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingEasyInfo"role="button">---</a><br>
-
-              Master est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterEasyInfo"role="button">---</a><br>
-
-              Child<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildEasyInfo"role="button">---</a><br>
+              asset est<a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointDifficultInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointMediumInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointEasyInfo"role="button"></a><br>
 
               </div>
             </div>
@@ -646,55 +559,19 @@
           <div class="chart-stage">
             <div class="row" style="margin:0px;">
               <div class="chart-title">
-            Standard Deviation hero
+            Standard Deviation asset
           </div>
-              hero total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroTotalInfo"role="button">---</a><br>
+              asset total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationTotalInfo"role="button"></a><br>
 
               <div class="chart-title"> </div>
-              hero per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyInfo"role="button">---</a>
+              asset per task<a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationDifficultInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationMediumInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationEasyInfo"role="button"></a>
               <div class="chart-title"> </div>
-              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyTotalInfo"role="button">---</a>
- <div class="chart-title">
-            Standard Deviation stab
-          </div>
-              Establishing total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingTotalInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              Estab per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyTotalInfo"role="button">---</a>
- <div class="chart-title">
-            Standard Deviation master
-          </div>
-              Master total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterTotalInfo"role="button">---</a><br>
-          <div class="chart-title"> </div>
-              master per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyInfo"role="button">---</a>
-            <div class="chart-title"> </div>
-              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyTotalInfo"role="button">---</a>
- <div class="chart-title">
-            Standard Deviation child
-          </div>
-              Child total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildTotalInfo"role="button">---</a><br>
-              <div class="chart-title"> </div>
-              Child Per Task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultInfo"role="button">---</a>              
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyInfo"role="button">---</a>
-              <div class="chart-title"> </div>
-              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumTotalInfo"role="button">---</a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyTotalInfo"role="button">---</a>
-
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationDifficultTotalInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationMediumTotalInfo"role="button"></a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationEasyTotalInfo"role="button"></a>
+ 
               </div>
             </div>
             </div>
@@ -733,6 +610,7 @@
 
   <script type="text/javascript" src="assets/js/connected-devices.js"></script>
   <script type="text/javascript" src="assets/js/cgCalculator.js"></script>
+  <script type="text/javascript" src="assets/js/cgCalculatorSingleAsset.js"></script>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
