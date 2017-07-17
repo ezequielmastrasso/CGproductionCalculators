@@ -29,7 +29,10 @@ HR should be able to give you this number.
 The biggest limitation is not knowing the tasks dependencies in advance.  
 We should have an actual work breakdown structure, sequences, assets, etc to come up with this.  
 Currently the actual project Duration (aka: the critical path, or the minimum time needed for the project  
-after concatenating all the tasks decencies) will be given by a guesstimate of % overlapping tasks.  
-This guesstimate is calculated as   
-(totalMean-overlappingTaksMean)/teamCapacity=duration  
+after concatenating all the tasks decencies) will be driven by a guesstimate of % overlapping tasks given by the user
+This guesstimate is calculated as
+(totalMean-overlappingTaksMean)/teamCapacity=duration
+
+However The info box will display a rough estimation of possible overlapping % tasks calculated as:
+(85% childShots)+(85%masterShots-EstablishingShotsCount)+(90%Establishing+90%Hero)
 
