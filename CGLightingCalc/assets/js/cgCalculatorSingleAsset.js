@@ -108,7 +108,9 @@ function updateInformationPanel (){
     console.log("criticalPathDifficultAssets: ", criticalPathDifficultAssets)
     console.log("criticalPathMediumAssets: ", criticalPathMediumAssets)
     console.log("criticalPathEasyAssets: ", criticalPathEasyAssets)
-    console.log("criticalPathMean: ", criticalPathMean)        
+    console.log("criticalPathMean: ", criticalPathMean)
+    writeToPage("criticalPathMean",criticalPathMean.toFixed(2));
+    
 
     
 
@@ -142,8 +144,10 @@ function updateInformationPanel (){
     var proposedDate = getInputDate("endDate");
 
     proposedDuration= dateDifference(startDate,proposedDate);
+    writeToPage("proposedDuration",proposedDuration);    
     
-    console.log(proposedDuration);
+    
+    console.log("proposedDuration",proposedDuration);
 
     //criticalPathVariance
     var criticalPathVarianceDifficultAssets=varianceAssetDifficult*assetDifficultCount;
@@ -151,14 +155,15 @@ function updateInformationPanel (){
     var criticalPathVarianceEasyAssets=varianceAssetEasy*assetEasyCount;
     criticalPathVariance=criticalPathVarianceDifficultAssets+criticalPathVarianceMediumAssets+criticalPathVarianceEasyAssets;
     criticalPathStandardDeviation=Math.sqrt(criticalPathVariance,2);
-    console.log("criticalPathVarianceDifficultAssets: ", criticalPathVarianceDifficultAssets)
+    writeToPage("criticalPathVariance",criticalPathVariance.toFixed(4));
+    writeToPage("criticalPathStndDeviation",criticalPathStandardDeviation.toFixed(4));
 
     var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
-    console.log("Z",Z);
+    writeToPage("Z",Z.toFixed(4));
 
     probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
     console.log("probabilities",probabilities);
-    writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");    
+    writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");
     
     
   

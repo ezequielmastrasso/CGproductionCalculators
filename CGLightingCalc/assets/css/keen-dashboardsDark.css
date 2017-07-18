@@ -4,7 +4,8 @@
  */
 body{
     background:#1f1f1f;
-    color: #ABABAB; 
+    color: #ABABAB;
+    font-size: 12px;
 }
 legend{
     color: #AFAFAF;
@@ -92,7 +93,7 @@ body.application .return-link:hover,
 .chart-wrapper .chart-title {
   border-bottom: 1px solid grey;
   color: #B5B5B5;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 200;
   padding: 7px 10px 4px;
 }
