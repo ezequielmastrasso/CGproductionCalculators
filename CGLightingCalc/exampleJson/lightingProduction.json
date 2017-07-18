@@ -1,0 +1,195 @@
+//To be minified with JSON.minify()
+//JSON.parse(JSON.minify(lightingProduction));
+
+{
+	"lightingProduction": {
+		"lighters": 30,
+		"juniorLighters": 6,
+		"leadLighters": 8,
+		"lightersWorkingCapacity": 1.0, //working capacity of lighters
+		"juniorLightersWorkingCapacity": 0.6, //working capacity of junior artist, 0.6 is 60% 
+		"leadLightersWorkingCapacity": 0.1, //0.1 is 10%. Leads usually manage more than doing actual work.
+
+		"dailyworkingHours": 8, //amount of hours an artist works per day
+		"dailyReviewHours": 1, //amount of hours an artist will spend on dailys (warning: this affects leads working capacity too)
+		"yearWorkingDays": 260, //amount of actual work days the year will have. 365-publicHolidays-weekends
+		"entitledHolidays": 21, //amount of days an artist has allocated for holidays in a calendar year
+		"averageSickDays": 5, //average sick days an artist will take throughout a year (HR input)
+    "teamCapacity": 0, //actual manDays the team accounts for in 1 day. lighers+(junior*juniorCapacity)+(leads*leadsCapacity)
+    
+    "totalTeamHolidays": 0,
+    "totalTeamSickDays": 0,
+		
+    "shotCount": 2000, //total amount of shots
+		"sequenceCount": 120, // amount of sequences
+    "establishingShotsPerSequence": 2.5, // an average of how many masterShots each sequence will have
+    
+    "startingDate": 0,
+    "endDate": 0,
+    "projectDuration": 0, //endDate-startingDate-weekends-publicHolidays-entitledHolidaysForThePeriod
+    
+    "totalManDaysBest": 0, //total manDays the production will take - best case
+    "totalManDaysMostLikely": 0, //total manDays the production will take - most Likely
+    "totalManDaysWorst": 0, //total manDays the production will take - worst case
+    
+    "totalManDaysPerManBest": 0, //total manDays per team member - best case
+    "totalManDaysPerManMostLikely": 0, //total manDays per team member - mostLikely
+    "totalManDaysPerManWorst": 0, //total manDays per team member - worst case
+    
+    "heroShotsPercentage": 3, //
+    "establishingShotsPercentage": 0, // calculated with establishing per sequence
+    "masterShotsPercentage": 40, //
+    "childShotsPercentage": 43, //
+    
+    "heroShotsCount": 0, // calculated with hero Shots percentage given
+    "establishingShotsCount": 0, // calculated with establishing Shots percentage given
+    "masterShotsCount": 0, // calculated with master Shots percentage given
+    "childShotsCount": 0, // calculated with child Shots percentage given
+    
+
+		"heroShots": {
+      "percentageDifficult": 75, //% of difficult hero shots
+      "percentageMedium": 20, //% of medium difficulty hero shots
+      "percentageEasy": 5, //% of easy hero shots
+			"difficult": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 14
+				},
+				{
+					"worst": 0
+				}
+			],
+			"medium": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 7
+				},
+				{
+					"worst": 0
+				}
+			],
+			"easy": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 6
+				},
+				{
+					"worst": 0
+				}
+			]
+		},
+		"establishingShots": {
+      "percentageDifficult": 70, //% of difficult establishing shots
+      "percentageMedium": 20, //% of medium difficulty establishing shots
+      "percentageEasy": 10, //% of easy establishing shots
+			"difficult": [{
+					"best": 
+				},
+				{
+					"mostLikely": 5
+				},
+				{
+					"worst": 0
+				}
+			],
+			"medium": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 4
+				},
+				{
+					"worst": 0
+				}
+			],
+
+			"easy": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 3
+				},
+				{
+					"worst": 0
+				}
+			]
+		},
+		"masterShots": {
+      "percentageDifficult": 60, //% of difficult master shots
+      "percentageMedium": 30, //% of medium difficulty master shots
+      "percentageEasy": 10, //% of easy master shots
+			"difficult": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 4
+				},
+				{
+					"worst": 0
+				}
+			],
+			"medium": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 3
+				},
+				{
+					"worst": 0
+				}
+			],
+
+			"easy": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 2
+				},
+				{
+					"worst": 0
+				}
+			]
+		},
+		"childShots": {
+      "percentageDifficult": 0, //% of difficult child shots
+      "percentageMedium": 50, //% of medium difficulty child shots
+      "percentageEasy": 50, //% of easy child shots
+			"difficult": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 2
+				},
+				{
+					"worst": 0
+				}
+			],
+			"medium": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 1
+				},
+				{
+					"worst": 0
+				}
+			],
+
+			"easy": [{
+					"best": 0
+				},
+				{
+					"mostLikely": 1
+				},
+				{
+					"worst": 0
+				}
+			]
+		}
+
+	}
+}

@@ -1,0 +1,561 @@
+//To be minified with JSON.minify()
+//JSON.parse(JSON.minify(lightingProduction));
+
+{
+  "assetProduction": {
+    "artist": 30,
+    "juniorArtist": 6,
+    "leadArtist": 8,
+    "artistWorkingCapacity": 1.0, //working capacity of artists
+    "juniorArtistWorkingCapacity": 0.6, //working capacity of junior artist, 0.6 is 60% 
+    "leadArtistWorkingCapacity": 0.1, //0.1 is 10%. Leads usually manage more than doing actual work.
+
+    "dailyworkingHours": 8, //amount of hours an artist works per day
+    "dailyReviewHours": 1, //amount of hours an artist will spend on dailys (warning: this affects leads working capacity too)
+    "yearWorkingDays": 260, //amount of actual work days the year will have. 365-publicHolidays-weekends
+    "entitledHolidays": 21, //amount of days an artist has allocated for holidays in a calendar year
+    "averageSickDays": 5, //average sick days an artist will take throughout a year (HR input)
+    "teamCapacity": 0, //actual manDays the team accounts for in 1 day. lighers+(junior*juniorCapacity)+(leads*leadsCapacity)
+    
+    "totalTeamHolidays": 0,
+    "totalTeamSickDays": 0,
+    
+    
+    
+    "startingDate": 0,
+    "endDate": 0,
+    "projectDuration": 0, //endDate-startingDate-weekends-publicHolidays-entitledHolidaysForThePeriod
+    
+    "totalManDaysBest": 0, //total manDays the production will take - best case
+    "totalManDaysMostLikely": 0, //total manDays the production will take - most Likely
+    "totalManDaysWorst": 0, //total manDays the production will take - worst case
+    
+    "totalManDaysPerManBest": 0, //total manDays per team member - best case
+    "totalManDaysPerManMostLikely": 0, //total manDays per team member - mostLikely
+    "totalManDaysPerManWorst": 0, //total manDays per team member - worst case
+    
+    "characterCountMain" :10,
+    "characterCountMainVariants" :20,
+    "characterCountSecondary" :12,
+    "characterCountSecondaryVariants" :10,
+    "characterCountIncidental" :25,
+    "characterCountIncidentalVariants" :25,
+    "characterCountCrowd" :30,
+    "characterCountVariants" :50,
+
+    "setCount" :40,
+    "setExtraElements" :50,
+    "setFoliagePieces" :50,
+    "setFoliagePiecesVariants" :20,
+
+    "propCount" :70,
+    "propCountVariant" :0,
+
+    "characterCountMain": {
+      "percentageDifficult": 50, //% of difficult establishing shots
+      "percentageMedium": 40, //% of medium difficulty establishing shots
+      "percentageEasy": 10, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 10
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 7
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 5
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+
+    "characterCountVariants": {
+      "percentageDifficult": 30, //% of difficult establishing shots
+      "percentageMedium": 20, //% of medium difficulty establishing shots
+      "percentageEasy": 50, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 4
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountSecondary": {
+      "percentageDifficult": 50, //% of difficult establishing shots
+      "percentageMedium": 30, //% of medium difficulty establishing shots
+      "percentageEasy": 20, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 6
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 5
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 4
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountSecondaryVariants": {
+      "percentageDifficult": 30, //% of difficult establishing shots
+      "percentageMedium": 20, //% of medium difficulty establishing shots
+      "percentageEasy": 50, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 3
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountIncidental": {
+      "percentageDifficult": 30, //% of difficult establishing shots
+      "percentageMedium": 50, //% of medium difficulty establishing shots
+      "percentageEasy": 20, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 4
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 3
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountIncidentalVariants": {
+      "percentageDifficult": 80, //% of difficult establishing shots
+      "percentageMedium": 10, //% of medium difficulty establishing shots
+      "percentageEasy": 10, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountCrowd": {
+      "percentageDifficult": 80, //% of difficult establishing shots
+      "percentageMedium": 10, //% of medium difficulty establishing shots
+      "percentageEasy": 10, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "characterCountCrowdVariants": {
+      "percentageDifficult": 80, //% of difficult establishing shots
+      "percentageMedium": 10, //% of medium difficulty establishing shots
+      "percentageEasy": 10, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "setCount": {
+      "percentageDifficult": 10, //% of difficult establishing shots
+      "percentageMedium": 20, //% of medium difficulty establishing shots
+      "percentageEasy": 70, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 18
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 11
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 7
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "setExtraElements": {
+      "percentageDifficult": 10, //% of difficult establishing shots
+      "percentageMedium": 30, //% of medium difficulty establishing shots
+      "percentageEasy": 60, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 5
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 3
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "setFoliagePieces": {
+      "percentageDifficult": 10, //% of difficult establishing shots
+      "percentageMedium": 25, //% of medium difficulty establishing shots
+      "percentageEasy": 65, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 3
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "setFoliagePiecesVariants": {
+      "percentageDifficult": 10, //% of difficult establishing shots
+      "percentageMedium": 25, //% of medium difficulty establishing shots
+      "percentageEasy": 65, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "propCount": {
+      "percentageDifficult": 5, //% of difficult establishing shots
+      "percentageMedium": 80, //% of medium difficulty establishing shots
+      "percentageEasy": 15, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 8
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 6
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ]
+    },
+    "propCountVariant": {
+      "percentageDifficult": 10, //% of difficult establishing shots
+      "percentageMedium": 70, //% of medium difficulty establishing shots
+      "percentageEasy": 20, //% of easy establishing shots
+      "difficult": [{
+          "best": 
+        },
+        {
+          "mostLikely": 2
+        },
+        {
+          "worst": 0
+        }
+      ],
+      "medium": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ],
+
+      "easy": [{
+          "best": 0
+        },
+        {
+          "mostLikely": 1
+        },
+        {
+          "worst": 0
+        }
+      ]
+    }
+
+  }
+}

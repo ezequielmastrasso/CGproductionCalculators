@@ -69,7 +69,7 @@ function updateInformationPanel (){
 		
     //estimates Hero
     //difficult
-    var estimateHeroDifficultBest=threePointChild=getInputValue("estimateHeroDifficultBestInput");
+    var estimateHeroDifficultBest =threePointChild=getInputValue("estimateHeroDifficultBestInput");
     console.log("estimateHeroDifficultBest: ", estimateHeroDifficultBest)
     var estimateHeroDifficultMostLikely=threePointChild=getInputValue("estimateHeroDifficultMostLikelyInput");
     console.log("estimateHeroDifficultMostLikely: ", estimateHeroDifficultMostLikely)
@@ -582,10 +582,22 @@ function updateInformationPanel (){
         ]);
 
        var options = {'chartArea': {'width': '100%', 'height': '80%'},
-               colors: ['#e0440e', '#e6693e', '#ec8f6e']
+              legend: { position: 'top', maxLines: 3 },
+              legend: { textStyle: { color: 'white' }},
+              backgroundColor: '#3d3d3d',
+              hAxis: {
+                  textStyle:{color: '#FFF'}
+              },
+               colors: ['#FF1D2D', '#f56f27', '#f5aa27']
     };
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
-               colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f']
+                legend: { position: 'top', maxLines: 3 },
+                backgroundColor: '#3d3d3d',
+              legend: { textStyle: { color: 'white' }},
+              hAxis: {
+                  textStyle:{color: '#FFF'}
+              },
+               colors: ['#FF1D2D', '#f56f27', '#f5aa27', '#F5E827']
     };
 
 
@@ -609,7 +621,13 @@ function updateInformationPanel (){
       var options = {
         legend: { position: 'top', maxLines: 3 },
         bar: { groupWidth: '75%' },
-        colors: ['#e0440e', '#e6693e', '#ec8f6e'],
+        colors: ['#FF1D2D', '#f56f27', '#f5aa27'],
+        backgroundColor: '#3d3d3d',
+        legend: { position: 'top', maxLines: 3 },
+              legend: { textStyle: { color: 'white' }},
+              hAxis: {
+                  textStyle:{color: '#FFF'}
+              },
         isStacked: true
       };
 

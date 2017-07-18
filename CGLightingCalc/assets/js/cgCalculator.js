@@ -4,13 +4,15 @@ function getInputValue(id){
   if (mytextvalue ==""){
         mytextvalue =document.getElementById(id).placeholder;
         //console.log(id, mytextvalue);
-        document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;
+        try{document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;}
+        catch(err){}
         console.log(id, ": ", mytextvalue);
         return parseFloat(mytextvalue);
     }
   else{
     //console.log(id, mytextvalue);
-    document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;
+    try{document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;}
+    catch(err){}
     console.log(id, ": ", mytextvalue);
     return parseFloat(mytextvalue);
   }

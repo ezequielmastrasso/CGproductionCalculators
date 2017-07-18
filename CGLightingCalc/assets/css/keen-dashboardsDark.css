@@ -3,8 +3,8 @@
  * Full-page application style
  */
 body{
-    background: black;
-    color: white; 
+    background:#1f1f1f;
+    color: #ABABAB; 
 }
 legend{
     color: #AFAFAF;
@@ -19,8 +19,8 @@ legend{
 
 body.application,
 .keen-dashboard {
-  background: #000000;
-  font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #1f1f1f;
+  font-family: 'Open Sans',sans-serif;
   padding: 60px 20px 0;
 }
 
@@ -84,7 +84,7 @@ body.application .return-link:hover,
 
 
 .chart-wrapper {
-  background: #0e0e0e;
+  background: #3d3d3d;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
   margin-bottom: 10px;
@@ -109,4 +109,8 @@ body.application .return-link:hover,
   color: #808080;
   font-size: 12px;
   padding: 8px 10px 5px;
+}
+
+.btn {
+  padding:5px;
 }
