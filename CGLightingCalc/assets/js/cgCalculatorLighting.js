@@ -384,8 +384,9 @@ function updateInformationPanel (){
 
     var heroShotsEasyMean=threePointHeroEasy*heroShotsEasyCount
     document.getElementById("heroShotsEasyMeanInfo").innerHTML=heroShotsEasyMean.toFixed(0);
-    console.log("threePointHeroEasy:heroShotsCount ", threePointHeroEasy,heroShotsCount);
-
+    console.log("threePointHeroEasy ", heroShotsEasyMean);
+    
+    //mean hero total
     var heroShotsMean=heroShotsDifficultMean+heroShotsMediumMean+heroShotsEasyMean
     document.getElementById("totalMeanHeroInfo").innerHTML=heroShotsMean;
     console.log("totalMeanHeroInfo: ", heroShotsMean)
@@ -402,7 +403,7 @@ function updateInformationPanel (){
 
     var establishingShotsEasyMean=threePointEstablishingEasy*establishingShotsEasyCount
     document.getElementById("establishingShotsEasyMeanInfo").innerHTML=establishingShotsEasyMean.toFixed(0);
-    console.log("threePointestablishingEasy:establishingShotsCount ", threePointEstablishingEasy,establishingShotsCount);
+    console.log("establishingShotsEasyMean: ", establishingShotsEasyMean);
 
     var establishingShotsMean=establishingShotsDifficultMean+establishingShotsMediumMean+establishingShotsEasyMean
     document.getElementById("totalMeanEstablishingHeroInfo").innerHTML=establishingShotsMean.toFixed(0);
@@ -450,7 +451,7 @@ function updateInformationPanel (){
     document.getElementById("totalMeanInfo").innerHTML=totalShotMean.toFixed(0);
     console.log("totalShotMean: ", totalShotMean)
 
-    //Standard deviation totals Hero
+    //Standard deviation totals Hero To Do
     var standardDeviationHeroDifficultTotal=Math.sqrt(standardDeviationHeroDifficult*heroShotsDifficultCount);
     document.getElementById("standardDeviationHeroDifficultTotalInfo").innerHTML=standardDeviationHeroDifficultTotal.toFixed(2);
     var standardDeviationHeroMediumTotal=Math.sqrt(standardDeviationHeroMedium*heroShotsMediumCount);
@@ -462,7 +463,7 @@ function updateInformationPanel (){
     var standardDeviationHeroTotal=standardDeviationHeroDifficultTotal+standardDeviationHeroMediumTotal+standardDeviationHeroEasyTotal;
     document.getElementById("standardDeviationHeroTotalInfo").innerHTML=standardDeviationHeroTotal.toFixed(2);
 
-    //Standard deviation totals Establishing
+    //Standard deviation totals Establishing To Do
     var standardDeviationEstablishingDifficultTotal=Math.sqrt(standardDeviationEstablishingDifficult*establishingShotsDifficultCount);
     document.getElementById("standardDeviationEstablishingDifficultTotalInfo").innerHTML=standardDeviationEstablishingDifficultTotal.toFixed(2);
     var standardDeviationEstablishingMediumTotal=Math.sqrt(standardDeviationEstablishingMedium*establishingShotsMediumCount);
@@ -500,14 +501,16 @@ function updateInformationPanel (){
     document.getElementById("averageSickDaysInfo").innerHTML=averageSickDays;
     console.log("averageSickDays: ", averageSickDays)
 
+    
+    //team capacity
     actualWorkingHoursPerDay=dailyworkingHours-dailyReviewHours;
     dayMultiplier=actualWorkingHoursPerDay/dailyworkingHours
     console.log("actualWorkingHoursPerDay: ", actualWorkingHoursPerDay)
     console.log("dayMultiplier: ", dayMultiplier)
-
     
 
-
+    var leavePercent = daysPercentage (yearWorkingDays,entitledHolidays)
+    var sickPercent = daysPercentage (yearWorkingDays,averageSickDays)
 
 
     //total holiday and sick days 
@@ -519,19 +522,36 @@ function updateInformationPanel (){
     document.getElementById("totalTeamSickDaysInfo").innerHTML=totalTeamSickDays;
     console.log("totalTeamSickDays: ", totalTeamSickDays)
 
-    var teamCapacity=((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
-    document.getElementById("teamCapacityInfo").innerHTML=teamCapacity.toFixed(2);;
-    console.log("teamCapacity: ", teamCapacity)
+    var teamCapacity =((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
+    //duplicate it to have the original value for calculations
+    var originalTeamCapacity=teamCapacity;
+    console.log("teamCapacityInfo before idle and leave: ", teamCapacity)
+    //busy idle ratio
+    var busyIdleRatio =getInputValue("busyIdleRatio");
+    teamCapacity=teamCapacity*busyIdleRatio;
+    console.log("teamCapacityInfo after idle: ", teamCapacity)
+    teamCapacity=teamCapacity-((originalTeamCapacity*leavePercent)/100)
+    console.log("teamCapacityInfo after leave",teamCapacity);
+    teamCapacity=teamCapacity-((originalTeamCapacity*sickPercent)/100)
+    console.log("teamCapacityInfo after sick",teamCapacity);
+    writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
     
-    var totalManDaysBest =0;  //total manDays the production will take - best case
-    var totalManDaysMostLikely  =0; //total manDays the production will take - most Likely
-    var totalManDaysWorst  =0; //total manDays the production will take - worst case
-    
+    //criticalPathMean
+    var criticalPathHeroShots= heroShotsCount*(heroShotsMean/teamCapacity)
+    var criticalPathEstablishingShots= establishingShotsCount*(establishingShotsMean/teamCapacity)
+    var criticalPathMasterShots = masterShotsCount*(masterShotsMean/teamCapacity)
+    var criticalPathChildShots = childShotsCount*(childShotsMean/teamCapacity)
+    criticalPathMean=criticalPathHeroShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
+    console.log("criticalPathHero---: ", criticalPathHeroShots)
+    console.log("criticalPathEstablishing: ", criticalPathEstablishingShots)
+    console.log("criticalPathMaster: ", criticalPathMasterShots)
+    console.log("criticalPathChild: ", criticalPathChildShots)
+    console.log("criticalPathChild: ", criticalPathMean)
 
     //projectManDaysInfo
-    var projectManDays =totalShotMean/teamCapacity;  //totalmean/teamCapacity
+    var projectManDays =totalShotMean;  //totalmean/teamCapacity
+    writeToPage("projectManDaysInfo",projectManDays.toFixed(2));
     document.getElementById("projectManDaysInfo").innerHTML=projectManDays.toFixed(2);;
-    console.log("projectManDays: ", projectManDays)
     
     
     google.charts.load('current', {'packages':['corechart']});
@@ -582,7 +602,7 @@ function updateInformationPanel (){
        var options = {'chartArea': {'width': '100%', 'height': '80%'},
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
-              fontSize: 12,
+              fontSize: 10,
               backgroundColor: '#3d3d3d',
               hAxis: {
                   textStyle:{color: '#FFF',}
@@ -592,7 +612,7 @@ function updateInformationPanel (){
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
-                        fontSize: 12,
+                        fontSize: 10,
               legend: { textStyle: { color: 'white'}},
               hAxis: {
                   textStyle:{color: '#FFF'}
@@ -623,7 +643,7 @@ function updateInformationPanel (){
         bar: { groupWidth: '75%' },
         colors: ['#df3d48', '#d87844', '#d8a244'],
         backgroundColor: '#3d3d3d',
-        fontSize: 12,
+        fontSize: 10,
         fontName: 'Open Sans', 
         legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: '#FFF' }},
