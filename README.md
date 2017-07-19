@@ -24,9 +24,9 @@ This should be an average of sickies pulled by artists on a single year.
 HR should be able to give you this number.  
 
 # To do:
-*start-end date to take into account bank holidays, a fraction of the team entitled holiday, and a fraction of average sick days
-*give the 80% and 90%
-*Investigate and include busy/idle % in the calculation to avoid task queuing (ref: queueing theory, and the phoenix project)
+* start-end date to take into account bank holidays, a fraction of the team entitled holiday, and a fraction of average sick days
+* give the 80% and 90%
+* Investigate and include busy/idle % in the calculation to avoid task queuing (ref: queueing theory, and the phoenix project)  
 Wait Time = %busy / %idle (or b/(100-b) where b = % utilized)
 Therefore, if the resource is 90% utilized then the wait time is 9x’s longer than if the person is 50% utilized. Wait time is 11x’s longer when 99% utilized compared to when you where 90% utilized.
 
