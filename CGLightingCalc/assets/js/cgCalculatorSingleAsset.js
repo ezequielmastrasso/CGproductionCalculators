@@ -46,6 +46,10 @@ function updateInformationPanel (){
     var yearWorkingDays =getInputValue("yearWorkingDaysInput");
     var entitledHolidays =getInputValue("entitledHolidaysInput");
     var averageSickDays =getInputValue("averageSickDaysInput");
+    var leavePercent = daysPercentage (yearWorkingDays,entitledHolidays)
+    var sickPercent = daysPercentage (yearWorkingDays,averageSickDays)
+    console.log("leavePercent: ", leavePercent)
+    console.log("sickPercent: ", sickPercent)
 
     var assetEstimateDifficultBest =getInputValue("assetEstimateDifficultBestInput");
     var assetEstimateDifficultMostLikely =getInputValue("assetEstimateDifficultMostLikelyInput");
@@ -66,6 +70,8 @@ function updateInformationPanel (){
 
     //Asset count
     var assetDifficultCount = (assetCount*assetDifficultPercentage)/100;
+    console.log("assetCount",assetCount);
+    console.log("assetDifficultPercentage",assetDifficultPercentage);
     writeToPage("assetDifficultCountInfo",assetDifficultCount);
     var assetMediumCount = (assetCount*assetMediumPercentage)/100;
     writeToPage("assetMediumCountInfo",assetMediumCount);
@@ -97,15 +103,27 @@ function updateInformationPanel (){
     console.log("dayMultiplier: ", dayMultiplier)
 
     var teamCapacity =((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
+    //duplicate it to have the original value for calculations
+    var originalTeamCapacity=teamCapacity;
+    
+    console.log("teamCapacityInfo before idle and leave: ", teamCapacity)
+    //busy idle ratio
+    var busyIdleRatio =getInputValue("busyIdleRatio");
+    teamCapacity=teamCapacity*busyIdleRatio;
+    console.log("teamCapacityInfo after idle: ", teamCapacity)
+    teamCapacity=teamCapacity-((originalTeamCapacity*leavePercent)/100)
+    console.log("teamCapacityInfo after leave",teamCapacity);
+    teamCapacity=teamCapacity-((originalTeamCapacity*sickPercent)/100)
+    console.log("teamCapacityInfo after sick",teamCapacity);
     writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
     
 
     //criticalPathMean
-    var criticalPathDifficultAssets=assetDifficultMean*(assetThreePointDifficult/teamCapacity);
-    var criticalPathMediumAssets=assetMediumMean*(assetThreePointMedium/teamCapacity);
-    var criticalPathEasyAssets=assetEasyMean*(assetThreePointEasy/teamCapacity);
+    var criticalPathDifficultAssets=assetDifficultCount*(assetThreePointDifficult/teamCapacity);
+    var criticalPathMediumAssets=assetMediumCount*(assetThreePointMedium/teamCapacity);
+    var criticalPathEasyAssets=assetEasyCount*(assetThreePointEasy/teamCapacity);
     criticalPathMean=criticalPathDifficultAssets+criticalPathMediumAssets+criticalPathEasyAssets;
-    console.log("criticalPathDifficultAssets: ", criticalPathDifficultAssets)
+    console.log("criticalPathDifficultAssets---: ", criticalPathDifficultAssets)
     console.log("criticalPathMediumAssets: ", criticalPathMediumAssets)
     console.log("criticalPathEasyAssets: ", criticalPathEasyAssets)
     console.log("criticalPathMean: ", criticalPathMean)
@@ -148,6 +166,9 @@ function updateInformationPanel (){
     
     
     console.log("proposedDuration",proposedDuration);
+
+    
+    
 
     //criticalPathVariance
     var criticalPathVarianceDifficultAssets=varianceAssetDifficult*assetDifficultCount;

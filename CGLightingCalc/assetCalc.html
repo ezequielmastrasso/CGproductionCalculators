@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <title>Lighting Production Calculator</title>
+
+  <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboardsDark.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/connected-devicesDark.css" />
+  <!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+  
+
+</head>
+<body class="application">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="navbar-brand" href="./">Lighting Production Calculator</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="http://www.ezequielm.com">visity my Site</a></li>
+          <li><a href="https://github.com/ezequielmastrasso/CGproductionCalculators">sorceCode</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+<form class="form-horizontal">
+                    <fieldset>
+
+  <div class="container-fluid">
+    <div class="row">
+       <div class="col-sm-12 col-md-3 col-lg-2">
+        <div class="chart-wrapper" style="min-height:200px;padding:15px">
+       <div class="chart-title">
+            start Date
+          </div>
+       <div class="input-group">
+        <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+        
+        <input class="form-control" id="startDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+       </div>
+      <div class="chart-title">
+            end Date
+          </div>
+      <div class="input-group">
+        <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+        <input class="form-control" id="endDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+       </div>
+</div>
+</div>
+       <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="chart-wrapper" style="min-height:200px;padding:15px">
+        <table class="table table-bordered table-inverse">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>main chars</th>
+                <th>variants</th>
+                <th>secondary</th>
+                <th>variants</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">Count</th>
+                <td><input style="margin:-8px;"  onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    </td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+
+                </tr>
+                <tr>
+                <th scope="row">Difficult %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">medium %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">easy %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-inverse">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>incid chars</th>
+                <th>variants</th>
+                <th>crowds</th>
+                <th>variants</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">Count</th>
+                <td><input style="margin:-8px;"  onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required=""></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+
+                </tr>
+                <tr>
+                <th scope="row">Difficult %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">medium %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">easy %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-inverse">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>sets</th>
+                <th>variants</th>
+                <th>set ext elemnt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">Count</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">Difficult %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">medium %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <th scope="row">easy %</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        </table>
+        </div>
+</div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            General Inputs
+          </div>
+          <div class="chart-stage">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#charInfo" data-toggle="tab">chars info</a></li>
+                    <li><a href="#setsPropsInfo" data-toggle="tab">sets/props info</a></li>
+                    <li ><a href="#team" data-toggle="tab">Team</a></li>
+                    <li><a href="#teamCapacity" data-toggle="tab">capacity</a></li>
+                    <li><a href="#workEnv" data-toggle="tab">Work Env</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="tab-content">
+                 <div class="tab-pane" id="team">
+
+         
+                    <!-- Team input-->
+                    <legend>Team Information</legend>                            
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="shotCounttt">Leads Artists Count</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="shotCounttt">Artist Count</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="15" class="form-control input-md" required="">    
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="shotCounttt">Junior Artists Count</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="6" class="form-control input-md" required="">    
+                      </div>
+                    </div>
+
+                 </div>
+                 <div class="tab-pane" id="teamCapacity">
+            
+                      <!-- Team Capacity Input-->
+                      <legend>Team Capacity Input</legend>
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="shotCounttt">Leads working Capacity</label>  
+                        <div class="col-md-2">
+                        <input   onchange="updateInformationPanel()" id="leadArtistsCapacityInput" name="shotCounttt" type="text" placeholder="0.2" class="form-control input-md" required="">    
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="shotCounttt">Artist working Capacity</label>  
+                        <div class="col-md-2">
+                        <input   onchange="updateInformationPanel()" id="artistsCapacityInput" name="shotCounttt" type="text" placeholder="1" class="form-control input-md" required="">    
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="shotCounttt">Juniors working Capacity</label>  
+                        <div class="col-md-2">
+                        <input   onchange="updateInformationPanel()" id="juniorArtistsCapacityInput" name="shotCounttt" type="text" placeholder="0.6" class="form-control input-md" required="">    
+                        </div>
+                      </div>
+
+
+
+                 </div>
+                 <div class="tab-pane" id="workEnv">
+        
+                        <!-- Working Environment Input-->
+                        <legend>Working Environment</legend>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="dailyWorkingHours">Daily Working Hours</label>
+                          <div class="col-md-2">
+                            <select id="dailyWorkingHoursInput" name="dailyWorkingHours" class="form-control">
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8" selected="selected">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="dailyMeetingHours">Daily Review Hours</label>
+                          <div class="col-md-2">
+                            <select id="dailyReviewHoursInput" name="dailyWorkingHours" class="form-control">
+                              <option value="0">0</option>
+                              <option value="0.5">0.5</option>
+                              <option value="1" selected="selected">1</option>
+                              <option value="1.5">1.5</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotCounttt">Yearly Working days</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="yearWorkingDaysInput" name="shotCounttt" type="text" placeholder="260" class="form-control input-md" required="">    
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotCounttt">Entitled Holidays</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="entitledHolidaysInput" name="shotCounttt" type="text" placeholder="21" class="form-control input-md" required="">    
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotCounttt">sick days per year</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="averageSickDaysInput" name="shotCounttt" type="text" placeholder="5" class="form-control input-md" required="">    
+                          </div>
+                        </div>
+
+                 </div>
+                 <div class="tab-pane active" id="charInfo">            
+                        <!-- Shot input-->
+                        <legend>Chars Info</legend>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotCounttt">Main Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="10" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">Main Variants Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="20" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">secondary Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="12" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">sec variants Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="10" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">incidental Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="25" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">inc variants Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="25" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">crowd Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="30" class="form-control input-md" required="">
+                          </div>
+                          <label class="col-md-4 control-label" for="shotCounttt">crowd variant Count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="50" class="form-control input-md" required="">
+                          </div>
+                          
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">Sequence count</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="110" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        
+                 </div>
+                 <div class="tab-pane" id="setsPropsInfo">        
+                        <!-- Show input-->
+                        <legend>sets & Props Info</legend>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">Sets</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="heroShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="40" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">Sets variants</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="heroShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="0" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">set extra elements</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"  id="establishingShotsPerSequenceInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">set foliage p/item</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="masterShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">set fol. variants</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="childShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">props</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="childShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotsPerSequence">props variants</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()" id="childShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                          </div>
+                        </div>
+
+                 </div>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            % Inputs
+          </div>
+          <div class="chart-stage">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#mainCharsInfo" data-toggle="tab">chars</a></li>
+                    <li><a href="#secondaryCharsInfo" data-toggle="tab">second.</a></li>
+                    <li><a href="#incidentalCharsInfo" data-toggle="tab">incidt.</a></li>
+                    <li><a href="#crowdsCharsInfo" data-toggle="tab">crowds</a></li>
+                    <li><a href="#setsInfo" data-toggle="tab">sets</a></li>
+                    <li><a href="#extraElementsInfo" data-toggle="tab">ext elemnt</a></li>
+                    <li><a href="#foliageInfo" data-toggle="tab">foliage</a></li>
+                    <li><a href="#propsInfo" data-toggle="tab">props</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="tab-content">
+                 
+                 <div class="tab-pane active" id="mainCharsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>Chars % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>main</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="secondaryCharsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>secondary % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>secondary</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="incidentalCharsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>incidental % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>incidental</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="crowdsCharsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>crowds % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>crowds</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="setsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>sets % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>sets</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="extraElementsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>extra elements  % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>extraElementsInfo</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="foliageInfo">
+                    <!-- Hero Shot input-->
+                    <legend>foliage % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>foliage</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="propsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>props % estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>props</label>  
+                      <div class="col-md-3">
+                        difficult
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       medium
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        easy
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">variants</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Shots Days Estimates
+          </div>
+          <div class="chart-stage">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#mainCharsEstInfo" data-toggle="tab">chars</a></li>
+                    <li><a href="#mainVarCharsEstInfo" data-toggle="tab">chars var</a></li>
+                    <li><a href="#secondaryEstCharsInfo" data-toggle="tab">second.</a></li>
+                    <li><a href="#secondaryVarEstCharsInfo" data-toggle="tab">second.var</a></li>
+                    <li><a href="#incidentalEstCharsInfo" data-toggle="tab">incidt.</a></li>
+                    <li><a href="#incidentalVarEstCharsInfo" data-toggle="tab">incidt. var</a></li>
+                    <li><a href="#crowdsEstCharsInfo" data-toggle="tab">crowds</a></li>
+                    <li><a href="#crowdsVarEstCharsInfo" data-toggle="tab">crowds var</a></li>
+                    <li><a href="#setsEstInfo" data-toggle="tab">sets</a></li>
+                    <li><a href="#setsVarEstInfo" data-toggle="tab">sets var</a></li>
+                    <li><a href="#extraElementsEstInfo" data-toggle="tab">ext elemnt</a></li>
+                    <li><a href="#extraElementsVarEstInfo" data-toggle="tab">ext elemnt var</a></li>
+                    <li><a href="#foliageEstInfo" data-toggle="tab">foliage</a></li>
+                    <li><a href="#foliageVarEstInfo" data-toggle="tab">foliage var</a></li>
+                    <li><a href="#propsEstInfo" data-toggle="tab">props</a></li>
+                    <li><a href="#propsVarEstInfo" data-toggle="tab">props var</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="tab-content">
+                 
+                 <div class="tab-pane active" id="mainCharsEstInfo">
+                    <!-- Hero Shot input-->
+                    <legend>Chars Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyBestInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="mainVarCharsEstInfo">
+                    <!-- Hero Shot input-->
+                    <legend>main variants Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyBestInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+                 <div class="tab-pane" id="secondaryEstCharsInfo">
+                    <!-- Hero Shot input-->
+                    <legend>secondary Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultBestInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="12" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateHeroDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="7" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroMediumWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyBestInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateHeroEasyWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+        
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row" >
+         
+    
+
+
+     
+    
+</div>
+</div>
+
+
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
+          <div class="chart-title">
+            % probabilities on your end date
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
+          <div class="chart-title">
+            some useful stats
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
+          <div class="chart-title">
+            the 80%
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:100px">
+          <div class="chart-title">
+            the 95% chances
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+        <div class="row" >
+         <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="chart-wrapper "style="min-height:130px">
+          <div class="chart-title">
+            Shots difficulty count overlay
+          </div>
+               <div id="chart_div" style="width: 100%; height: 120px;"></div>
+
+         
+
+        </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Shots subtypes %/count
+          </div>
+             <div id="piechart" style="width: 340px; height: 250px;"></div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Shots  Types %/count
+          </div>
+             <div id="piechart2" style="width: 340px; height: 250px;"></div>
+
+         
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Shots subtypes man days %/count
+          </div>
+             <div id="piechart3" style="width: 340px; height: 250px;"></div>
+
+         
+
+        </div>
+      </div>
+      
+      </div>
+
+    </div>
+
+      <div class="col-sm-12">
+        <div class="row">
+          <h2 style="text-align:center;">
+        Debugging
+        </h2>
+      </div>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-2">
+
+        <div class="chart-wrapper" style="min-height:370px">
+          <div class="chart-title">
+            means
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              total mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              total mean hero<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanHeroInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyMeanInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              total mean establ<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanEstablishingHeroInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyMeanInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              total mean master<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanMasterHeroInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyMeanInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              total mean child<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanChildHeroInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumMeanInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyMeanInfo"role="button">---</a>
+
+              
+              
+
+              
+              
+
+              
+
+              </div>
+            </div>
+            </div>
+      </div>
+          <div class="col-sm-6 col-md-3 col-lg-2">
+
+        <div class="chart-wrapper" style="min-height:370px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              leadsArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="leadsArtistsCountInfo"role="button">---</a><br>
+                  artistCount<a href="#" class="btn btn-primary btn-lg disabled" id="artistCountInfo"role="button">---</a><br>
+                  juniorArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCountInfo"role="button">---</a><br>
+                  artistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="artistsCapacityInfo"role="button">---</a><br>
+                  junioArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCapacityInfo">---</a><br>
+                  leadArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="leadArtistsCapacityInfo">---</a><br>
+                  dailyworkingHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyworkingHoursInfo"role="button">---</a><br>
+                  dailyReviewHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyReviewHoursInfo">---</a><br>
+                  yearWorkingDays<a href="#" class="btn btn-primary btn-lg disabled" id="yearWorkingDaysInfo"role="button">---</a><br>
+                  entitledHolidays<a href="#" class="btn btn-primary btn-lg disabled" id="entitledHolidaysInfo">---</a><br>
+                  averageSickDays<a href="#" class="btn btn-primary btn-lg disabled" id="averageSickDaysInfo"role="button">---</a><br>
+                  totalTeamHolidaysInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamHolidaysInfo"role="button">---</a><br>         
+                  totalTeamsickInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamSickDaysInfo"role="button">---</a><br>         
+                  team m/day Capacity<a href="#" class="btn btn-primary btn-lg disabled" id="teamCapacityInfo"role="button">---</a><br>
+                  project m/days<a href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button">---</a><br>
+
+              </div>
+            </div>
+            </div>
+      </div>
+          <div class="col-sm-6 col-md-3 col-lg-2">
+
+        <div class="chart-wrapper" style="min-height:370px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              <legend>shotcount</legend>
+                    shotCount<a href="#" class="btn btn-primary btn-lg disabled" id="shotCountInfo"role="button">---</a><br>
+                  sequences<a href="#" class="btn btn-primary btn-lg disabled" id="sequenceCountInfo">---</a><br>
+                  establ per seq<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPerSequenceInfo">0</a><br>
+
+                  hero Shots<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyCountInfo"role="button">---</a><br>
+
+                  establishing Shots<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyCountInfo"role="button">---</a><br>
+                  
+                  master Shots<a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyCountInfo"role="button">---</a><br>
+                  
+                  child Shots<a href="#" class="btn btn-primary btn-lg disabled" id="childShotsCountInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumCountInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyCountInfo"role="button">---</a><br>
+
+              </div>
+            </div>
+            </div>
+      </div>
+          <div class="col-sm-6 col-md-3 col-lg-2">
+
+        <div class="chart-wrapper"  style="min-height:370px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              <legend>shot Percentages</legend>
+
+                  hero <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultPercentageInfo"role="button">---</a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsMediumPercentageInfo"role="button">---</a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsEasyPercentageInfo"role="button">---</a><br>                
+
+                  establishing <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsEasyPercentageInfo"role="button">---</a><br>
+
+                  master <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="masterShotsEasyPercentageInfo"role="button">---</a><br>
+
+                  child <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsPercentageInfo"role="button">---</a><br>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsDifficultPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsMediumPercentageInfo"role="button">---</a>
+                  <a href="#" class="btn btn-primary btn-lg disabled" id="childShotsEasyPercentageInfo"role="button">---</a><br>
+
+              </div>
+            </div>
+            </div>
+      </div>
+
+
+      <div class="col-sm-6 col-md-3 col-lg-2">
+ 
+        <div class="chart-wrapper"  style="min-height:370px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              <div class="chart-title">
+            Variance
+          </div>
+              hero<a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceHeroEasyInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              establ<a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceEstablishingEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              master<a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceMasterEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              child<a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceChildEasyInfo"role="button">---</a><br>
+
+              </div>
+            </div>
+            </div>
+      </div>
+
+      <div class="col-sm-6 col-md-3 col-lg-2">
+
+        <div class="chart-wrapper"  style="min-height:370px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              <div class="chart-title">
+            3 point
+          </div>
+              hero est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointHeroEasyInfo"role="button">---</a><br>
+
+              Establishing est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointEstablishingEasyInfo"role="button">---</a><br>
+
+              Master est<a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointMasterEasyInfo"role="button">---</a><br>
+
+              Child<a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="threePointChildEasyInfo"role="button">---</a><br>
+
+              </div>
+            </div>
+            </div>
+      </div>
+           <div class="col-sm-6 col-md-6 col-lg-2">
+
+        <div class="chart-wrapper" style="min-height:510px">
+          <div class="chart-title">
+            information
+          </div>
+          <div class="chart-stage">
+            <div class="row" style="margin:0px;">
+              <div class="chart-title">
+            Standard Deviation hero
+          </div>
+              hero total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroTotalInfo"role="button">---</a><br>
+
+              <div class="chart-title"> </div>
+              hero per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationHeroEasyTotalInfo"role="button">---</a>
+ <div class="chart-title">
+            Standard Deviation stab
+          </div>
+              Establishing total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingTotalInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              Estab per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationEstablishingEasyTotalInfo"role="button">---</a>
+ <div class="chart-title">
+            Standard Deviation master
+          </div>
+              Master total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterTotalInfo"role="button">---</a><br>
+          <div class="chart-title"> </div>
+              master per task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyInfo"role="button">---</a>
+            <div class="chart-title"> </div>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationMasterEasyTotalInfo"role="button">---</a>
+ <div class="chart-title">
+            Standard Deviation child
+          </div>
+              Child total StandardDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildTotalInfo"role="button">---</a><br>
+              <div class="chart-title"> </div>
+              Child Per Task<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultInfo"role="button">---</a>              
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyInfo"role="button">---</a>
+              <div class="chart-title"> </div>
+              total<a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildDifficultTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildMediumTotalInfo"role="button">---</a>
+              <a href="#" class="btn btn-primary btn-lg disabled" id="standardDeviationChildEasyTotalInfo"role="button">---</a>
+
+              </div>
+            </div>
+            </div>
+      </div>
+          
+
+
+
+
+      
+
+
+
+
+
+    </div>
+
+     <input   onchange="updateInformationPanel()" type="text" class="users" value="0" style="visibility: hidden"/>
+
+
+
+
+
+
+ 
+    <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
+  </fielset>
+  </form>
+  <script type="text/javascript" src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery-knob/dist/jquery.knob.min.js"></script>
+
+  <script type="text/javascript" src="assets/lib/keen-js/dist/keen.min.js"></script>
+  
+  
+
+  <script type="text/javascript" src="assets/js/connected-devices.js"></script>
+
+<script>
+
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/cgCalculator.css" />
+    <script type="text/javascript" src="assets/js/cgCalculator.js"></script>
+    <script type="text/javascript" src="assets/js/cgCalculatorLighting.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      
+      
+
+      
+      
+    </script>
+
+</body>
+</html>

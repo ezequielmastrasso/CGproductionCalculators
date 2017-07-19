@@ -133,3 +133,8 @@ function writeToPage(domString,text){
   document.getElementById(domString).innerHTML=text;
   console.log(domString, ": ", text);
 }
+
+function daysPercentage (yearWorkingDays, holidayDaysEntitled){
+  //% of entitled holidays in a calendar year
+  return ((holidayDaysEntitled*100)/yearWorkingDays)
+}
