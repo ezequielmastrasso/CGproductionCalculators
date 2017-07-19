@@ -26,8 +26,6 @@ function updateInformationPanel (){
 
 
 		var establishingShotsPerSequence=getInputValue("establishingShotsPerSequenceInput");
-    document.getElementById("establishingShotsPerSequenceInfo").innerHTML=establishingShotsPerSequence;
-    console.log("establishingShotsPerSequence: ", establishingShotsPerSequence)
 		
     var artistsCapacity=getInputValue("artistsCapacityInput");
     document.getElementById("artistsCapacityInfo").innerHTML=artistsCapacity;
@@ -584,20 +582,22 @@ function updateInformationPanel (){
        var options = {'chartArea': {'width': '100%', 'height': '80%'},
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
+              fontSize: 12,
               backgroundColor: '#3d3d3d',
               hAxis: {
-                  textStyle:{color: '#FFF'}
+                  textStyle:{color: '#FFF',}
               },
-               colors: ['#FF1D2D', '#f56f27', '#f5aa27']
+               colors: ['#df3d48', '#d87844', '#d8a244']
     };
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
-              legend: { textStyle: { color: 'white' }},
+                        fontSize: 12,
+              legend: { textStyle: { color: 'white'}},
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
-               colors: ['#FF1D2D', '#f56f27', '#f5aa27', '#F5E827']
+               colors: ['#df3d48', '#d87844', '#d8a244', '#d8c244']
     };
 
 
@@ -619,14 +619,19 @@ function updateInformationPanel (){
       ]);
 
       var options = {
-        legend: { position: 'top', maxLines: 3 },
+        legend: { position: 'top', maxLines: 3, fontSize: 1},
         bar: { groupWidth: '75%' },
-        colors: ['#FF1D2D', '#f56f27', '#f5aa27'],
+        colors: ['#df3d48', '#d87844', '#d8a244'],
         backgroundColor: '#3d3d3d',
+        fontSize: 12,
+        fontName: 'Open Sans', 
         legend: { position: 'top', maxLines: 3 },
-              legend: { textStyle: { color: 'white' }},
+              legend: { textStyle: { color: '#FFF' }},
               hAxis: {
-                  textStyle:{color: '#FFF'}
+                  textStyle:{color: '#FFF'},
+              },
+              vAxis: {
+                  textStyle:{color: '#FFF'},
               },
         isStacked: true
       };

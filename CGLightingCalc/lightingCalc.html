@@ -6,7 +6,6 @@
   <title>Lighting Production Calculator</title>
 
   <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboardsDark.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/connected-devicesDark.css" />
   <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
@@ -55,7 +54,7 @@
          </i>
         </div>
         
-        <input class="form-control" id="startDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+        <input onchange="updateInformationPanel()" class="form-control" id="startDate" name="date" placeholder="07/03/2017" type="text" style="min-width:120px"/>
        </div>
       <div class="chart-title">
             end Date
@@ -65,7 +64,7 @@
          <i class="fa fa-calendar">
          </i>
         </div>
-        <input class="form-control" id="endDate" name="date" placeholder="MM/DD/YYYY" type="text" style="min-width:120px"/>
+        <input onchange="updateInformationPanel()" class="form-control" id="endDate" name="date" placeholder="06/14/2018" type="text" style="min-width:120px"/>
        </div>
 </div>
 </div>
@@ -98,19 +97,19 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Leads Artists Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="0" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Artist Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="15" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="1" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Junior Artists Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="6" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="0" class="form-control input-md" required="">    
                       </div>
                     </div>
 
@@ -137,6 +136,12 @@
                         <input   onchange="updateInformationPanel()" id="juniorArtistsCapacityInput" name="shotCounttt" type="text" placeholder="0.6" class="form-control input-md" required="">    
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="shotCounttt">busy/idle ratio</label>  
+                        <div class="col-md-2">
+                        <input   onchange="updateInformationPanel()" id="busyIdleRatio" name="shotCounttt" type="text" placeholder="1" class="form-control input-md" required="">    
+                        </div>
+                      </div>
 
 
 
@@ -148,7 +153,7 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="dailyWorkingHours">Daily Working Hours</label>
                           <div class="col-md-2">
-                            <select id="dailyWorkingHoursInput" name="dailyWorkingHours" class="form-control">
+                            <select onchange="updateInformationPanel()" id="dailyWorkingHoursInput" name="dailyWorkingHours" class="form-control">
                               <option value="5">5</option>
                               <option value="6">6</option>
                               <option value="7">7</option>
@@ -161,10 +166,10 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="dailyMeetingHours">Daily Review Hours</label>
                           <div class="col-md-2">
-                            <select id="dailyReviewHoursInput" name="dailyWorkingHours" class="form-control">
-                              <option value="0">0</option>
+                            <select onchange="updateInformationPanel()" id="dailyReviewHoursInput" name="dailyWorkingHours" class="form-control">
+                              <option value="0"selected="selected">0</option>
                               <option value="0.5">0.5</option>
-                              <option value="1" selected="selected">1</option>
+                              <option value="1" >1</option>
                               <option value="1.5">1.5</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
@@ -182,13 +187,13 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">Entitled Holidays</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()" id="entitledHolidaysInput" name="shotCounttt" type="text" placeholder="21" class="form-control input-md" required="">    
+                          <input   onchange="updateInformationPanel()" id="entitledHolidaysInput" name="shotCounttt" type="text" placeholder="0" class="form-control input-md" required="">    
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">sick days per year</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()" id="averageSickDaysInput" name="shotCounttt" type="text" placeholder="5" class="form-control input-md" required="">    
+                          <input   onchange="updateInformationPanel()" id="averageSickDaysInput" name="shotCounttt" type="text" placeholder="0" class="form-control input-md" required="">    
                           </div>
                         </div>
 
@@ -199,14 +204,14 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">Shot Count</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="2000" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="100" class="form-control input-md" required="">
                             
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">Sequence count</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="110" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="0" class="form-control input-md" required="">
                           </div>
                         </div>
                         
@@ -223,7 +228,7 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">establishingShotsPerSequence</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"  id="establishingShotsPerSequenceInput" name="shotsPerSequence" type="text" placeholder="2.5" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"  id="establishingShotsPerSequenceInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
@@ -763,7 +768,6 @@
               <legend>shotcount</legend>
                     shotCount<a href="#" class="btn btn-primary btn-lg disabled" id="shotCountInfo"role="button">---</a><br>
                   sequences<a href="#" class="btn btn-primary btn-lg disabled" id="sequenceCountInfo">---</a><br>
-                  establ per seq<a href="#" class="btn btn-primary btn-lg disabled" id="establishingShotsPerSequenceInfo">0</a><br>
 
                   hero Shots<a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsCountInfo"role="button">---</a><br>
                   <a href="#" class="btn btn-primary btn-lg disabled" id="heroShotsDifficultCountInfo"role="button">---</a>
@@ -983,28 +987,19 @@
 
   <script type="text/javascript" src="assets/js/connected-devices.js"></script>
 
-<script>
 
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/cgCalculator.css" />
     <script type="text/javascript" src="assets/js/cgCalculator.js"></script>
     <script type="text/javascript" src="assets/js/cgCalculatorLighting.js"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 
 
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      
-      
+<link rel="stylesheet" type="text/css" href="assets/css/keen-dashboardsDark.css" />
 
-      
-      
-    </script>
 
 </body>
 </html>

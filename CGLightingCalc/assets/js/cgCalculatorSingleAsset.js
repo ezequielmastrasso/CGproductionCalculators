@@ -221,6 +221,7 @@ function updateInformationPanel (){
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               backgroundColor: '#3d3d3d',
+              fontSize: 12,
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
@@ -230,6 +231,7 @@ function updateInformationPanel (){
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
               legend: { textStyle: { color: 'white' }},
+              fontSize: 12,
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
@@ -256,10 +258,15 @@ function updateInformationPanel (){
         bar: { groupWidth: '75%' },
         colors: ['#FF1D2D', '#f56f27', '#f5aa27'],
         backgroundColor: '#3d3d3d',
+        fontSize: 12,
+        fontName: 'Open Sans', 
         legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               hAxis: {
                   textStyle:{color: '#FFF'}
+              },
+              vAxis: {
+                  textStyle:{color: '#FFF'},
               },
         isStacked: true
       };
