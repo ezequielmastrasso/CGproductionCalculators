@@ -3,8 +3,8 @@ Pert based production calculators for CG productions
 Too early to check, please come back later :)
 
 ##### Temp testing url address:
-http://ezequielm.com/lightingCalc/singleAssetCalc.html
-http://ezequielm.com/lightingCalc/lightingCalc.html
+http://ezequielm.com/lightingCalc/singleAssetCalc.html  
+http://ezequielm.com/lightingCalc/lightingCalc.html  
 
 Keen io, Keen Dashboard, Jquery, JS, google charts, and d3
 
