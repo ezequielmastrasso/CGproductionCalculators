@@ -52,9 +52,9 @@ function updateInformationPanel (){
     
 
     //INPUT %
-    var heroShotsPercentage=getInputValue("heroShotsPercentageInput");
-    document.getElementById("heroShotsPercentageInfo").innerHTML=heroShotsPercentage;
-    console.log("heroShotsPercentage: ", heroShotsPercentage)
+    var uniqueShotsPercentage=getInputValue("uniqueShotsPercentageInput");
+    document.getElementById("uniqueShotsPercentageInfo").innerHTML=uniqueShotsPercentage;
+    console.log("uniqueShotsPercentage: ", uniqueShotsPercentage)
 
     var masterShotsPercentage=getInputValue("masterShotsPercentageInput");
     document.getElementById("masterShotsPercentageInfo").innerHTML=masterShotsPercentage;
@@ -65,28 +65,28 @@ function updateInformationPanel (){
     console.log("childShotsPercentage: ", childShotsPercentage)
 
 		
-    //estimates Hero
+    //estimates Unique
     //difficult
-    var estimateHeroDifficultBest =threePointChild=getInputValue("estimateHeroDifficultBestInput");
-    console.log("estimateHeroDifficultBest: ", estimateHeroDifficultBest)
-    var estimateHeroDifficultMostLikely=threePointChild=getInputValue("estimateHeroDifficultMostLikelyInput");
-    console.log("estimateHeroDifficultMostLikely: ", estimateHeroDifficultMostLikely)
-    var estimateHeroDifficultWorst=threePointChild=getInputValue("estimateHeroDifficultWorstInput");
-    console.log("estimateHeroDifficultWorst: ", estimateHeroDifficultWorst)
+    var estimateUniqueDifficultBest =threePointChild=getInputValue("estimateUniqueDifficultBestInput");
+    console.log("estimateUniqueDifficultBest: ", estimateUniqueDifficultBest)
+    var estimateUniqueDifficultMostLikely=threePointChild=getInputValue("estimateUniqueDifficultMostLikelyInput");
+    console.log("estimateUniqueDifficultMostLikely: ", estimateUniqueDifficultMostLikely)
+    var estimateUniqueDifficultWorst=threePointChild=getInputValue("estimateUniqueDifficultWorstInput");
+    console.log("estimateUniqueDifficultWorst: ", estimateUniqueDifficultWorst)
     //medium
-    var estimateHeroMediumBest=threePointChild=getInputValue("estimateHeroMediumBestInput");
-    console.log("estimateHeroMediumBest: ", estimateHeroMediumBest)
-    var estimateHeroMediumMostLikely=threePointChild=getInputValue("estimateHeroMediumMostLikelyInput");
-    console.log("estimateHeroMediumMostLikely: ", estimateHeroMediumMostLikely)
-    var estimateHeroMediumWorst=threePointChild=getInputValue("estimateHeroMediumWorstInput");
-    console.log("estimateHeroMediumWorst: ", estimateHeroMediumWorst)
+    var estimateUniqueMediumBest=threePointChild=getInputValue("estimateUniqueMediumBestInput");
+    console.log("estimateUniqueMediumBest: ", estimateUniqueMediumBest)
+    var estimateUniqueMediumMostLikely=threePointChild=getInputValue("estimateUniqueMediumMostLikelyInput");
+    console.log("estimateUniqueMediumMostLikely: ", estimateUniqueMediumMostLikely)
+    var estimateUniqueMediumWorst=threePointChild=getInputValue("estimateUniqueMediumWorstInput");
+    console.log("estimateUniqueMediumWorst: ", estimateUniqueMediumWorst)
     //easy
-    var estimateHeroEasyBest=threePointChild=getInputValue("estimateHeroEasyBestInput");
-    console.log("estimateHeroEasyBest: ", estimateHeroEasyBest)
-    var estimateHeroEasyMostLikely=threePointChild=getInputValue("estimateHeroEasyMostLikelyInput");
-    console.log("estimateHeroEasyMostLikely: ", estimateHeroEasyMostLikely)
-    var estimateHeroEasyWorst=threePointChild=getInputValue("estimateHeroEasyWorstInput");
-    console.log("estimateHeroEasyWorst: ", estimateHeroEasyWorst)
+    var estimateUniqueEasyBest=threePointChild=getInputValue("estimateUniqueEasyBestInput");
+    console.log("estimateUniqueEasyBest: ", estimateUniqueEasyBest)
+    var estimateUniqueEasyMostLikely=threePointChild=getInputValue("estimateUniqueEasyMostLikelyInput");
+    console.log("estimateUniqueEasyMostLikely: ", estimateUniqueEasyMostLikely)
+    var estimateUniqueEasyWorst=threePointChild=getInputValue("estimateUniqueEasyWorstInput");
+    console.log("estimateUniqueEasyWorst: ", estimateUniqueEasyWorst)
 
     //estimates Establishing
     //difficult
@@ -159,12 +159,12 @@ function updateInformationPanel (){
 
 
     //3 point means
-    var threePointHeroDifficult=threePointWeighted(estimateHeroDifficultBest, estimateHeroDifficultMostLikely,estimateHeroDifficultWorst);
-    var threePointHeroMedium=threePointWeighted(estimateHeroMediumBest, estimateHeroMediumMostLikely,estimateHeroMediumWorst);
-    var threePointHeroEasy=threePointWeighted(estimateHeroEasyBest, estimateHeroEasyMostLikely,estimateHeroEasyWorst);
-    document.getElementById("threePointHeroDifficultInfo").innerHTML=threePointHeroDifficult.toFixed(2);
-    document.getElementById("threePointHeroMediumInfo").innerHTML=threePointHeroMedium.toFixed(2);
-    document.getElementById("threePointHeroEasyInfo").innerHTML=threePointHeroEasy.toFixed(2);
+    var threePointUniqueDifficult=threePointWeighted(estimateUniqueDifficultBest, estimateUniqueDifficultMostLikely,estimateUniqueDifficultWorst);
+    var threePointUniqueMedium=threePointWeighted(estimateUniqueMediumBest, estimateUniqueMediumMostLikely,estimateUniqueMediumWorst);
+    var threePointUniqueEasy=threePointWeighted(estimateUniqueEasyBest, estimateUniqueEasyMostLikely,estimateUniqueEasyWorst);
+    document.getElementById("threePointUniqueDifficultInfo").innerHTML=threePointUniqueDifficult.toFixed(2);
+    document.getElementById("threePointUniqueMediumInfo").innerHTML=threePointUniqueMedium.toFixed(2);
+    document.getElementById("threePointUniqueEasyInfo").innerHTML=threePointUniqueEasy.toFixed(2);
 
     var threePointEstablishingDifficult=threePointWeighted(estimateEstablishingDifficultBest, estimateEstablishingDifficultMostLikely,estimateEstablishingDifficultWorst);
     var threePointEstablishingMedium=threePointWeighted(estimateEstablishingMediumBest, estimateEstablishingMediumMostLikely,estimateEstablishingMediumWorst);
@@ -187,13 +187,13 @@ function updateInformationPanel (){
     document.getElementById("threePointChildMediumInfo").innerHTML=threePointChildMedium.toFixed(2);
     document.getElementById("threePointChildEasyInfo").innerHTML=threePointChildEasy.toFixed(2);
 
-    //standard Deviation hero
-    var standardDeviationHeroDifficult=stardardDeviation(estimateHeroDifficultBest,estimateHeroDifficultWorst);
-    var standardDeviationHeroMedium=stardardDeviation(estimateHeroMediumBest,estimateHeroMediumWorst);
-    var standardDeviationHeroEasy=stardardDeviation(estimateHeroEasyBest,estimateHeroEasyWorst);
-    document.getElementById("standardDeviationHeroDifficultInfo").innerHTML=standardDeviationHeroDifficult.toFixed(2);
-    document.getElementById("standardDeviationHeroMediumInfo").innerHTML=standardDeviationHeroMedium.toFixed(2);
-    document.getElementById("standardDeviationHeroEasyInfo").innerHTML=standardDeviationHeroEasy.toFixed(2);
+    //standard Deviation unique
+    var standardDeviationUniqueDifficult=stardardDeviation(estimateUniqueDifficultBest,estimateUniqueDifficultWorst);
+    var standardDeviationUniqueMedium=stardardDeviation(estimateUniqueMediumBest,estimateUniqueMediumWorst);
+    var standardDeviationUniqueEasy=stardardDeviation(estimateUniqueEasyBest,estimateUniqueEasyWorst);
+    document.getElementById("standardDeviationUniqueDifficultInfo").innerHTML=standardDeviationUniqueDifficult.toFixed(2);
+    document.getElementById("standardDeviationUniqueMediumInfo").innerHTML=standardDeviationUniqueMedium.toFixed(2);
+    document.getElementById("standardDeviationUniqueEasyInfo").innerHTML=standardDeviationUniqueEasy.toFixed(2);
 
     //standard Deviation Establishing
     var standardDeviationEstablishingDifficult=stardardDeviation(estimateEstablishingDifficultBest,estimateEstablishingDifficultWorst);
@@ -223,13 +223,13 @@ function updateInformationPanel (){
 
 
 
-    //variance hero
-    var varianceHeroDifficult=variance(estimateHeroDifficultBest,estimateHeroDifficultWorst);
-    var varianceHeroMedium=variance(estimateHeroMediumBest,estimateHeroMediumWorst);
-    var varianceHeroEasy=variance(estimateHeroEasyBest,estimateHeroEasyWorst);
-    document.getElementById("varianceHeroDifficultInfo").innerHTML=varianceHeroDifficult.toFixed(2);
-    document.getElementById("varianceHeroMediumInfo").innerHTML=varianceHeroMedium.toFixed(2);
-    document.getElementById("varianceHeroEasyInfo").innerHTML=varianceHeroEasy.toFixed(2);
+    //variance unique
+    var varianceUniqueDifficult=variance(estimateUniqueDifficultBest,estimateUniqueDifficultWorst);
+    var varianceUniqueMedium=variance(estimateUniqueMediumBest,estimateUniqueMediumWorst);
+    var varianceUniqueEasy=variance(estimateUniqueEasyBest,estimateUniqueEasyWorst);
+    document.getElementById("varianceUniqueDifficultInfo").innerHTML=varianceUniqueDifficult.toFixed(2);
+    document.getElementById("varianceUniqueMediumInfo").innerHTML=varianceUniqueMedium.toFixed(2);
+    document.getElementById("varianceUniqueEasyInfo").innerHTML=varianceUniqueEasy.toFixed(2);
 
     //variance master
     var varianceMasterDifficult=variance(estimateMasterDifficultBest,estimateMasterDifficultWorst);
@@ -255,8 +255,8 @@ function updateInformationPanel (){
     document.getElementById("varianceChildMediumInfo").innerHTML=varianceChildMedium.toFixed(2);
     document.getElementById("varianceChildEasyInfo").innerHTML=varianceChildEasy.toFixed(2);
 
-    var heroShotsCount= (shotCount*heroShotsPercentage)/100;
-    document.getElementById("heroShotsCountInfo").innerHTML=heroShotsCount.toFixed(0);
+    var uniqueShotsCount= (shotCount*uniqueShotsPercentage)/100;
+    document.getElementById("uniqueShotsCountInfo").innerHTML=uniqueShotsCount.toFixed(0);
     
     var establishingShotsCount= establishingShotsPerSequence*sequenceCount;
     document.getElementById("establishingShotsCountInfo").innerHTML=establishingShotsCount.toFixed(0);
@@ -275,17 +275,17 @@ function updateInformationPanel (){
 
 
     //INPUT %
-    var heroDifficultShotsPercentage=getInputValue("heroShotsDifficultPercentageInput");
-    document.getElementById("heroShotsDifficultPercentageInfo").innerHTML=heroDifficultShotsPercentage;
-    console.log("heroDifficultShotsPercentage: ", heroDifficultShotsPercentage)
+    var uniqueDifficultShotsPercentage=getInputValue("uniqueShotsDifficultPercentageInput");
+    document.getElementById("uniqueShotsDifficultPercentageInfo").innerHTML=uniqueDifficultShotsPercentage;
+    console.log("uniqueDifficultShotsPercentage: ", uniqueDifficultShotsPercentage)
 
-    var heroMediumShotsPercentage=getInputValue("heroShotsMediumPercentageInput");
-    document.getElementById("heroShotsMediumPercentageInfo").innerHTML=heroMediumShotsPercentage;
-    console.log("heroMediumShotsPercentage: ", heroMediumShotsPercentage)
+    var uniqueMediumShotsPercentage=getInputValue("uniqueShotsMediumPercentageInput");
+    document.getElementById("uniqueShotsMediumPercentageInfo").innerHTML=uniqueMediumShotsPercentage;
+    console.log("uniqueMediumShotsPercentage: ", uniqueMediumShotsPercentage)
 
-    var heroEasyShotsPercentage=getInputValue("heroShotsEasyPercentageInput");
-    document.getElementById("heroShotsEasyPercentageInfo").innerHTML=heroEasyShotsPercentage;
-    console.log("heroEasyShotsPercentage: ", heroEasyShotsPercentage)
+    var uniqueEasyShotsPercentage=getInputValue("uniqueShotsEasyPercentageInput");
+    document.getElementById("uniqueShotsEasyPercentageInfo").innerHTML=uniqueEasyShotsPercentage;
+    console.log("uniqueEasyShotsPercentage: ", uniqueEasyShotsPercentage)
 
     var establishingDifficultShotsPercentage=getInputValue("establishingShotsDifficultPercentageInput");
     document.getElementById("establishingShotsDifficultPercentageInfo").innerHTML=establishingDifficultShotsPercentage;
@@ -324,17 +324,17 @@ function updateInformationPanel (){
     console.log("childEasyShotsPercentage: ", childEasyShotsPercentage)
 
     //calculate each shot type/difficulty Count
-    var heroShotsDifficultCount=(getInputValue("heroShotsDifficultPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsDifficultCountInfo").innerHTML=heroShotsDifficultCount.toFixed(0);
-    console.log("heroShotsDifficultCount: ", heroShotsDifficultCount)
+    var uniqueShotsDifficultCount=(getInputValue("uniqueShotsDifficultPercentageInput")*uniqueShotsCount)/100;
+    document.getElementById("uniqueShotsDifficultCountInfo").innerHTML=uniqueShotsDifficultCount.toFixed(0);
+    console.log("uniqueShotsDifficultCount: ", uniqueShotsDifficultCount)
 
-    var heroShotsMediumCount=(getInputValue("heroShotsMediumPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsMediumCountInfo").innerHTML=heroShotsMediumCount.toFixed(0);
-    console.log("heroShotsMediumCount: ", heroShotsMediumCount)
+    var uniqueShotsMediumCount=(getInputValue("uniqueShotsMediumPercentageInput")*uniqueShotsCount)/100;
+    document.getElementById("uniqueShotsMediumCountInfo").innerHTML=uniqueShotsMediumCount.toFixed(0);
+    console.log("uniqueShotsMediumCount: ", uniqueShotsMediumCount)
 
-    var heroShotsEasyCount=(getInputValue("heroShotsEasyPercentageInput")*heroShotsCount)/100;
-    document.getElementById("heroShotsEasyCountInfo").innerHTML=heroShotsEasyCount.toFixed(0);
-    console.log("heroShotsEasyCount: ", heroShotsEasyCount)
+    var uniqueShotsEasyCount=(getInputValue("uniqueShotsEasyPercentageInput")*uniqueShotsCount)/100;
+    document.getElementById("uniqueShotsEasyCountInfo").innerHTML=uniqueShotsEasyCount.toFixed(0);
+    console.log("uniqueShotsEasyCount: ", uniqueShotsEasyCount)
 
     var establishingShotsDifficultCount=(getInputValue("establishingShotsDifficultPercentageInput")*establishingShotsCount)/100;
     document.getElementById("establishingShotsDifficultCountInfo").innerHTML=establishingShotsDifficultCount.toFixed(0);
@@ -374,22 +374,22 @@ function updateInformationPanel (){
 
 
     //means
-    var heroShotsDifficultMean=threePointHeroDifficult*heroShotsDifficultCount
-    document.getElementById("heroShotsDifficultMeanInfo").innerHTML=heroShotsDifficultMean.toFixed(0);
-    console.log("heroShotsDifficultMean: ", heroShotsDifficultMean)
+    var uniqueShotsDifficultMean=threePointUniqueDifficult*uniqueShotsDifficultCount
+    document.getElementById("uniqueShotsDifficultMeanInfo").innerHTML=uniqueShotsDifficultMean.toFixed(0);
+    console.log("uniqueShotsDifficultMean: ", uniqueShotsDifficultMean)
 
-    var heroShotsMediumMean=threePointHeroMedium*heroShotsMediumCount
-    document.getElementById("heroShotsMediumMeanInfo").innerHTML=heroShotsMediumMean.toFixed(0);
-    console.log("heroShotsMediumMean: ", heroShotsMediumMean)
+    var uniqueShotsMediumMean=threePointUniqueMedium*uniqueShotsMediumCount
+    document.getElementById("uniqueShotsMediumMeanInfo").innerHTML=uniqueShotsMediumMean.toFixed(0);
+    console.log("uniqueShotsMediumMean: ", uniqueShotsMediumMean)
 
-    var heroShotsEasyMean=threePointHeroEasy*heroShotsEasyCount
-    document.getElementById("heroShotsEasyMeanInfo").innerHTML=heroShotsEasyMean.toFixed(0);
-    console.log("threePointHeroEasy ", heroShotsEasyMean);
+    var uniqueShotsEasyMean=threePointUniqueEasy*uniqueShotsEasyCount
+    document.getElementById("uniqueShotsEasyMeanInfo").innerHTML=uniqueShotsEasyMean.toFixed(0);
+    console.log("threePointUniqueEasy ", uniqueShotsEasyMean);
     
-    //mean hero total
-    var heroShotsMean=heroShotsDifficultMean+heroShotsMediumMean+heroShotsEasyMean
-    document.getElementById("totalMeanHeroInfo").innerHTML=heroShotsMean;
-    console.log("totalMeanHeroInfo: ", heroShotsMean)
+    //mean unique total
+    var uniqueShotsMean=uniqueShotsDifficultMean+uniqueShotsMediumMean+uniqueShotsEasyMean
+    document.getElementById("totalMeanUniqueInfo").innerHTML=uniqueShotsMean;
+    console.log("totalMeanUniqueInfo: ", uniqueShotsMean)
 
 
 
@@ -406,7 +406,7 @@ function updateInformationPanel (){
     console.log("establishingShotsEasyMean: ", establishingShotsEasyMean);
 
     var establishingShotsMean=establishingShotsDifficultMean+establishingShotsMediumMean+establishingShotsEasyMean
-    document.getElementById("totalMeanEstablishingHeroInfo").innerHTML=establishingShotsMean.toFixed(0);
+    document.getElementById("totalMeanEstablishingUniqueInfo").innerHTML=establishingShotsMean.toFixed(0);
     console.log("totalMeanestablishingInfo: ", establishingShotsMean)
 
     
@@ -425,7 +425,7 @@ function updateInformationPanel (){
     console.log("threePointmasterEasy:masterShotsCount ", threePointMasterEasy,masterShotsCount);
 
     var masterShotsMean=masterShotsDifficultMean+masterShotsMediumMean+masterShotsEasyMean
-    document.getElementById("totalMeanMasterHeroInfo").innerHTML=masterShotsMean.toFixed(0);
+    document.getElementById("totalMeanMasterUniqueInfo").innerHTML=masterShotsMean.toFixed(0);
     console.log("totalMeanmasterInfo: ", masterShotsMean)
 
 
@@ -443,25 +443,25 @@ function updateInformationPanel (){
     console.log("childShotsEasyMean ", childShotsEasyMean);
 
     var childShotsMean=childShotsDifficultMean+childShotsMediumMean+childShotsEasyMean
-    document.getElementById("totalMeanChildHeroInfo").innerHTML=childShotsMean.toFixed(0);
+    document.getElementById("totalMeanChildUniqueInfo").innerHTML=childShotsMean.toFixed(0);
     console.log("totalMeanchildInfo: ", childShotsMean)
 
     //total Mean
-    var totalShotMean=heroShotsMean+establishingShotsMean+masterShotsMean+childShotsMean;
+    var totalShotMean=uniqueShotsMean+establishingShotsMean+masterShotsMean+childShotsMean;
     document.getElementById("totalMeanInfo").innerHTML=totalShotMean.toFixed(0);
     console.log("totalShotMean: ", totalShotMean)
 
-    //Standard deviation totals Hero To Do
-    var standardDeviationHeroDifficultTotal=Math.sqrt(standardDeviationHeroDifficult*heroShotsDifficultCount);
-    document.getElementById("standardDeviationHeroDifficultTotalInfo").innerHTML=standardDeviationHeroDifficultTotal.toFixed(2);
-    var standardDeviationHeroMediumTotal=Math.sqrt(standardDeviationHeroMedium*heroShotsMediumCount);
-    document.getElementById("standardDeviationHeroMediumTotalInfo").innerHTML=standardDeviationHeroMediumTotal.toFixed(2);
-    var standardDeviationHeroEasyTotal=Math.sqrt(standardDeviationHeroEasy*heroShotsEasyCount);
-    document.getElementById("standardDeviationHeroEasyTotalInfo").innerHTML=standardDeviationHeroEasyTotal.toFixed(2);
+    //Standard deviation totals Unique To Do
+    var standardDeviationUniqueDifficultTotal=Math.sqrt(standardDeviationUniqueDifficult*uniqueShotsDifficultCount);
+    document.getElementById("standardDeviationUniqueDifficultTotalInfo").innerHTML=standardDeviationUniqueDifficultTotal.toFixed(2);
+    var standardDeviationUniqueMediumTotal=Math.sqrt(standardDeviationUniqueMedium*uniqueShotsMediumCount);
+    document.getElementById("standardDeviationUniqueMediumTotalInfo").innerHTML=standardDeviationUniqueMediumTotal.toFixed(2);
+    var standardDeviationUniqueEasyTotal=Math.sqrt(standardDeviationUniqueEasy*uniqueShotsEasyCount);
+    document.getElementById("standardDeviationUniqueEasyTotalInfo").innerHTML=standardDeviationUniqueEasyTotal.toFixed(2);
     
     
-    var standardDeviationHeroTotal=standardDeviationHeroDifficultTotal+standardDeviationHeroMediumTotal+standardDeviationHeroEasyTotal;
-    document.getElementById("standardDeviationHeroTotalInfo").innerHTML=standardDeviationHeroTotal.toFixed(2);
+    var standardDeviationUniqueTotal=standardDeviationUniqueDifficultTotal+standardDeviationUniqueMediumTotal+standardDeviationUniqueEasyTotal;
+    document.getElementById("standardDeviationUniqueTotalInfo").innerHTML=standardDeviationUniqueTotal.toFixed(2);
 
     //Standard deviation totals Establishing To Do
     var standardDeviationEstablishingDifficultTotal=Math.sqrt(standardDeviationEstablishingDifficult*establishingShotsDifficultCount);
@@ -537,12 +537,12 @@ function updateInformationPanel (){
     writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
     
     //criticalPathMean
-    var criticalPathHeroShots= heroShotsCount*(heroShotsMean/teamCapacity)
+    var criticalPathUniqueShots= uniqueShotsCount*(uniqueShotsMean/teamCapacity)
     var criticalPathEstablishingShots= establishingShotsCount*(establishingShotsMean/teamCapacity)
     var criticalPathMasterShots = masterShotsCount*(masterShotsMean/teamCapacity)
     var criticalPathChildShots = childShotsCount*(childShotsMean/teamCapacity)
-    criticalPathMean=criticalPathHeroShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
-    console.log("criticalPathHero---: ", criticalPathHeroShots)
+    criticalPathMean=criticalPathUniqueShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
+    console.log("criticalPathUnique---: ", criticalPathUniqueShots)
     console.log("criticalPathEstablishing: ", criticalPathEstablishingShots)
     console.log("criticalPathMaster: ", criticalPathMasterShots)
     console.log("criticalPathChild: ", criticalPathChildShots)
@@ -561,9 +561,9 @@ function updateInformationPanel (){
 
         var data = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['Hero Difficult',     heroShotsDifficultCount],
-          ['Hero Medium',  heroShotsMediumCount],
-          ['Hero Easy', heroShotsEasyCount],
+          ['Unique Difficult',     uniqueShotsDifficultCount],
+          ['Unique Medium',  uniqueShotsMediumCount],
+          ['Unique Easy', uniqueShotsEasyCount],
           ['Establishing Difficult',     establishingShotsDifficultCount],
           ['Establishing Medium',  establishingShotsMediumCount],
           ['Establishing Easy', establishingShotsEasyCount],
@@ -577,16 +577,16 @@ function updateInformationPanel (){
         ]);
         var data2 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['Hero',     heroShotsCount],
+          ['Unique',     uniqueShotsCount],
           ['Establishing',     establishingShotsCount],
           ['Master',    masterShotsCount],
           ['Child',    childShotsCount],
         ]);
         var data3 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['Hero Difficult',     heroShotsDifficultMean],
-          ['Hero Medium',  heroShotsMediumMean],
-          ['Hero Easy', heroShotsEasyMean],
+          ['Unique Difficult',     uniqueShotsDifficultMean],
+          ['Unique Medium',  uniqueShotsMediumMean],
+          ['Unique Easy', uniqueShotsEasyMean],
           ['Establishing Difficult',     establishingShotsDifficultMean],
           ['Establishing Medium',  establishingShotsMediumMean],
           ['Establishing Easy', establishingShotsEasyMean],
@@ -632,7 +632,7 @@ function updateInformationPanel (){
         
       var data4 = google.visualization.arrayToDataTable([
         ['Genre', 'difficult', 'Medium', 'Easy',{ role: 'annotation' } ],
-        ['hero', heroShotsDifficultCount, heroShotsMediumCount, heroShotsEasyCount, "Total: "+heroShotsCount],
+        ['unique', uniqueShotsDifficultCount, uniqueShotsMediumCount, uniqueShotsEasyCount, "Total: "+uniqueShotsCount],
         ['establishing', establishingShotsDifficultCount, establishingShotsMediumCount, establishingShotsEasyCount, "Total: "+establishingShotsCount],
         ['Master', masterShotsDifficultCount, masterShotsMediumCount, masterShotsEasyCount, "Total: "+masterShotsCount],
         ['Child', childShotsDifficultCount, childShotsMediumCount, childShotsEasyCount, "Total: "+childShotsCount]
