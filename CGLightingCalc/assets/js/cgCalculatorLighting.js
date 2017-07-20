@@ -219,49 +219,18 @@ function updateInformationPanel (){
     document.getElementById("standardDeviationChildMediumInfo").innerHTML=standardDeviationChildMedium.toFixed(2);
     document.getElementById("standardDeviationChildEasyInfo").innerHTML=standardDeviationChildEasy.toFixed(2);
 
-    
+  
 
 
+   
 
-    //variance unique
-    var varianceUniqueDifficult=variance(estimateUniqueDifficultBest,estimateUniqueDifficultWorst);
-    var varianceUniqueMedium=variance(estimateUniqueMediumBest,estimateUniqueMediumWorst);
-    var varianceUniqueEasy=variance(estimateUniqueEasyBest,estimateUniqueEasyWorst);
-    document.getElementById("varianceUniqueDifficultInfo").innerHTML=varianceUniqueDifficult.toFixed(2);
-    document.getElementById("varianceUniqueMediumInfo").innerHTML=varianceUniqueMedium.toFixed(2);
-    document.getElementById("varianceUniqueEasyInfo").innerHTML=varianceUniqueEasy.toFixed(2);
-
-    //variance master
-    var varianceMasterDifficult=variance(estimateMasterDifficultBest,estimateMasterDifficultWorst);
-    var varianceMasterMedium=variance(estimateMasterMediumBest,estimateMasterMediumWorst);
-    var varianceMasterEasy=variance(estimateMasterEasyBest,estimateMasterEasyWorst);
-    document.getElementById("varianceMasterDifficultInfo").innerHTML=varianceMasterDifficult.toFixed(2);
-    document.getElementById("varianceMasterMediumInfo").innerHTML=varianceMasterMedium.toFixed(2);
-    document.getElementById("varianceMasterEasyInfo").innerHTML=varianceMasterEasy.toFixed(2);
-
-    //variance Establishing
-    var varianceEstablishingDifficult=variance(estimateEstablishingDifficultBest,estimateEstablishingDifficultWorst);
-    var varianceEstablishingMedium=variance(estimateEstablishingMediumBest,estimateEstablishingMediumWorst);
-    var varianceEstablishingEasy=variance(estimateEstablishingEasyBest,estimateEstablishingEasyWorst);
-    document.getElementById("varianceEstablishingDifficultInfo").innerHTML=varianceEstablishingDifficult.toFixed(2);
-    document.getElementById("varianceEstablishingMediumInfo").innerHTML=varianceEstablishingMedium.toFixed(2);
-    document.getElementById("varianceEstablishingEasyInfo").innerHTML=varianceEstablishingEasy.toFixed(2);
-
-    //variance Child
-    var varianceChildDifficult=variance(estimateChildDifficultBest,estimateChildDifficultWorst);
-    var varianceChildMedium=variance(estimateChildMediumBest,estimateChildMediumWorst);
-    var varianceChildEasy=variance(estimateChildEasyBest,estimateChildEasyWorst);
-    document.getElementById("varianceChildDifficultInfo").innerHTML=varianceChildDifficult.toFixed(2);
-    document.getElementById("varianceChildMediumInfo").innerHTML=varianceChildMedium.toFixed(2);
-    document.getElementById("varianceChildEasyInfo").innerHTML=varianceChildEasy.toFixed(2);
-
+    //shots count
     var uniqueShotsCount= (shotCount*uniqueShotsPercentage)/100;
     document.getElementById("uniqueShotsCountInfo").innerHTML=uniqueShotsCount.toFixed(0);
     
     var establishingShotsCount= establishingShotsPerSequence*sequenceCount;
     document.getElementById("establishingShotsCountInfo").innerHTML=establishingShotsCount.toFixed(0);
     console.log("-----establishingShotsCount, seq count: ", establishingShotsCount,sequenceCount)
-
 
     var establishingShotsPercentage=(100*establishingShotsCount)/shotCount;
     document.getElementById("establishingShotsPercentageInfo").innerHTML=establishingShotsPercentage;
@@ -513,14 +482,11 @@ function updateInformationPanel (){
     var sickPercent = daysPercentage (yearWorkingDays,averageSickDays)
 
 
-    //total holiday and sick days 
+    //days and working year
     var totalTeamHolidays=(leadArtists+artist+juniorArtists)*entitledHolidays;
-    document.getElementById("totalTeamHolidaysInfo").innerHTML=totalTeamHolidays;
-    console.log("totalTeamHolidays: ", totalTeamHolidays)
-
+    writeToPage("totalTeamHolidaysInfo",totalTeamHolidays);
     var totalTeamSickDays=(leadArtists+artist+juniorArtists)*averageSickDays;
-    document.getElementById("totalTeamSickDaysInfo").innerHTML=totalTeamSickDays;
-    console.log("totalTeamSickDays: ", totalTeamSickDays)
+    writeToPage("totalTeamSickDaysInfo",totalTeamSickDays);    
 
     var teamCapacity =((artist*artistsCapacity)+(leadArtists*leadArtistsCapacity)+(juniorArtists*juniorArtistsCapacity))*dayMultiplier;
     //duplicate it to have the original value for calculations
@@ -537,22 +503,107 @@ function updateInformationPanel (){
     writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
     
     //criticalPathMean
-    var criticalPathUniqueShots= uniqueShotsCount*(uniqueShotsMean/teamCapacity)
-    var criticalPathEstablishingShots= establishingShotsCount*(establishingShotsMean/teamCapacity)
-    var criticalPathMasterShots = masterShotsCount*(masterShotsMean/teamCapacity)
-    var criticalPathChildShots = childShotsCount*(childShotsMean/teamCapacity)
+    var criticalPathUniqueShots= uniqueShotsMean/teamCapacity
+    var criticalPathEstablishingShots= establishingShotsMean/teamCapacity
+    var criticalPathMasterShots = masterShotsMean/teamCapacity
+    var criticalPathChildShots = childShotsMean/teamCapacity
     criticalPathMean=criticalPathUniqueShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
     console.log("criticalPathUnique---: ", criticalPathUniqueShots)
     console.log("criticalPathEstablishing: ", criticalPathEstablishingShots)
     console.log("criticalPathMaster: ", criticalPathMasterShots)
     console.log("criticalPathChild: ", criticalPathChildShots)
-    console.log("criticalPathChild: ", criticalPathMean)
+    console.log("criticalPathMean: ", criticalPathMean)
+    writeToPage("criticalPathMean",criticalPathMean.toFixed(2));
 
     //projectManDaysInfo
     var projectManDays =totalShotMean;  //totalmean/teamCapacity
     writeToPage("projectManDaysInfo",projectManDays.toFixed(2));
     document.getElementById("projectManDaysInfo").innerHTML=projectManDays.toFixed(2);;
+
+    var startDate = getInputDate("startDate");
+    var proposedDate = getInputDate("endDate");
+
+    proposedDuration= dateDifference(startDate,proposedDate);
+    writeToPage("proposedDuration",proposedDuration);   
+    console.log("proposedDuration",proposedDuration);
+
+
+     //variance unique
+    var varianceUniqueDifficult=variance(estimateUniqueDifficultBest,estimateUniqueDifficultWorst);
+    var varianceUniqueMedium=variance(estimateUniqueMediumBest,estimateUniqueMediumWorst);
+    var varianceUniqueEasy=variance(estimateUniqueEasyBest,estimateUniqueEasyWorst);
+    document.getElementById("varianceUniqueDifficultInfo").innerHTML=varianceUniqueDifficult.toFixed(2);
+    document.getElementById("varianceUniqueMediumInfo").innerHTML=varianceUniqueMedium.toFixed(2);
+    document.getElementById("varianceUniqueEasyInfo").innerHTML=varianceUniqueEasy.toFixed(2);
+
+    //variance master
+    var varianceMasterDifficult=variance(estimateMasterDifficultBest,estimateMasterDifficultWorst);
+    var varianceMasterMedium=variance(estimateMasterMediumBest,estimateMasterMediumWorst);
+    var varianceMasterEasy=variance(estimateMasterEasyBest,estimateMasterEasyWorst);
+    document.getElementById("varianceMasterDifficultInfo").innerHTML=varianceMasterDifficult.toFixed(2);
+    document.getElementById("varianceMasterMediumInfo").innerHTML=varianceMasterMedium.toFixed(2);
+    document.getElementById("varianceMasterEasyInfo").innerHTML=varianceMasterEasy.toFixed(2);
+
+    //variance Establishing
+    var varianceEstablishingDifficult=variance(estimateEstablishingDifficultBest,estimateEstablishingDifficultWorst);
+    var varianceEstablishingMedium=variance(estimateEstablishingMediumBest,estimateEstablishingMediumWorst);
+    var varianceEstablishingEasy=variance(estimateEstablishingEasyBest,estimateEstablishingEasyWorst);
+    document.getElementById("varianceEstablishingDifficultInfo").innerHTML=varianceEstablishingDifficult.toFixed(2);
+    document.getElementById("varianceEstablishingMediumInfo").innerHTML=varianceEstablishingMedium.toFixed(2);
+    document.getElementById("varianceEstablishingEasyInfo").innerHTML=varianceEstablishingEasy.toFixed(2);
+
+    //variance Child
+    var varianceChildDifficult=variance(estimateChildDifficultBest,estimateChildDifficultWorst);
+    var varianceChildMedium=variance(estimateChildMediumBest,estimateChildMediumWorst);
+    var varianceChildEasy=variance(estimateChildEasyBest,estimateChildEasyWorst);
+    document.getElementById("varianceChildDifficultInfo").innerHTML=varianceChildDifficult.toFixed(2);
+    document.getElementById("varianceChildMediumInfo").innerHTML=varianceChildMedium.toFixed(2);
+    document.getElementById("varianceChildEasyInfo").innerHTML=varianceChildEasy.toFixed(2);
     
+    var criticalPathVarianceUniqueDifficult=varianceUniqueDifficult*uniqueShotsDifficultCount
+    console.log("criticalPathVarianceUniqueDifficult",criticalPathVarianceUniqueDifficult)
+    var criticalPathVarianceUniqueMedium=varianceUniqueMedium*uniqueShotsMediumCount
+    console.log("criticalPathVarianceUniqueMedium",criticalPathVarianceUniqueMedium)
+    var criticalPathVarianceUniqueEasy=varianceUniqueEasy*uniqueShotsEasyCount
+    console.log("criticalPathVarianceUniqueEasy",criticalPathVarianceUniqueEasy)
+    var criticalPathVarianceEstablishingDifficult=varianceEstablishingDifficult*establishingShotsDifficultCount
+    console.log("criticalPathVarianceEstablishingDifficult",criticalPathVarianceEstablishingDifficult)
+    var criticalPathVarianceEstablishingMedium=varianceEstablishingMedium*establishingShotsMediumCount
+    console.log("criticalPathVarianceEstablishingMedium",criticalPathVarianceEstablishingMedium)
+    var criticalPathVarianceEstablishingEasy=varianceEstablishingEasy*establishingShotsEasyCount
+    console.log("criticalPathVarianceEstablishingEasy",criticalPathVarianceEstablishingEasy)
+    var criticalPathVarianceMasterDifficult=varianceMasterDifficult*masterShotsDifficultCount
+    console.log("criticalPathVarianceMasterDifficult",criticalPathVarianceMasterDifficult)
+    var criticalPathVarianceMasterMedium=varianceMasterMedium*masterShotsMediumCount
+    console.log("criticalPathVarianceMasterMedium",criticalPathVarianceMasterMedium)
+    var criticalPathVarianceMasterEasy=varianceMasterEasy*masterShotsEasyCount
+    console.log("criticalPathVarianceMasterEasy",criticalPathVarianceMasterEasy)
+    var criticalPathVarianceChildDifficult=varianceChildDifficult*childShotsDifficultCount
+    console.log("criticalPathVarianceChildMedium",criticalPathVarianceChildDifficult)
+    var criticalPathVarianceChildMedium=varianceChildMedium*childShotsMediumCount
+    console.log("criticalPathVarianceChildMedium",criticalPathVarianceChildMedium)
+    var criticalPathVarianceChildEasy=varianceChildEasy*childShotsEasyCount
+    console.log("criticalPathVarianceChildEasy",criticalPathVarianceChildEasy)
+
+    var criticalPathVarianceUnique=criticalPathVarianceUniqueDifficult+criticalPathVarianceUniqueMedium+criticalPathVarianceUniqueEasy
+    console.log("criticalPathVarianceUnique",criticalPathVarianceUnique)
+    var criticalPathVarianceEstablishing=criticalPathVarianceEstablishingDifficult+criticalPathVarianceEstablishingMedium+criticalPathVarianceEstablishingEasy
+    console.log("criticalPathVarianceEstablishing",criticalPathVarianceEstablishing)
+    var criticalPathVarianceMaster=criticalPathVarianceMasterDifficult+criticalPathVarianceMasterMedium+criticalPathVarianceMasterEasy
+    console.log("criticalPathVarianceMaster",criticalPathVarianceMaster)
+    var criticalPathVarianceChild=criticalPathVarianceChildDifficult+criticalPathVarianceChildMedium+criticalPathVarianceChildEasy
+    console.log("criticalPathVarianceChild",criticalPathVarianceChild)
+
+    var totalCriticalPathVariance=criticalPathVarianceUnique+criticalPathVarianceEstablishing+
+                                  criticalPathVarianceMaster+criticalPathVarianceChild
+    writeToPage("criticalPathVariance",totalCriticalPathVariance.toFixed(4));
+
+    criticalPathStandardDeviation=Math.sqrt(totalCriticalPathVariance,2);
+    var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
+    writeToPage("Z",Z.toFixed(4));
+    probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
+    console.log("probabilities",probabilities);
+    writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");
     
     google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
