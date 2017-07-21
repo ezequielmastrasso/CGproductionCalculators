@@ -4,15 +4,11 @@ function getInputValue(id){
   if (mytextvalue ==""){
         mytextvalue =document.getElementById(id).placeholder;
         //console.log(id, mytextvalue);
-        try{document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;}
-        catch(err){}
         console.log(id, ": ", mytextvalue);
         return parseFloat(mytextvalue);
     }
   else{
     //console.log(id, mytextvalue);
-    try{document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;}
-    catch(err){}
     console.log(id, ": ", mytextvalue);
     return parseFloat(mytextvalue);
   }
@@ -23,14 +19,10 @@ function getInputDate(id){
   var mytextvalue = document.getElementById(id).value;
   if (mytextvalue ==""){
         mytextvalue =document.getElementById(id).placeholder;
-        //console.log(id, mytextvalue);
-        //document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;
         console.log(id, ": ", mytextvalue);
         return mytextvalue.replace("/","-");
     }
   else{
-    //console.log(id, mytextvalue);
-    //document.getElementById(id.replace("Input", "Info")).innerHTML=mytextvalue;
     console.log(id, ": ", mytextvalue);
     return mytextvalue.replace("/","-");
   }
@@ -149,3 +141,23 @@ function daysPercentage (yearWorkingDays, holidayDaysEntitled){
 			autoclose: true,
 		})
 	})
+
+  function calculateAsset (identifier,count, best, mostLikely, worst, teamCapacity){
+      console.log("-------------Calculating Asset-------------")
+      console.log(identifier + "  - count = " +count);
+      console.log("estimates = " + best + " / "+ mostLikely + " / "+ worst + " / ");
+      
+      var dict = {};
+      dict.id=identifier;
+      dict.mean = threePointWeighted(best, mostLikely, worst);
+      dict.variance = variance(best, worst);
+      dict.meanTotal = (dict.mean*count);
+      dict.meanCriticalPath = (dict.mean*count)/teamCapacity;
+      dict.criticalPathVarianceTotal =dict.variance*count;
+      for (var item in dict) {
+        console.log(item + " = " + dict[item]);
+        // Output
+        // key:anotherKey value:anotherValue
+      }
+      return dict
+  } 
