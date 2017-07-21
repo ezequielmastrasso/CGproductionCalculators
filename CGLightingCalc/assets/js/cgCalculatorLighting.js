@@ -291,6 +291,20 @@ function updateInformationPanel (){
     console.log("probabilities",probabilities.toFixed(4));
     writeToPage("probEndDateInfo",(probabilities*100).toFixed(4)+"%");
 
+    //0.9495
+    //0.9505
+    //95%: 1.645
+    //expecte duration:totalShotMean
+    //diviation: criticalPathStandardDeviation
+    percent95=1.645*criticalPathStandardDeviation+criticalPathMean
+    percent80=0.85*criticalPathStandardDeviation+criticalPathMean
+    console.log(percent95)
+    console.log(percent80)
+    writeToPage("the80",percent80.toFixed(1)+ " days");
+    writeToPage("the95",percent95.toFixed(1)+ " days");
+
+    
+
 
 
     
