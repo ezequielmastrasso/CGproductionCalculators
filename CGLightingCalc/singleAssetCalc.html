@@ -46,7 +46,7 @@
   <div class="container-fluid">
     <div class="row">
        <div class="col-sm-12 col-md-3 col-lg-2">
-        <div class="chart-wrapper" style="min-height:200px;padding:15px">
+        <div class="chart-wrapper" style="min-height:310px;padding:15px">
        <div class="chart-title">
             start Date
           </div>
@@ -334,7 +334,7 @@
 
 
       <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:100px">
+        <div class="chart-wrapper" style="min-height:190px">
           <div class="chart-title">
             % probabilities on your end date<br>
             <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="probEndDateInfo"role="button"></a><br>
@@ -345,7 +345,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:100px">
+        <div class="chart-wrapper" style="min-height:190px">
           <div class="chart-title">
             some useful stats
           </div>
@@ -359,18 +359,20 @@
           criticalPathStndDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathStndDeviation"role="button"></a><br>         
         </div>
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:100px">
+       <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="chart-wrapper" style="min-height:235px">
           <div class="chart-title">
             the 80%
           </div>
+          <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="the80"role="button"></a><br>
         </div>
       </div>
       <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:100px">
+        <div class="chart-wrapper" style="min-height:235px">
           <div class="chart-title">
             the 95% chances
           </div>
+          <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="the95"role="button"></a><br>
         </div>
       </div>
 
@@ -422,130 +424,7 @@
 
     </div>
 
-      <div class="col-sm-12">
-        <div class="row">
-          <h2 style="text-align:center;">
-        Debugging
-        </h2>
-      </div>
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-2">
-
-        <div class="chart-wrapper" style="min-height:370px">
-          <div class="chart-title">
-            means
-          </div>
-          <div class="chart-stage">
-            <div class="row" style="margin:0px;">
-              
-              <div class="chart-title"> </div>
-              Difficult<a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultMeanInfo"role="button"></a>
-              Medium<a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumMeanInfo"role="button"></a>
-              Easy<a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyMeanInfo"role="button"></a>
-              <div class="chart-title"> </div>
-
-              dif<a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultBestInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultMostLikelyInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateDifficultWorstInfo"role="button"></a>
-              <br>
-              med<a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumBestInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumMostLikelyInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateMediumWorstInfo"role="button"></a>
-              eas<br>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyBestInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyMostLikelyInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetEstimateEasyWorstInfo"role="button"></a>
-             
-              </div>
-            </div>
-            </div>
-      </div>
-          <div class="col-sm-6 col-md-3 col-lg-2">
-
-        <div class="chart-wrapper" style="min-height:370px">
-          <div class="chart-title">
-            information
-          </div>
-          <div class="chart-stage">
-            <div class="row" style="margin:0px;">
-              leadsArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="leadsArtistsCountInfo"role="button"></a><br>
-              artistCount<a href="#" class="btn btn-primary btn-lg disabled" id="artistCountInfo"role="button"></a><br>
-              juniorArtistsCount<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCountInfo"role="button"></a><br>
-              artistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="artistsCapacityInfo"role="button"></a><br>
-              junioArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="juniorArtistsCapacityInfo"></a><br>
-              leadArtistsCapacity<a href="#" class="btn btn-primary btn-lg disabled" id="leadArtistsCapacityInfo"></a><br>
-              dailyworkingHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyWorkingHoursInfo"role="button"></a><br>
-              dailyReviewHours<a href="#" class="btn btn-primary btn-lg disabled" id="dailyReviewHoursInfo"></a><br>
-              yearWorkingDays<a href="#" class="btn btn-primary btn-lg disabled" id="yearWorkingDaysInfo"role="button"></a><br>
-              entitledHolidays<a href="#" class="btn btn-primary btn-lg disabled" id="entitledHolidaysInfo"></a><br>
-              averageSickDays<a href="#" class="btn btn-primary btn-lg disabled" id="averageSickDaysInfo"role="button"></a><br>
-              
-                  
-
-              </div>
-            </div>
-            </div>
-      </div>
-          <div class="col-sm-6 col-md-3 col-lg-2">
-
-        <div class="chart-wrapper" style="min-height:370px">
-          <div class="chart-title">
-            information
-          </div>
-          <div class="chart-stage">
-            <div class="row" style="margin:0px;">
-              <legend>asset count</legend>
-                  asset<a href="#" class="btn btn-primary btn-lg disabled" id="assetCountInfo"role="button"></a><br>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultCountInfo"role="button"></a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumCountInfo"role="button"></a>
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyCountInfo"role="button"></a><br>
-              <br>
-              <legend>asset Percentages</legend>
-
-                  asset
-                  <a href="#" class="btn btn-primary btn-lg disabled" id="assetDifficultPercentageInfo"role="button"></a>
-                    <a href="#" class="btn btn-primary btn-lg disabled" id="assetMediumPercentageInfo"role="button"></a>
-                    <a href="#" class="btn btn-primary btn-lg disabled" id="assetEasyPercentageInfo"role="button"></a><br>                
-
-              </div>
-            </div>
-            </div>
-      </div>
-
-
-      <div class="col-sm-6 col-md-3 col-lg-2">
- 
-        <div class="chart-wrapper"  style="min-height:370px">
-          <div class="chart-title">
-            information
-          </div>
-          <div class="chart-stage">
-            <div class="row" style="margin:0px;">
-              <div class="chart-title">
-            Variance
-          </div>
-              asset<a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetDifficultInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetMediumInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="varianceAssetEasyInfo"role="button"></a><br>
-              <div class="chart-title">
-            3 point
-          </div>
-              asset est<a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointDifficultInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointMediumInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetThreePointEasyInfo"role="button"></a><br>
-              <div class="chart-title">
-            Standard Deviation asset
-          </div>
-              <div class="chart-title"> </div>
-              asset per task<a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationDifficultInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationMediumInfo"role="button"></a>
-              <a href="#" class="btn btn-primary btn-lg disabled" id="assetStandardDeviationEasyInfo"role="button"></a>
-              
-              </div>
-            </div>
-            </div>
-      </div>
-
+  
 
           
 

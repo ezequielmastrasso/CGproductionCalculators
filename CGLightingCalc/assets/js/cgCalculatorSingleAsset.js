@@ -63,38 +63,14 @@ function updateInformationPanel (){
     var assetEstimateEasyMostLikely =getInputValue("assetEstimateEasyMostLikelyInput");
     var assetEstimateEasyWorst =getInputValue("assetEstimateEasyWorstInput");
 
-
-
-
-    //toCalculate
+    
 
     //Asset count
     var assetDifficultCount = (assetCount*assetDifficultPercentage)/100;
     console.log("assetCount",assetCount);
     console.log("assetDifficultPercentage",assetDifficultPercentage);
-    writeToPage("assetDifficultCountInfo",assetDifficultCount);
     var assetMediumCount = (assetCount*assetMediumPercentage)/100;
-    writeToPage("assetMediumCountInfo",assetMediumCount);
     var assetEasyCount = (assetCount*assetEasyPercentage)/100;
-    writeToPage("assetEasyCountInfo",assetEasyCount);
-
-    
-    //mean
-    var assetThreePointDifficult =threePointWeighted(assetEstimateDifficultBest,assetEstimateDifficultMostLikely,assetEstimateDifficultWorst)
-    writeToPage("assetThreePointDifficultInfo",assetThreePointDifficult.toFixed(2));
-    var assetThreePointMedium = threePointWeighted(assetEstimateMediumBest,assetEstimateMediumMostLikely,assetEstimateMediumWorst)
-    writeToPage("assetThreePointMediumInfo",assetThreePointMedium.toFixed(2));
-    var assetThreePointEasy = threePointWeighted(assetEstimateEasyBest, assetEstimateEasyMostLikely,assetEstimateEasyWorst);
-    writeToPage("assetThreePointEasyInfo",assetThreePointEasy.toFixed(2));
-    //totals
-    var assetDifficultMean = assetThreePointDifficult*assetDifficultCount;
-    writeToPage("assetDifficultMeanInfo",assetDifficultMean.toFixed(2));
-    var assetMediumMean =assetThreePointMedium*assetMediumCount;
-    writeToPage("assetMediumMeanInfo",assetMediumMean.toFixed(2));
-    var assetEasyMean =assetThreePointEasy*assetEasyCount;
-    writeToPage("assetEasyMeanInfo",assetEasyMean.toFixed(2));
-    var totalMean = assetDifficultMean+ assetMediumMean+assetEasyMean ;
-    writeToPage("totalMeanInfo",totalMean.toFixed(2));
     
     //team capacity
     actualWorkingHoursPerDay=dailyworkingHours-dailyReviewHours;
@@ -116,56 +92,67 @@ function updateInformationPanel (){
     teamCapacity=teamCapacity-((originalTeamCapacity*sickPercent)/100)
     console.log("teamCapacityInfo after sick",teamCapacity);
     writeToPage("teamCapacityInfo",teamCapacity.toFixed(2));
+
     
+    //toCalculate
+    assetDifficult=calculateAsset("assetDifficult",
+                assetDifficultCount,
+                assetEstimateDifficultBest,
+                assetEstimateDifficultMostLikely,
+                assetEstimateDifficultWorst,
+                teamCapacity)
+    assetMedium=calculateAsset("assetMedium",
+                assetMediumCount,
+                assetEstimateMediumBest,
+                assetEstimateMediumMostLikely,
+                assetEstimateMediumWorst,
+                teamCapacity)
+    assetEasy=calculateAsset("assetEasy",
+                assetEasyCount,
+                assetEstimateEasyBest,
+                assetEstimateEasyMostLikely,
+                assetEstimateEasyWorst,
+                teamCapacity)
+
 
     //criticalPathMean
-    var criticalPathDifficultAssets=assetDifficultCount*(assetThreePointDifficult/teamCapacity);
-    var criticalPathMediumAssets=assetMediumCount*(assetThreePointMedium/teamCapacity);
-    var criticalPathEasyAssets=assetEasyCount*(assetThreePointEasy/teamCapacity);
-    criticalPathMean=criticalPathDifficultAssets+criticalPathMediumAssets+criticalPathEasyAssets;
-    console.log("criticalPathDifficultAssets---: ", criticalPathDifficultAssets)
-    console.log("criticalPathMediumAssets: ", criticalPathMediumAssets)
-    console.log("criticalPathEasyAssets: ", criticalPathEasyAssets)
+    var criticalPathMean=assetDifficult.meanCriticalPath+assetMedium.meanCriticalPath+assetEasy.meanCriticalPath;
+
+    console.log("criticalPathDifficultAssets---: ", assetDifficult.meanCriticalPath)
+    console.log("criticalPathMediumAssets: ", assetMedium.meanCriticalPath)
+    console.log("criticalPathEasyAssets: ", assetEasy.meanCriticalPath)
     console.log("criticalPathMean: ", criticalPathMean)
     writeToPage("criticalPathMean",criticalPathMean.toFixed(2));
-    
 
     
 
     
-    var projectManDays = assetDifficultMean+assetMediumMean+assetEasyMean;
+    var projectManDays = assetDifficult.meanTotal+assetMedium.meanTotal+assetEasy.meanTotal;
     writeToPage("projectManDaysInfo",projectManDays.toFixed(2));
+    writeToPage("totalMeanInfo",projectManDays.toFixed(2));
 
     //variance
     var varianceAssetDifficult = variance(assetEstimateDifficultBest,assetEstimateDifficultWorst);
-    writeToPage("varianceAssetDifficultInfo",varianceAssetDifficult.toFixed(2));
     var varianceAssetMedium = variance(assetEstimateMediumBest,assetEstimateMediumWorst);    
-    writeToPage("varianceAssetMediumInfo",varianceAssetMedium.toFixed(2));
     var varianceAssetEasy = variance(assetEstimateEasyBest,assetEstimateEasyWorst);
-    writeToPage("varianceAssetEasyInfo",varianceAssetEasy.toFixed(2));
 
     //Standard Deviation
     var assetStandardDeviationDifficult = stardardDeviation(assetEstimateDifficultBest,assetEstimateDifficultWorst);
-    writeToPage("assetStandardDeviationDifficultInfo",assetStandardDeviationDifficult.toFixed(2));
     var assetStandardDeviationMedium =stardardDeviation(assetEstimateMediumBest,assetEstimateMediumWorst); 
-    writeToPage("assetStandardDeviationMediumInfo",assetStandardDeviationMedium.toFixed(2));
     var assetStandardDeviationEasy =stardardDeviation(assetEstimateEasyBest,assetEstimateEasyWorst);
-    writeToPage("assetStandardDeviationEasyInfo",assetStandardDeviationEasy.toFixed(2));
 
     //days and working year
     var totalTeamHolidays=(leadArtists+artist+juniorArtists)*entitledHolidays;
     writeToPage("totalTeamHolidaysInfo",totalTeamHolidays);
     var totalTeamSickDays=(leadArtists+artist+juniorArtists)*averageSickDays;
-    writeToPage("totalTeamSickDaysInfo",totalTeamSickDays);    
 
     var startDate = getInputDate("startDate");
     var proposedDate = getInputDate("endDate");
 
     proposedDuration= dateDifference(startDate,proposedDate);
     writeToPage("proposedDuration",proposedDuration);    
-    
-    
     console.log("proposedDuration",proposedDuration);
+    writeToPage("totalTeamSickDaysInfo",totalTeamSickDays);    
 
     
     
@@ -185,6 +172,18 @@ function updateInformationPanel (){
     probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
     console.log("probabilities",probabilities);
     writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");
+
+    //0.9495
+    //0.9505
+    //95%: 1.645
+    //expecte duration:totalShotMean
+    //diviation: criticalPathStandardDeviation
+    percent95=1.645*criticalPathStandardDeviation+criticalPathMean
+    percent80=0.85*criticalPathStandardDeviation+criticalPathMean
+    console.log(percent95)
+    console.log(percent80)
+    writeToPage("the80",percent80.toFixed(1)+ " days");
+    writeToPage("the95",percent95.toFixed(1)+ " days");
     
     
   
@@ -210,9 +209,9 @@ function updateInformationPanel (){
         ]);
         var data3 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['difficult mandays',     assetDifficultMean],
-          ['medium man days',     assetMediumMean],
-          ['easy man days',     assetEasyMean]
+          ['difficult mandays',     assetDifficult.mean],
+          ['medium man days',     assetMedium.mean],
+          ['easy man days',     assetEasy.mean]
 
           
         ]);
