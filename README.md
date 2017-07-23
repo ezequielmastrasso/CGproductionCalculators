@@ -1,6 +1,7 @@
 # CGproductionCalculators
 Pert based production calculators for CG productions with probabilities.  
 Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.  
+![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShot.jpg)
 
 ##### Assumptions and caveats:  
 Accounts for holidays, sick days, team leads/artists/juniors % capacity, busy idle time, and amount hours of daily reviews, on a per day basis.  
