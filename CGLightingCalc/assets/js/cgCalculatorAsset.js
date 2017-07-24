@@ -361,7 +361,7 @@ function updateInformationPanel (){
               hAxis: {
                   textStyle:{color: '#FFF',}
               },
-               colors: ['#df3d48', '#d87844', '#d8a244']
+               colors: ['#cd5332', '#9c442d', '#784438', '#9e608d', '#75546c', '#614e5f','#4976b4','#486181','#47576a','#85a56c','#50795b','#4c6453'],
     };
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
                 legend: { position: 'top', maxLines: 3 },
@@ -371,7 +371,7 @@ function updateInformationPanel (){
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
-               colors: ['#df3d48', '#d87844', '#d8a244', '#d8c244']
+               colors: ['#cd5332', '#9e608d','#4976b4','#85a56c'],
     };
 
 
@@ -385,17 +385,17 @@ function updateInformationPanel (){
 
         
       var data4 = google.visualization.arrayToDataTable([
-        ['Genre', 'difficult', 'Medium', 'Easy',{ role: 'annotation' } ],
-        ['assetA', assetAShotsDifficultCount, assetAShotsMediumCount, assetAShotsEasyCount, "Total: "+assetAShotsCount],
-        ['assetB', assetBShotsDifficultCount, assetBShotsMediumCount, assetBShotsEasyCount, "Total: "+assetBShotsCount],
-        ['AssetC', assetCShotsDifficultCount, assetCShotsMediumCount, assetCShotsEasyCount, "Total: "+assetCShotsCount],
-        ['AssetD', assetDShotsDifficultCount, assetDShotsMediumCount, assetDShotsEasyCount, "Total: "+assetDShotsCount]
+        ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
+        ['assetA', assetAShotsDifficultCount, '#cd5332', assetAShotsMediumCount, '#9c442d', assetAShotsEasyCount, "Total: "+assetAShotsCount, '#784438'],
+        ['assetB', assetBShotsDifficultCount, '#9e608d', assetBShotsMediumCount, '#75546c', assetBShotsEasyCount, "Total: "+assetBShotsCount, '#614e5f'],
+        ['AssetC', assetCShotsDifficultCount, '#4976b4', assetCShotsMediumCount, '#486181', assetCShotsEasyCount, "Total: "+assetCShotsCount, '#47576a'],
+        ['AssetD', assetDShotsDifficultCount, '#85a56c', assetDShotsMediumCount, '#50795b', assetDShotsEasyCount, "Total: "+assetDShotsCount, '#4c6453']
       ]);
 
       var options = {
         legend: { position: 'top', maxLines: 3, fontSize: 1},
         bar: { groupWidth: '75%' },
-        colors: ['#df3d48', '#d87844', '#d8a244'],
+        colors: ['#A0A0A0', '#A0A0A0', '#A0A0A0'],
         backgroundColor: '#3d3d3d',
         fontSize: 10,
         fontName: 'Open Sans', 
