@@ -398,6 +398,7 @@ function updateInformationPanel (){
         bar: { groupWidth: '75%' },
         backgroundColor: '#3d3d3d',
         fontSize: 10,
+        pieSliceText: 'value',
         fontName: 'Open Sans',
         colors: ['#A0A0A0', '#A0A0A0','#A0A0A0','#A0A0A0'],
         legend: { position: 'top', maxLines: 3 },

@@ -220,21 +220,22 @@ function updateInformationPanel (){
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               backgroundColor: '#3d3d3d',
-              fontSize: 12,
+              fontSize: 10,
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
-               colors: ['#FF1D2D', '#f56f27', '#f5aa27']
+               colors: ['#85a56c', '#50795b', '#4c6453']
     };
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
               legend: { textStyle: { color: 'white' }},
-              fontSize: 12,
+              fontSize: 10,
+              pieSliceText: 'value',
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
-               colors: ['#FF1D2D', '#f56f27', '#f5aa27', '#f3b49f']
+               colors: ['#85a56c', '#50795b', '#4c6453']
     };
 
 
@@ -255,9 +256,10 @@ function updateInformationPanel (){
       var options = {
         legend: { position: 'top', maxLines: 3 },
         bar: { groupWidth: '75%' },
-        colors: ['#FF1D2D', '#f56f27', '#f5aa27'],
+        colors: ['#85a56c', '#50795b', '#4c6453'],
         backgroundColor: '#3d3d3d',
-        fontSize: 12,
+        fontSize: 10,
+        pieSliceText: 'value',
         fontName: 'Open Sans', 
         legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
