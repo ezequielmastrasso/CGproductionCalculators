@@ -338,18 +338,18 @@ function updateInformationPanel (){
         ]);
         var data3 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
-          ['Unique Difficult',     shotsUniqueDifficult.mean],
-          ['Unique Medium',  shotsUniqueMedium.mean],
-          ['Unique Easy', shotsUniqueEasy.mean],
-          ['Establishing Difficult',    shotsEstablishingDifficult.mean],
-          ['Establishing Medium',  shotsEstablishingMedium.mean],
-          ['Establishing Easy', shotsEstablishingEasy.mean],
-          ['Master Difficult',    shotsMasterDifficult.mean],
-          ['Master Medium',    shotsMasterMedium.mean],
-          ['Master Easy',    shotsMasterEasy.mean],
-          ['Child Difficult',    shotsChildDifficult.mean],
-          ['Child Medium',    shotsChildMedium.mean],
-          ['Child Easy',    shotsChildEasy.mean],
+          ['Unique Difficult',     shotsUniqueDifficult.meanTotal],
+          ['Unique Medium',  shotsUniqueMedium.meanTotal],
+          ['Unique Easy', shotsUniqueEasy.meanTotal],
+          ['Establishing Difficult',    shotsEstablishingDifficult.meanTotal],
+          ['Establishing Medium',  shotsEstablishingMedium.meanTotal],
+          ['Establishing Easy', shotsEstablishingEasy.meanTotal],
+          ['Master Difficult',    shotsMasterDifficult.meanTotal],
+          ['Master Medium',    shotsMasterMedium.meanTotal],
+          ['Master Easy',    shotsMasterEasy.meanTotal],
+          ['Child Difficult',    shotsChildDifficult.meanTotal],
+          ['Child Medium',    shotsChildMedium.meanTotal],
+          ['Child Easy',    shotsChildEasy.meanTotal],
           
         ]);
 
@@ -357,11 +357,12 @@ function updateInformationPanel (){
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               fontSize: 10,
+              pieSliceText: 'value',
               backgroundColor: '#3d3d3d',
               hAxis: {
                   textStyle:{color: '#FFF',}
               },
-               colors: ['#df3d48', '#d87844', '#d8a244']
+              colors: ['#cd5332', '#9c442d', '#784438', '#9e608d', '#75546c', '#614e5f','#4976b4','#486181','#47576a','#85a56c','#50795b','#4c6453'],
     };
        var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
                 legend: { position: 'top', maxLines: 3 },
@@ -371,7 +372,7 @@ function updateInformationPanel (){
               hAxis: {
                   textStyle:{color: '#FFF'}
               },
-               colors: ['#df3d48', '#d87844', '#d8a244', '#d8c244']
+              colors: ['#cd5332', '#9e608d','#4976b4','#85a56c'],
     };
 
 
@@ -385,20 +386,20 @@ function updateInformationPanel (){
 
         
       var data4 = google.visualization.arrayToDataTable([
-        ['Genre', 'difficult', 'Medium', 'Easy',{ role: 'annotation' } ],
-        ['unique', uniqueShotsDifficultCount, uniqueShotsMediumCount, uniqueShotsEasyCount, "Total: "+uniqueShotsCount],
-        ['establishing', establishingShotsDifficultCount, establishingShotsMediumCount, establishingShotsEasyCount, "Total: "+establishingShotsCount],
-        ['Master', masterShotsDifficultCount, masterShotsMediumCount, masterShotsEasyCount, "Total: "+masterShotsCount],
-        ['Child', childShotsDifficultCount, childShotsMediumCount, childShotsEasyCount, "Total: "+childShotsCount]
+        ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
+        ['unique', uniqueShotsDifficultCount, '#cd5332', uniqueShotsMediumCount, '#9c442d', uniqueShotsEasyCount, "Total: "+uniqueShotsCount, '#784438'],
+        ['establishing', establishingShotsDifficultCount, '#9e608d', establishingShotsMediumCount, '#75546c', establishingShotsEasyCount, "Total: "+establishingShotsCount, '#614e5f'],
+        ['Master', masterShotsDifficultCount, '#4976b4', masterShotsMediumCount, '#486181', masterShotsEasyCount, "Total: "+masterShotsCount, '#47576a'],
+        ['Child', childShotsDifficultCount, '#85a56c', childShotsMediumCount, '#50795b', childShotsEasyCount, "Total: "+childShotsCount, '#4c6453']
       ]);
 
       var options = {
         legend: { position: 'top', maxLines: 3, fontSize: 1},
         bar: { groupWidth: '75%' },
-        colors: ['#df3d48', '#d87844', '#d8a244'],
         backgroundColor: '#3d3d3d',
         fontSize: 10,
-        fontName: 'Open Sans', 
+        fontName: 'Open Sans',
+        colors: ['#A0A0A0', '#A0A0A0','#A0A0A0','#A0A0A0'],
         legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: '#FFF' }},
               hAxis: {
