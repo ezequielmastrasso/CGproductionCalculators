@@ -182,3 +182,29 @@ function daysPercentage (yearWorkingDays, holidayDaysEntitled){
       }
       return dict
   } 
+
+    function calculateAssetRender (identifier,shotsCount, best, mostLikely, worst, reRendering,farmCapacity,renderAverageFramesPerShot){
+      var dict = {};
+      dict.count=shotsCount*renderAverageFramesPerShot
+      dict.id=identifier;
+      dict.meanRender = threePointWeighted(best, mostLikely, worst);
+      dict.mean = dict.meanRender + (dict.meanRender*(reRendering/100))
+      dict.variance = variance(best, worst);
+      dict.meanTotal = (dict.mean*dict.count);//totalRenderTimeInMins=weighter mins render time * shotcount * framespershot
+      dict.meanCriticalPath =dict.meanTotal/farmCapacity;//mins rendering per node=totalRenderTimeInMins/farmCapacity
+      dict.criticalPathVarianceTotal =dict.variance*dict.count;
+      console.log("-------------Calculating Asset-------------")
+      console.log(identifier + "  - frameCount = " +dict.count);
+      console.log("shotCount = ", shotsCount)
+      console.log("estimates = " + best + " / "+ mostLikely + " / "+ worst + " / ");
+      console.log("frameRendertime (mins)=" + dict.meanRender)
+      console.log("frameRendertime (mins) + re-rendenring %=" + dict.mean)
+      console.log("total rendering (mins)=" + dict.meanTotal)
+
+      for (var item in dict) {
+        console.log(item + " = " + dict[item]);
+        // Output
+        // key:anotherKey value:anotherValue
+      }
+      return dict
+  } 

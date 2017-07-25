@@ -612,56 +612,63 @@
                  
                  <div class="tab-pane active" id="renderTimes">
                     <!-- Unique Shot input-->
+                    <div class="form-group">
+                          <label class="col-md-4 control-label" for="shotCounttt">Avrg Frame per Shot</label>  
+                          <div class="col-md-2">
+                          <input   onchange="updateInformationPanel()"   id="renderAverageFramesPerShotInput" name="shotCounttt" type="text" placeholder="90" class="form-control input-md" required="">
+                            
+                          </div>
+                        </div>
                     <legend>render Times estimates in minutes</legend>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence"><br>Unique</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueDifficultBestInput" name="shotsPerSequence" type="text" placeholder="180" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateUniqueBestInput" name="shotsPerSequence" type="text" placeholder="180" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="210" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateUniqueMostLikelyInput" name="shotsPerSequence" type="text" placeholder="210" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="260" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateUniqueWorstInput" name="shotsPerSequence" type="text" placeholder="260" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Establ</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueMediumBestInput" name="shotsPerSequence" type="text" placeholder="150" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateEstablishingBestInput" name="shotsPerSequence" type="text" placeholder="150" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="190" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateEstablishingMostLikelyInput" name="shotsPerSequence" type="text" placeholder="190" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueMediumWorstInput" name="shotsPerSequence" type="text" placeholder="220" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateEstablishingWorstInput" name="shotsPerSequence" type="text" placeholder="220" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Master</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyBestInput" name="shotsPerSequence" type="text" placeholder="140" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateMasterBestInput" name="shotsPerSequence" type="text" placeholder="140" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="180" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateMasterMostLikelyInput" name="shotsPerSequence" type="text" placeholder="180" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyWorstInput" name="shotsPerSequence" type="text" placeholder="210" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateMasterWorstInput" name="shotsPerSequence" type="text" placeholder="210" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Child</label>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyBestInput" name="shotsPerSequence" type="text" placeholder="140" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateChildBestInput" name="shotsPerSequence" type="text" placeholder="140" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="190" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateChildMostLikelyInput" name="shotsPerSequence" type="text" placeholder="190" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateUniqueEasyWorstInput" name="shotsPerSequence" type="text" placeholder="220" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="renderEstimateChildWorstInput" name="shotsPerSequence" type="text" placeholder="220" class="form-control input-md" required="">
                       </div>
                     </div>
                     
@@ -673,14 +680,14 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">render time (in mins)</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderBaselineMinutesInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
                             
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">cores/card</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderBaselineCoresInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                           </div>
                         </div>
                     
@@ -692,26 +699,26 @@
                     <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">nodes count</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmNodesCountInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
                             
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">cores/card per node</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmCoresPerNodeInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">linear scalability</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmLinearScalabilityInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">busy/idle ratio</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder=".9" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmBusyIdleInput" name="shotsPerSequence" type="text" placeholder=".9" class="form-control input-md" required="">
                           </div>
                         </div>
                  </div>
@@ -721,26 +728,26 @@
                     <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">unique re-rendering %</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="30" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderEstimateUniqueRerenderingInput" name="shotCounttt" type="text" placeholder="30" class="form-control input-md" required="">
                             
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">estbl re-rendering %</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="25" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderEstimateEstablishingRerenderingInput" name="shotsPerSequence" type="text" placeholder="25" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">master re-rendering %</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderEstimateMasterRerenderingInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">child re-rendering %</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderEstimateChildRerenderingInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                           </div>
                         </div>
                     
@@ -800,7 +807,7 @@
 
 
      
-
+        <h1 style="text-align: center"> Shot Lighting </h1>
         <div class="row" >
          <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="chart-wrapper "style="min-height:130px">
@@ -837,6 +844,36 @@
             Man days per type
           </div>
              <div id="piechart3" style="width: 340px; height: 250px;"></div>
+
+         
+
+        </div>
+      </div>
+      
+      </div>
+
+    </div>
+    <h1 style="text-align: center"> Rendering </h1>
+    <div class="row" >
+         <div class="col-sm-12 col-md-12 col-lg-12">
+        
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Frame Count
+          </div>
+             <div id="renderPiechart2" style="width: 340px; height: 250px;"></div>
+
+         
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            farmNode Days
+          </div>
+             <div id="renderPiechart3" style="width: 340px; height: 250px;"></div>
 
          
 

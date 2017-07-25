@@ -305,11 +305,115 @@ function updateInformationPanel (){
 
     
 
+    //RENDER
+    var renderEstimateUniqueBest =  getInputValue("renderEstimateUniqueBestInput");
+    var renderEstimateUniqueMostLikely =  getInputValue("renderEstimateUniqueMostLikelyInput");
+    var renderEstimateUniqueWorst =  getInputValue("renderEstimateUniqueWorstInput");
 
+    var renderEstimateEstablishingBest =  getInputValue("renderEstimateEstablishingBestInput");
+    var renderEstimateEstablishingMostLikely =  getInputValue("renderEstimateEstablishingMostLikelyInput");
+    var renderEstimateEstablishingWorst =  getInputValue("renderEstimateEstablishingWorstInput");
 
+    var renderEstimateMasterBest =  getInputValue("renderEstimateMasterBestInput");
+    var renderEstimateMasterMostLikely =  getInputValue("renderEstimateMasterMostLikelyInput");
+    var renderEstimateMasterWorst =  getInputValue("renderEstimateMasterWorstInput");
+
+    var renderEstimateChildBest =  getInputValue("renderEstimateChildBestInput");
+    var renderEstimateChildMostLikely =  getInputValue("renderEstimateChildMostLikelyInput");
+    var renderEstimateChildWorst =  getInputValue("renderEstimateChildWorstInput");
+
+    var renderBaselineMinutes =  getInputValue("renderBaselineMinutesInput");
+
+    var renderBaselineCores =  getInputValue("renderBaselineCoresInput");
+
+    var renderFarmNodesCount =  getInputValue("renderFarmNodesCountInput");
+    var renderFarmCoresPerNode =  getInputValue("renderFarmCoresPerNodeInput");
+    var renderFarmLinearScalability =  getInputValue("renderFarmLinearScalabilityInput");
+    var renderFarmBusyIdle =  getInputValue("renderFarmBusyIdleInput");
     
+    var renderEstimateUniqueRerendering =  getInputValue("renderEstimateUniqueRerenderingInput");
+    var renderEstimateEstablishingRerendering =  getInputValue("renderEstimateEstablishingRerenderingInput");
+    var renderEstimateMasterRerendering =  getInputValue("renderEstimateMasterRerenderingInput");
+    var renderEstimateChildRerendering =  getInputValue("renderEstimateChildRerenderingInput");
+
+    var renderAverageFramesPerShot =  getInputValue("renderAverageFramesPerShotInput");
+    
+    
+    //CALCULATE THIS!
+    var farmCapacity=100;
+
+    var renderUnique=calculateAssetRender("renderUnique",
+                                          uniqueShotsCount,
+                                          renderEstimateUniqueBest,
+                                          renderEstimateUniqueMostLikely,
+                                          renderEstimateUniqueWorst,
+                                          renderEstimateUniqueRerendering,
+                                          farmCapacity,
+                                          renderAverageFramesPerShot)
+    var renderEstablishing=calculateAssetRender("Establishing",
+                                          establishingShotsCount,
+                                          renderEstimateEstablishingBest,
+                                          renderEstimateEstablishingMostLikely,
+                                          renderEstimateEstablishingWorst,
+                                          renderEstimateEstablishingRerendering,
+                                          farmCapacity,
+                                          renderAverageFramesPerShot)  
+    var renderMaster=calculateAssetRender("Master",
+                                          masterShotsCount,
+                                          renderEstimateMasterBest,
+                                          renderEstimateMasterMostLikely,
+                                          renderEstimateMasterWorst,
+                                          renderEstimateMasterRerendering,
+                                          farmCapacity,
+                                          renderAverageFramesPerShot)  
+    var renderChild=calculateAssetRender("Child",
+                                          childShotsCount,
+                                          renderEstimateChildBest,
+                                          renderEstimateChildMostLikely,
+                                          renderEstimateChildWorst,
+                                          renderEstimateChildRerendering,
+                                          farmCapacity,
+                                          renderAverageFramesPerShot)  
+    criticalPathMean=renderUnique.meanCriticalPath+renderEstablishing.meanCriticalPath+renderMaster.meanCriticalPath+renderChild.meanCriticalPath
+    
+    console.log('renderAverageFramesPerShot = ' + renderAverageFramesPerShot)
+
+    console.log('Unique Count = ' + uniqueShotsCount)
+    console.log('Unique frameCount  = ' + renderUnique.count)
+    console.log('Unique minutes per frame  = ' + renderUnique.mean)
+    console.log('Unique minutes total  = ' + renderUnique.meanTotal)
+    console.log('Unique Hours total  = ' + renderUnique.meanTotal/60)
+    console.log('Unique Days total  = ' + (renderUnique.meanTotal/60)/24)
+
+    console.log('Establishing Count = ' + establishingShotsCount)
+    console.log('Establishing frameCount = ' + renderEstablishing.count)
+    console.log('Establishing minutes per frame  = ' + renderEstablishing.mean)
+    console.log('Establishing minutes total  = ' + renderEstablishing.meanTotal)
+    console.log('Establishing Hours total  = ' + renderEstablishing.meanTotal/60)
+    console.log('Establishing Days total  = ' + (renderEstablishing.meanTotal/60)/24)
+    
+    console.log('Master Count = ' + masterShotsCount)
+    console.log('Master Unique = ' + renderMaster.count)
+    console.log('Master minutes per frame  = ' + renderMaster.mean)
+    console.log('Master minutes total  = ' + renderMaster.meanTotal)
+    console.log('Master Hours total  = ' + renderMaster.meanTotal/60)
+    console.log('Master Days total  = ' + (renderMaster.meanTotal/60)/24)
+    
+    console.log('Child Count = ' + childShotsCount)
+    console.log('Child Unique = ' + renderChild.count)
+    console.log('Child minutes per frame  = ' + renderChild.mean)
+    console.log('Child minutes total  = ' + renderChild.meanTotal)
+    console.log('Child Hours total  = ' + renderChild.meanTotal/60)
+    console.log('Child Days total  = ' + (renderChild.meanTotal/60)/24)
+
+    console.log('Total Render in Minutes = ' + criticalPathMean)
+    console.log('Total Render in Hours = ' + criticalPathMean/60)
+    console.log('Total Render in Days = ' + (criticalPathMean/60)/24)
+
+
+
     google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
@@ -353,6 +457,40 @@ function updateInformationPanel (){
           
         ]);
 
+        var dataRender1 = google.visualization.arrayToDataTable([
+          ['Shots', 'Percentage'],
+          ['Unique Difficult',     uniqueShotsDifficultCount],
+          ['Unique Medium',  uniqueShotsMediumCount],
+          ['Unique Easy', uniqueShotsEasyCount],
+          ['Establishing Difficult',     establishingShotsDifficultCount],
+          ['Establishing Medium',  establishingShotsMediumCount],
+          ['Establishing Easy', establishingShotsEasyCount],
+          ['Master Difficult',    masterShotsDifficultCount],
+          ['Master Medium',    masterShotsMediumCount],
+          ['Master Easy',    masterShotsEasyCount],
+          ['Child Difficult',    childShotsDifficultCount],
+          ['Child Medium',    childShotsMediumCount],
+          ['Child Easy',    childShotsEasyCount]
+          
+        ]);
+        var dataRender2 = google.visualization.arrayToDataTable([
+          ['FrameCount', 'Percentage'],
+          ['Unique',     renderUnique.count],
+          ['Establishing',     renderEstablishing.count],
+          ['Master',    renderMaster.count],
+          ['Child',    renderChild.count],
+        ]);
+        var dataRender3 = google.visualization.arrayToDataTable([
+          ['Shots', 'Percentage'],
+          ['Unique Difficult',     ((renderUnique.meanCriticalPath/60)/24)],
+          ['Establishing Difficult',    ((renderEstablishing.meanCriticalPath/60)/24)],
+          ['Master Difficult',    ((renderMaster.meanCriticalPath/60)/24)],
+          ['Child Difficult',    ((renderChild.meanCriticalPath/60)/24)],
+          
+        ]);
+
+        
+
        var options = {'chartArea': {'width': '100%', 'height': '80%'},
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
@@ -368,6 +506,7 @@ function updateInformationPanel (){
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
                         fontSize: 10,
+                        pieSliceText: 'value',
               legend: { textStyle: { color: 'white'}},
               hAxis: {
                   textStyle:{color: '#FFF'}
@@ -379,13 +518,27 @@ function updateInformationPanel (){
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
         var chart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
+        var chart5 = new google.visualization.PieChart(document.getElementById('renderPiechart2'));
+        var chart6 = new google.visualization.PieChart(document.getElementById('renderPiechart3'));
+
 
         chart.draw(data, options);
         chart2.draw(data2, options2);
         chart3.draw(data3, options);
+        chart5.draw(dataRender2, options2);
+        chart6.draw(dataRender3, options);
+        
 
         
       var data4 = google.visualization.arrayToDataTable([
+        ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
+        ['unique', uniqueShotsDifficultCount, '#cd5332', uniqueShotsMediumCount, '#9c442d', uniqueShotsEasyCount, "Total: "+uniqueShotsCount, '#784438'],
+        ['establishing', establishingShotsDifficultCount, '#9e608d', establishingShotsMediumCount, '#75546c', establishingShotsEasyCount, "Total: "+establishingShotsCount, '#614e5f'],
+        ['Master', masterShotsDifficultCount, '#4976b4', masterShotsMediumCount, '#486181', masterShotsEasyCount, "Total: "+masterShotsCount, '#47576a'],
+        ['Child', childShotsDifficultCount, '#85a56c', childShotsMediumCount, '#50795b', childShotsEasyCount, "Total: "+childShotsCount, '#4c6453']
+      ]);
+
+      var renderData4 = google.visualization.arrayToDataTable([
         ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
         ['unique', uniqueShotsDifficultCount, '#cd5332', uniqueShotsMediumCount, '#9c442d', uniqueShotsEasyCount, "Total: "+uniqueShotsCount, '#784438'],
         ['establishing', establishingShotsDifficultCount, '#9e608d', establishingShotsMediumCount, '#75546c', establishingShotsEasyCount, "Total: "+establishingShotsCount, '#614e5f'],
