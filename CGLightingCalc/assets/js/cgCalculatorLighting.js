@@ -340,6 +340,25 @@ function updateInformationPanel (){
     
     
     //CALCULATE THIS!
+    /*TMP Calculation to do
+    Baseline Render time				240mins
+    baselineCores         				8			
+    baselineCoreRenderTime       	30
+    linear scalability		        0.7
+
+    farmNodesCores				        32
+    coreDifference	          		24
+
+    renderTime=0    baseLineRenderTime/baselineCores
+    cores=0
+    for farmCore in farmCores:
+      if cores<baselineCores:
+        renderTime=renderTime+baselineCoreRenderTime
+        cores+=1
+      else:
+          renderTime=renderTime+(baselineCoreRenderTime*0.7)
+          cores+=1
+    */
     var farmCapacity=100;
 
     var renderUnique=calculateAssetRender("renderUnique",
