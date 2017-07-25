@@ -226,15 +226,15 @@
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotsPerSequence">establishing p/Sequence</label>  
+                          <label class="col-md-4 control-label" for="shotsPerSequence">master p/Sequence</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"  id="establishingShotsPerSequenceInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"  id="masterShotsPerSequenceInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotsPerSequence">master %</label>  
+                          <label class="col-md-4 control-label" for="shotsPerSequence">parent %</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()" id="masterShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()" id="parentShotsPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
@@ -267,8 +267,8 @@
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#uniqueShotsInfo" data-toggle="tab">Unique</a></li>
-                    <li><a href="#estabShotsInfo" data-toggle="tab">Establ</a></li>
-                    <li><a href="#masterShotsInfo" data-toggle="tab">Masters</a></li>
+                    <li><a href="#masterShotsInfo" data-toggle="tab">Establ</a></li>
+                    <li><a href="#parentShotsInfo" data-toggle="tab">Parents</a></li>
                     <li><a href="#childShotsInfo" data-toggle="tab">Childs</a></li>
                   </ul>
                 </div>
@@ -300,50 +300,50 @@
                     
 
                  </div>
-                 <div class="tab-pane" id="estabShotsInfo">
+                 <div class="tab-pane" id="masterShotsInfo">
 
-                  <!-- Establishing Shot input-->
-                    <legend>Establishing Shots information</legend>
+                  <!-- Master Shot input-->
+                    <legend>Master Shots information</legend>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="establishingShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="masterShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="establishingShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="masterShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="establishingShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="55" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="masterShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="55" class="form-control input-md" required="">
                       </div>
                     </div>
                     
                     
                  </div>
-                 <div class="tab-pane" id="masterShotsInfo">
-                   <!-- Master Shot input-->
-                    <legend>Master Shots information</legend>
+                 <div class="tab-pane" id="parentShotsInfo">
+                   <!-- Parent Shot input-->
+                    <legend>Parent Shots information</legend>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="masterShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="60" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="parentShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="60" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="masterShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="parentShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="masterShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="parentShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
@@ -392,8 +392,8 @@
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#uniqueShotsEst" data-toggle="tab">Unique</a></li>
-                    <li><a href="#estabShotsEst" data-toggle="tab">Establ</a></li>
-                    <li><a href="#masterShotsEst" data-toggle="tab">Masters</a></li>
+                    <li><a href="#masterShotsEst" data-toggle="tab">Establ</a></li>
+                    <li><a href="#parentShotsEst" data-toggle="tab">Parents</a></li>
                     <li><a href="#childShotsEst" data-toggle="tab">Childs</a></li>
                   </ul>
                 </div>
@@ -446,51 +446,6 @@
                     
 
                  </div>
-                  <div class="tab-pane" id="estabShotsEst">
-                    <!-- Unique Shot input-->
-                    <legend>establishing Days estimates</legend>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
-                      <div class="col-md-3">
-                        best
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingDifficultBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                       mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                        worst
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingMediumBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingMediumWorstInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateEstablishingEasyWorstInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    
-
-                 </div>
                   <div class="tab-pane" id="masterShotsEst">
                     <!-- Unique Shot input-->
                     <legend>master Days estimates</legend>
@@ -498,39 +453,84 @@
                       <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultBestInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="15" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterMediumWorstInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyWorstInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateMasterEasyWorstInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    
+
+                 </div>
+                  <div class="tab-pane" id="parentShotsEst">
+                    <!-- Unique Shot input-->
+                    <legend>parent Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateParentDifficultBestInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateParentDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateParentDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="15" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentMediumBestInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentEasyBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateParentEasyWorstInput" name="shotsPerSequence" type="text" placeholder="6" class="form-control input-md" required="">
                       </div>
                     </div>
                   

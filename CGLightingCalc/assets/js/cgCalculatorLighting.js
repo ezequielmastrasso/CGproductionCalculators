@@ -9,7 +9,7 @@ function updateInformationPanel (){
 		var juniorArtists=getInputValue("juniorArtistsCountInput");
     var shotCount =getInputValue("shotCountInput");
   	var sequenceCount =getInputValue("sequenceCountInput");
-		var establishingShotsPerSequence=getInputValue("establishingShotsPerSequenceInput");
+		var masterShotsPerSequence=getInputValue("masterShotsPerSequenceInput");
     var artistsCapacity=getInputValue("artistsCapacityInput");
     var juniorArtistsCapacity=getInputValue("juniorArtistsCapacityInput");
     var leadArtistsCapacity=getInputValue("leadArtistsCapacityInput");
@@ -17,7 +17,7 @@ function updateInformationPanel (){
 
     //INPUT %
     var uniqueShotsPercentage=getInputValue("uniqueShotsPercentageInput");
-    var masterShotsPercentage=getInputValue("masterShotsPercentageInput");
+    var parentShotsPercentage=getInputValue("parentShotsPercentageInput");
     var childShotsPercentage=getInputValue("childShotsPercentageInput");
 
 		
@@ -35,20 +35,6 @@ function updateInformationPanel (){
     var estimateUniqueEasyMostLikely=threePointChild=getInputValue("estimateUniqueEasyMostLikelyInput");
     var estimateUniqueEasyWorst=threePointChild=getInputValue("estimateUniqueEasyWorstInput");
 
-    //estimates Establishing
-    //difficult
-    var estimateEstablishingDifficultBest=threePointChild=getInputValue("estimateEstablishingDifficultBestInput");
-    var estimateEstablishingDifficultMostLikely=threePointChild=getInputValue("estimateEstablishingDifficultMostLikelyInput");
-    var estimateEstablishingDifficultWorst=threePointChild=getInputValue("estimateEstablishingDifficultWorstInput");
-    //medium
-    var estimateEstablishingMediumBest=threePointChild=getInputValue("estimateEstablishingMediumBestInput");
-    var estimateEstablishingMediumMostLikely=threePointChild=getInputValue("estimateEstablishingMediumMostLikelyInput");
-    var estimateEstablishingMediumWorst=threePointChild=getInputValue("estimateEstablishingMediumWorstInput");
-    //easy
-    var estimateEstablishingEasyBest=threePointChild=getInputValue("estimateEstablishingEasyBestInput");
-    var estimateEstablishingEasyMostLikely=threePointChild=getInputValue("estimateEstablishingEasyMostLikelyInput");
-    var estimateEstablishingEasyWorst=threePointChild=getInputValue("estimateEstablishingEasyWorstInput");
-
     //estimates Master
     //difficult
     var estimateMasterDifficultBest=threePointChild=getInputValue("estimateMasterDifficultBestInput");
@@ -62,6 +48,20 @@ function updateInformationPanel (){
     var estimateMasterEasyBest=threePointChild=getInputValue("estimateMasterEasyBestInput");
     var estimateMasterEasyMostLikely=threePointChild=getInputValue("estimateMasterEasyMostLikelyInput");
     var estimateMasterEasyWorst=threePointChild=getInputValue("estimateMasterEasyWorstInput");
+
+    //estimates Parent
+    //difficult
+    var estimateParentDifficultBest=threePointChild=getInputValue("estimateParentDifficultBestInput");
+    var estimateParentDifficultMostLikely=threePointChild=getInputValue("estimateParentDifficultMostLikelyInput");
+    var estimateParentDifficultWorst=threePointChild=getInputValue("estimateParentDifficultWorstInput");
+    //medium
+    var estimateParentMediumBest=threePointChild=getInputValue("estimateParentMediumBestInput");
+    var estimateParentMediumMostLikely=threePointChild=getInputValue("estimateParentMediumMostLikelyInput");
+    var estimateParentMediumWorst=threePointChild=getInputValue("estimateParentMediumWorstInput");
+    //easy
+    var estimateParentEasyBest=threePointChild=getInputValue("estimateParentEasyBestInput");
+    var estimateParentEasyMostLikely=threePointChild=getInputValue("estimateParentEasyMostLikelyInput");
+    var estimateParentEasyWorst=threePointChild=getInputValue("estimateParentEasyWorstInput");
 
     //estimates Child
     //difficult
@@ -79,21 +79,21 @@ function updateInformationPanel (){
 
     //shots count
     var uniqueShotsCount= (shotCount*uniqueShotsPercentage)/100;    
-    var establishingShotsCount= establishingShotsPerSequence*sequenceCount;
-    var establishingShotsPercentage=(100*establishingShotsCount)/shotCount;
-    var masterShotsCount= (shotCount*masterShotsPercentage)/100;    
+    var masterShotsCount= masterShotsPerSequence*sequenceCount;
+    var masterShotsPercentage=(100*masterShotsCount)/shotCount;
+    var parentShotsCount= (shotCount*parentShotsPercentage)/100;    
     var childShotsCount= (shotCount*childShotsPercentage)/100;
 
     //INPUT %
     var uniqueDifficultShotsPercentage=getInputValue("uniqueShotsDifficultPercentageInput");
     var uniqueMediumShotsPercentage=getInputValue("uniqueShotsMediumPercentageInput");
     var uniqueEasyShotsPercentage=getInputValue("uniqueShotsEasyPercentageInput");
-    var establishingDifficultShotsPercentage=getInputValue("establishingShotsDifficultPercentageInput");
-    var establishingMediumShotsPercentage=getInputValue("establishingShotsMediumPercentageInput");
-    var establishingEasyShotsPercentage=getInputValue("establishingShotsEasyPercentageInput");
     var masterDifficultShotsPercentage=getInputValue("masterShotsDifficultPercentageInput");
     var masterMediumShotsPercentage=getInputValue("masterShotsMediumPercentageInput");
     var masterEasyShotsPercentage=getInputValue("masterShotsEasyPercentageInput");
+    var parentDifficultShotsPercentage=getInputValue("parentShotsDifficultPercentageInput");
+    var parentMediumShotsPercentage=getInputValue("parentShotsMediumPercentageInput");
+    var parentEasyShotsPercentage=getInputValue("parentShotsEasyPercentageInput");
     var childDifficultShotsPercentage=getInputValue("childShotsDifficultPercentageInput");
     var childMediumShotsPercentage=getInputValue("childShotsMediumPercentageInput");
     var childEasyShotsPercentage=getInputValue("childShotsEasyPercentageInput");
@@ -101,11 +101,11 @@ function updateInformationPanel (){
     var uniqueShotsDifficultCount=(getInputValue("uniqueShotsDifficultPercentageInput")*uniqueShotsCount)/100;
     var uniqueShotsMediumCount=(getInputValue("uniqueShotsMediumPercentageInput")*uniqueShotsCount)/100;
     var uniqueShotsEasyCount=(getInputValue("uniqueShotsEasyPercentageInput")*uniqueShotsCount)/100;
-    var establishingShotsDifficultCount=(getInputValue("establishingShotsDifficultPercentageInput")*establishingShotsCount)/100;
-    var establishingShotsMediumCount=(getInputValue("establishingShotsMediumPercentageInput")*establishingShotsCount)/100;    var establishingShotsEasyCount=(getInputValue("establishingShotsEasyPercentageInput")*establishingShotsCount)/100;
     var masterShotsDifficultCount=(getInputValue("masterShotsDifficultPercentageInput")*masterShotsCount)/100;
-    var masterShotsMediumCount=(getInputValue("masterShotsMediumPercentageInput")*masterShotsCount)/100;
-    var masterShotsEasyCount=(getInputValue("masterShotsEasyPercentageInput")*masterShotsCount)/100;
+    var masterShotsMediumCount=(getInputValue("masterShotsMediumPercentageInput")*masterShotsCount)/100;    var masterShotsEasyCount=(getInputValue("masterShotsEasyPercentageInput")*masterShotsCount)/100;
+    var parentShotsDifficultCount=(getInputValue("parentShotsDifficultPercentageInput")*parentShotsCount)/100;
+    var parentShotsMediumCount=(getInputValue("parentShotsMediumPercentageInput")*parentShotsCount)/100;
+    var parentShotsEasyCount=(getInputValue("parentShotsEasyPercentageInput")*parentShotsCount)/100;
     var childShotsDifficultCount=(getInputValue("childShotsDifficultPercentageInput")*childShotsCount)/100;
     var childShotsMediumCount=(getInputValue("childShotsMediumPercentageInput")*childShotsCount)/100;
     var childShotsEasyCount=(getInputValue("childShotsEasyPercentageInput")*childShotsCount)/100;
@@ -162,25 +162,6 @@ function updateInformationPanel (){
                     estimateUniqueEasyWorst,
                     teamCapacity)
 
-    shotsEstablishingDifficult=calculateAsset("EstablishingDifficult",
-                    establishingShotsDifficultCount,
-                    estimateEstablishingDifficultBest,
-                    estimateEstablishingDifficultMostLikely,
-                    estimateEstablishingDifficultWorst,
-                    teamCapacity)
-    shotsEstablishingMedium=calculateAsset("EstablishingMedium",
-                    establishingShotsMediumCount,
-                    estimateEstablishingMediumBest,
-                    estimateEstablishingMediumMostLikely,
-                    estimateEstablishingMediumWorst,
-                    teamCapacity)
-    shotsEstablishingEasy=calculateAsset("EstablishingEasy",
-                    establishingShotsEasyCount,
-                    estimateEstablishingEasyBest,
-                    estimateEstablishingEasyMostLikely,
-                    estimateEstablishingEasyWorst,
-                    teamCapacity)
-
     shotsMasterDifficult=calculateAsset("MasterDifficult",
                     masterShotsDifficultCount,
                     estimateMasterDifficultBest,
@@ -198,6 +179,25 @@ function updateInformationPanel (){
                     estimateMasterEasyBest,
                     estimateMasterEasyMostLikely,
                     estimateMasterEasyWorst,
+                    teamCapacity)
+
+    shotsParentDifficult=calculateAsset("ParentDifficult",
+                    parentShotsDifficultCount,
+                    estimateParentDifficultBest,
+                    estimateParentDifficultMostLikely,
+                    estimateParentDifficultWorst,
+                    teamCapacity)
+    shotsParentMedium=calculateAsset("ParentMedium",
+                    parentShotsMediumCount,
+                    estimateParentMediumBest,
+                    estimateParentMediumMostLikely,
+                    estimateParentMediumWorst,
+                    teamCapacity)
+    shotsParentEasy=calculateAsset("ParentEasy",
+                    parentShotsEasyCount,
+                    estimateParentEasyBest,
+                    estimateParentEasyMostLikely,
+                    estimateParentEasyWorst,
                     teamCapacity)
 
     shotsChildDifficult=calculateAsset("ChildDifficult",
@@ -227,15 +227,15 @@ function updateInformationPanel (){
 
     //criticalPathMeans
     var criticalPathUniqueShots= shotsUniqueDifficult.meanCriticalPath+shotsUniqueMedium.meanCriticalPath+shotsUniqueEasy.meanCriticalPath
-    var criticalPathEstablishingShots= shotsEstablishingDifficult.meanCriticalPath+shotsEstablishingMedium.meanCriticalPath+shotsEstablishingEasy.meanCriticalPath
     var criticalPathMasterShots= shotsMasterDifficult.meanCriticalPath+shotsMasterMedium.meanCriticalPath+shotsMasterEasy.meanCriticalPath
+    var criticalPathParentShots= shotsParentDifficult.meanCriticalPath+shotsParentMedium.meanCriticalPath+shotsParentEasy.meanCriticalPath
     var criticalPathChildShots= shotsChildDifficult.meanCriticalPath+shotsChildMedium.meanCriticalPath+shotsChildEasy.meanCriticalPath
 
     
-    criticalPathMean=criticalPathUniqueShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
+    criticalPathMean=criticalPathUniqueShots+criticalPathMasterShots+criticalPathParentShots+criticalPathChildShots;
     console.log("criticalPathUnique---: ", criticalPathUniqueShots)
-    console.log("criticalPathEstablishing: ", criticalPathEstablishingShots)
     console.log("criticalPathMaster: ", criticalPathMasterShots)
+    console.log("criticalPathParent: ", criticalPathParentShots)
     console.log("criticalPathChild: ", criticalPathChildShots)
     console.log("criticalPathMean: ", criticalPathMean)
     writeToPage("criticalPathMean",criticalPathMean.toFixed(2));
@@ -244,12 +244,12 @@ function updateInformationPanel (){
     var totalShotMean=shotsUniqueDifficult.meanTotal+
                       shotsUniqueMedium.meanTotal+
                       shotsUniqueEasy.meanTotal+
-                      shotsEstablishingDifficult.meanTotal+
-                      shotsEstablishingMedium.meanTotal+
-                      shotsEstablishingEasy.meanTotal+
                       shotsMasterDifficult.meanTotal+
                       shotsMasterMedium.meanTotal+
                       shotsMasterEasy.meanTotal+
+                      shotsParentDifficult.meanTotal+
+                      shotsParentMedium.meanTotal+
+                      shotsParentEasy.meanTotal+
                       shotsChildDifficult.meanTotal+
                       shotsChildMedium.meanTotal+
                       shotsChildEasy.meanTotal;
@@ -270,12 +270,12 @@ function updateInformationPanel (){
     totalCriticalPathVariance=shotsUniqueDifficult.criticalPathVarianceTotal+
                       shotsUniqueMedium.criticalPathVarianceTotal+
                       shotsUniqueEasy.criticalPathVarianceTotal+
-                      shotsEstablishingDifficult.criticalPathVarianceTotal+
-                      shotsEstablishingMedium.criticalPathVarianceTotal+
-                      shotsEstablishingEasy.criticalPathVarianceTotal+
                       shotsMasterDifficult.criticalPathVarianceTotal+
                       shotsMasterMedium.criticalPathVarianceTotal+
                       shotsMasterEasy.criticalPathVarianceTotal+
+                      shotsParentDifficult.criticalPathVarianceTotal+
+                      shotsParentMedium.criticalPathVarianceTotal+
+                      shotsParentEasy.criticalPathVarianceTotal+
                       shotsChildDifficult.criticalPathVarianceTotal+
                       shotsChildMedium.criticalPathVarianceTotal+
                       shotsChildEasy.criticalPathVarianceTotal;
@@ -318,12 +318,12 @@ function updateInformationPanel (){
           ['Unique Difficult',     uniqueShotsDifficultCount],
           ['Unique Medium',  uniqueShotsMediumCount],
           ['Unique Easy', uniqueShotsEasyCount],
-          ['Establishing Difficult',     establishingShotsDifficultCount],
-          ['Establishing Medium',  establishingShotsMediumCount],
-          ['Establishing Easy', establishingShotsEasyCount],
-          ['Master Difficult',    masterShotsDifficultCount],
-          ['Master Medium',    masterShotsMediumCount],
-          ['Master Easy',    masterShotsEasyCount],
+          ['Master Difficult',     masterShotsDifficultCount],
+          ['Master Medium',  masterShotsMediumCount],
+          ['Master Easy', masterShotsEasyCount],
+          ['Parent Difficult',    parentShotsDifficultCount],
+          ['Parent Medium',    parentShotsMediumCount],
+          ['Parent Easy',    parentShotsEasyCount],
           ['Child Difficult',    childShotsDifficultCount],
           ['Child Medium',    childShotsMediumCount],
           ['Child Easy',    childShotsEasyCount]
@@ -332,8 +332,8 @@ function updateInformationPanel (){
         var data2 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
           ['Unique',     uniqueShotsCount],
-          ['Establishing',     establishingShotsCount],
-          ['Master',    masterShotsCount],
+          ['Master',     masterShotsCount],
+          ['Parent',    parentShotsCount],
           ['Child',    childShotsCount],
         ]);
         var data3 = google.visualization.arrayToDataTable([
@@ -341,12 +341,12 @@ function updateInformationPanel (){
           ['Unique Difficult',     shotsUniqueDifficult.meanTotal],
           ['Unique Medium',  shotsUniqueMedium.meanTotal],
           ['Unique Easy', shotsUniqueEasy.meanTotal],
-          ['Establishing Difficult',    shotsEstablishingDifficult.meanTotal],
-          ['Establishing Medium',  shotsEstablishingMedium.meanTotal],
-          ['Establishing Easy', shotsEstablishingEasy.meanTotal],
           ['Master Difficult',    shotsMasterDifficult.meanTotal],
-          ['Master Medium',    shotsMasterMedium.meanTotal],
-          ['Master Easy',    shotsMasterEasy.meanTotal],
+          ['Master Medium',  shotsMasterMedium.meanTotal],
+          ['Master Easy', shotsMasterEasy.meanTotal],
+          ['Parent Difficult',    shotsParentDifficult.meanTotal],
+          ['Parent Medium',    shotsParentMedium.meanTotal],
+          ['Parent Easy',    shotsParentEasy.meanTotal],
           ['Child Difficult',    shotsChildDifficult.meanTotal],
           ['Child Medium',    shotsChildMedium.meanTotal],
           ['Child Easy',    shotsChildEasy.meanTotal],
@@ -388,8 +388,8 @@ function updateInformationPanel (){
       var data4 = google.visualization.arrayToDataTable([
         ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
         ['unique', uniqueShotsDifficultCount, '#cd5332', uniqueShotsMediumCount, '#9c442d', uniqueShotsEasyCount, "Total: "+uniqueShotsCount, '#784438'],
-        ['establishing', establishingShotsDifficultCount, '#9e608d', establishingShotsMediumCount, '#75546c', establishingShotsEasyCount, "Total: "+establishingShotsCount, '#614e5f'],
-        ['Master', masterShotsDifficultCount, '#4976b4', masterShotsMediumCount, '#486181', masterShotsEasyCount, "Total: "+masterShotsCount, '#47576a'],
+        ['master', masterShotsDifficultCount, '#9e608d', masterShotsMediumCount, '#75546c', masterShotsEasyCount, "Total: "+masterShotsCount, '#614e5f'],
+        ['Parent', parentShotsDifficultCount, '#4976b4', parentShotsMediumCount, '#486181', parentShotsEasyCount, "Total: "+parentShotsCount, '#47576a'],
         ['Child', childShotsDifficultCount, '#85a56c', childShotsMediumCount, '#50795b', childShotsEasyCount, "Total: "+childShotsCount, '#4c6453']
       ]);
 
