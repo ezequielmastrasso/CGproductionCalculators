@@ -26,7 +26,7 @@
         <a class="navbar-brand" href="../">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-        <a class="navbar-brand" href="./">Asset Production Calculator - WIP NOT FINISHED</a>
+        <a class="navbar-brand" href="./">asset Production Calculator - WIP NOT FINISHED</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
@@ -79,8 +79,7 @@
               <div class="col-xs-3">
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
-                    <li class="active"><a href="#showInfo" data-toggle="tab">Show info</a></li>
-                    <li ><a href="#team" data-toggle="tab">Team</a></li>
+                    <li class="active"><a href="#team" data-toggle="tab">Team</a></li>
                     <li><a href="#teamCapacity" data-toggle="tab">capacity</a></li>
                     <li><a href="#workEnv" data-toggle="tab">Work Env</a></li>
                   </ul>
@@ -88,7 +87,7 @@
               </div>
               <div class="col-xs-9">
                 <div class="tab-content">
-                 <div class="tab-pane" id="team">
+                 <div class="tab-pane active" id="team">
 
          
                     <!-- Team input-->
@@ -96,19 +95,19 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Leads Artists</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="8" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="leadsArtistsCountInput" name="shotCounttt" type="text" placeholder="1" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Artist</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="22" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="artistCountInput" name="shotCounttt" type="text" placeholder="4" class="form-control input-md" required="">    
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="shotCounttt">Junior Artists</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="10" class="form-control input-md" required="">    
+                      <input   onchange="updateInformationPanel()" id="juniorArtistsCountInput" name="shotCounttt" type="text" placeholder="2" class="form-control input-md" required="">    
                       </div>
                     </div>
 
@@ -120,7 +119,7 @@
                       <div class="form-group">
                         <label class="col-md-4 control-label" for="shotCounttt">Leads working Capacity</label>  
                         <div class="col-md-2">
-                        <input   onchange="updateInformationPanel()" id="leadArtistsCapacityInput" name="shotCounttt" type="text" placeholder="0.6" class="form-control input-md" required="">    
+                        <input   onchange="updateInformationPanel()" id="leadArtistsCapacityInput" name="shotCounttt" type="text" placeholder="0.75" class="form-control input-md" required="">    
                         </div>
                       </div>
                       <div class="form-group">
@@ -138,7 +137,7 @@
                       <div class="form-group">
                         <label class="col-md-4 control-label" for="shotCounttt">busy/idle ratio</label>  
                         <div class="col-md-2">
-                        <input   onchange="updateInformationPanel()" id="busyIdleRatio" name="shotCounttt" type="text" placeholder="1" class="form-control input-md" required="">    
+                        <input   onchange="updateInformationPanel()" id="busyIdleRatio" name="shotCounttt" type="text" placeholder=".9" class="form-control input-md" required="">    
                         </div>
                       </div>
 
@@ -155,8 +154,8 @@
                             <select onchange="updateInformationPanel()" id="dailyWorkingHoursInput" name="dailyWorkingHours" class="form-control">
                               <option value="5">5</option>
                               <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8" selected="selected">8</option>
+                              <option value="7" selected="selected">7</option>
+                              <option value="8" >8</option>
                               <option value="9">9</option>
                               <option value="10">10</option>
                             </select>
@@ -166,8 +165,8 @@
                           <label class="col-md-4 control-label" for="dailyMeetingHours">Daily Review hours</label>
                           <div class="col-md-2">
                             <select onchange="updateInformationPanel()" id="dailyReviewHoursInput" name="dailyWorkingHours" class="form-control">
-                              <option value="0"selected="selected">0</option>
-                              <option value="0.5">0.5</option>
+                              <option value="0">0</option>
+                              <option value="0.5" selected="selected">0.5</option>
                               <option value="1" >1</option>
                               <option value="1.5">1.5</option>
                               <option value="2">2</option>
@@ -197,24 +196,7 @@
                         </div>
 
                  </div>
-                 <div class="tab-pane active" id="showInfo">            
-                        <!-- Shot input-->
-                        <legend>Show information Info</legend>
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotCounttt">Shot Count</label>  
-                          <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="shotCountInput" name="shotCounttt" type="text" placeholder="2000" class="form-control input-md" required="">
-                            
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotsPerSequence">Sequence count</label>  
-                          <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="sequenceCountInput" name="shotsPerSequence" type="text" placeholder="110" class="form-control input-md" required="">
-                          </div>
-                        </div>
-                        
-                 </div>
+
 
                  
 
@@ -230,1095 +212,1095 @@
 
         <div class="chart-wrapper">
           <div class="chart-title">
-            Assets % Inputs
+            assets % Inputs
           </div>
           <div class="chart-stage">
             <div class="row">
               <div class="col-xs-3">
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
-                    <li class="active"><a href="#assetAShotsInfo" data-toggle="tab">AssetA</a></li>
-                    <li><a href="#assetBShotsInfo" data-toggle="tab">AssetB</a></li>
-                    <li><a href="#assetCShotsInfo" data-toggle="tab">AssetC</a></li>
-                    <li><a href="#assetDShotsInfo" data-toggle="tab">AssetD</a></li>
-                    <li><a href="#assetEShotsInfo" data-toggle="tab">AssetE</a></li>
-                    <li><a href="#assetFShotsInfo" data-toggle="tab">AssetF</a></li>
-                    <li><a href="#assetGShotsInfo" data-toggle="tab">AssetG</a></li>
-                    <li><a href="#assetHShotsInfo" data-toggle="tab">AssetH</a></li>
-                    <li><a href="#assetIShotsInfo" data-toggle="tab">AssetI</a></li>
-                    <li><a href="#assetJShotsInfo" data-toggle="tab">AssetJ</a></li>
-                    <li><a href="#assetKShotsInfo" data-toggle="tab">AssetK</a></li>
-                    <li><a href="#assetLShotsInfo" data-toggle="tab">AssetL</a></li>
-                    <li><a href="#assetMShotsInfo" data-toggle="tab">AssetM</a></li>
-                    <li><a href="#assetNShotsInfo" data-toggle="tab">AssetN</a></li>
-                    <li><a href="#assetOShotsInfo" data-toggle="tab">AssetO</a></li>
+                    <li class="active"><a href="#assetAInfo" data-toggle="tab">Main Characters</a></li>
+                    <li><a href="#assetBInfo" data-toggle="tab">Main Chars Variants</a></li>
+                    <li><a href="#assetCInfo" data-toggle="tab">Secondary Characters</a></li>
+                    <li><a href="#assetDInfo" data-toggle="tab">Secondary Chars variants</a></li>
+                    <li><a href="#assetEInfo" data-toggle="tab">Incidental Characters</a></li>
+                    <li><a href="#assetFInfo" data-toggle="tab">Incidental Chars variants</a></li>
+                    <li><a href="#assetGInfo" data-toggle="tab">Crowd Characters</a></li>
+                    <li><a href="#assetHInfo" data-toggle="tab">Crowd Chars variants</a></li>
+                    <li><a href="#assetIInfo" data-toggle="tab">Sets</a></li>
+                    <li><a href="#assetJInfo" data-toggle="tab">Set Extra Elements</a></li>
+                    <li><a href="#assetKInfo" data-toggle="tab">set foliage (p/item)</a></li>
+                    <li><a href="#assetLInfo" data-toggle="tab">set foliage variants</a></li>
+                    <li><a href="#assetMInfo" data-toggle="tab">Props</a></li>
+                    <li><a href="#assetNInfo" data-toggle="tab">Props Variants</a></li>
+                    <li><a href="#assetOInfo" data-toggle="tab">Vehicles</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-xs-9">
                 <div class="tab-content">
                  
-                 <div class="tab-pane active" id="assetAShotsInfo">
-                    <!-- AssetA Shot input-->
-                    <legend>AssetA Count</legend>
+                 <div class="tab-pane active" id="assetAInfo">
+                    <!-- assetA Shot input-->
+                    <legend>assetA Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetAShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetACountInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetA Percentage Information</legend>
+                    <legend>assetA Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetAShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetAShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetADifficultPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetAShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="15" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetAMediumPercentageInput" name="PerSequence" type="text" placeholder="40" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetA Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetAEasyPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetA Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetADifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetAEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                     
 
                  </div>
-                 <div class="tab-pane" id="assetBShotsInfo">
+                 <div class="tab-pane" id="assetBInfo">
 
-                  <!-- AssetB Shot input-->
-                  <legend>AssetB Count</legend>
+                  <!-- assetB Shot input-->
+                  <legend>assetB Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetBShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetBCountInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetB Percentage Information</legend>
+                    <legend>assetB Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetBShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetBShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="35" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetBDifficultPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetBShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="55" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetBMediumPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetB Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetBEasyPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetB Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetBEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                     
                     
                     
                  </div>
-                 <div class="tab-pane" id="assetCShotsInfo">
-                   <!-- AssetC Shot input-->
-                   <legend>AssetC Count</legend>
+                 <div class="tab-pane" id="assetCInfo">
+                   <!-- assetC Shot input-->
+                   <legend>assetC Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetCShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetCCountInput" name="PerSequence" type="text" placeholder="12" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetC Percentage Information</legend>
+                    <legend>assetC Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetCShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="60" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetCShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetCDifficultPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetCShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetCMediumPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetC Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetCEasyPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetC Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetCEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
-                 <div class="tab-pane" id="assetDShotsInfo">
+                 <div class="tab-pane" id="assetDInfo">
 
-                  <!-- AssetD Shot input-->
-                  <legend>AssetD Count</legend>
+                  <!-- assetD Shot input-->
+                  <legend>assetD Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetDShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetDCountInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetD Percentage Information</legend>
+                    <legend>assetD Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetDShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetDShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetDDifficultPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="assetDShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetDMediumPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetD Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetDEasyPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetD Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                 </div>
-
-                 <div class="tab-pane" id="assetEShotsInfo">
-
-                  <!-- AssetE Shot input-->
-                  <legend>AssetE Count</legend>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetEShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <legend>AssetE Percentage Information</legend>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetEShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetEShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetEShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <legend>AssetE Days estimates</legend>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
-                      <div class="col-md-3">
-                        best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                       mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                        worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
-                      </div>
-                    <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
-                    </div>
-                      <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetDEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetFShotsInfo">
+                 <div class="tab-pane" id="assetEInfo">
 
-                  <!-- AssetF Shot input-->
-                  <legend>AssetF Count</legend>
+                  <!-- assetE Shot input-->
+                  <legend>assetE Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetFShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetECountInput" name="PerSequence" type="text" placeholder="25" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetF Percentage Information</legend>
+                    <legend>assetE Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetFShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetFShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEDifficultPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetFShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetEMediumPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetF Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetEEasyPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetE Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetEEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetGShotsInfo">
+                 <div class="tab-pane" id="assetFInfo">
 
-                  <!-- AssetG Shot input-->
-                    <legend>AssetG Count</legend>
+                  <!-- assetF Shot input-->
+                  <legend>assetF Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetGShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetFCountInput" name="PerSequence" type="text" placeholder="25" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetG Percentage Information</legend>
+                    <legend>assetF Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetGShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetGShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetFDifficultPercentageInput" name="PerSequence" type="text" placeholder="80" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetGShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetFMediumPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetG Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetFEasyPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetF Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetFEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                <div class="tab-pane" id="assetHShotsInfo">
+                 <div class="tab-pane" id="assetGInfo">
 
-                  <!-- AssetH Shot input-->
-                  <legend>AssetH Count</legend>
+                  <!-- assetG Shot input-->
+                    <legend>assetG Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetHShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetGCountInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetH Percentage Information</legend>
+                    <legend>assetG Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetHShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetHShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetGDifficultPercentageInput" name="PerSequence" type="text" placeholder="80" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetHShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetGMediumPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetH Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetGEasyPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetG Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetGEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetIShotsInfo">
+                <div class="tab-pane" id="assetHInfo">
 
-                  <!-- AssetI Shot input-->
-                  <legend>AssetI Count</legend>
+                  <!-- assetH Shot input-->
+                  <legend>assetH Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetIShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetHCountInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetI Percentage Information</legend>
+                    <legend>assetH Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetIShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetIShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetHDifficultPercentageInput" name="PerSequence" type="text" placeholder="80" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetIShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetHMediumPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetI Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetHEasyPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetH Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetHEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetJShotsInfo">
+                 <div class="tab-pane" id="assetIInfo">
 
-                  <!-- AssetJ Shot input-->
-                    <legend>AssetJ Count</legend>
+                  <!-- assetI Shot input-->
+                  <legend>assetI Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetJShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetICountInput" name="PerSequence" type="text" placeholder="40" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetJ Percentage Information</legend>
+                    <legend>assetI Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetJShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetJShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetIDifficultPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetJShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetIMediumPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetJ Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetIEasyPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetI Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetIEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetKShotsInfo">
+                 <div class="tab-pane" id="assetJInfo">
 
-                  <!-- AssetK Shot input-->
-                  <legend>AssetK Count</legend>
+                  <!-- assetJ Shot input-->
+                    <legend>assetJ Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetKShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetJCountInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetK Percentage Information</legend>
+                    <legend>assetJ Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetKShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetKShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetJDifficultPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetKShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetJMediumPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetK Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetJEasyPercentageInput" name="PerSequence" type="text" placeholder="60" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetJ Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetJEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetLShotsInfo">
+                 <div class="tab-pane" id="assetKInfo">
 
-                  <!-- AssetL Shot input-->
-                    <legend>AssetL Count</legend>
+                  <!-- assetK Shot input-->
+                  <legend>assetK Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetLShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetKCountInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetL Percentage Information</legend>
+                    <legend>assetK Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetLShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetLShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetKDifficultPercentageInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetLShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetKMediumPercentageInput" name="PerSequence" type="text" placeholder="25" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetL Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetKEasyPercentageInput" name="PerSequence" type="text" placeholder="65" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetK Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetKEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetMShotsInfo">
+                 <div class="tab-pane" id="assetLInfo">
 
-                  <!-- AssetM Shot input-->
-                    <legend>AssetM Count</legend>
+                  <!-- assetL Shot input-->
+                    <legend>assetL Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetMShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetLCountInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetM Percentage Information</legend>
+                    <legend>assetL Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetMShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetMShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetLDifficultPercentageInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetMShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetLMediumPercentageInput" name="PerSequence" type="text" placeholder="25" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetM Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetLEasyPercentageInput" name="PerSequence" type="text" placeholder="70" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetL Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetLEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetNShotsInfo">
+                 <div class="tab-pane" id="assetMInfo">
 
-                  <!-- AssetN Shot input-->
-                  <legend>AssetN Count</legend>
+                  <!-- assetM Shot input-->
+                    <legend>assetM Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetNShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetMCountInput" name="PerSequence" type="text" placeholder="70" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetN Percentage Information</legend>
+                    <legend>assetM Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetNShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetNShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetMDifficultPercentageInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetNShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetMMediumPercentageInput" name="PerSequence" type="text" placeholder="80" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetN Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetMEasyPercentageInput" name="PerSequence" type="text" placeholder="15" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetM Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetMEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
 
-                 <div class="tab-pane" id="assetOShotsInfo">
+                 <div class="tab-pane" id="assetNInfo">
 
-                  <!-- AssetO Shot input-->
-                  <legend>AssetO Count</legend>
+                  <!-- assetN Shot input-->
+                  <legend>assetN Count</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">Count</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetOShotsCountInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetNCountInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetO Percentage Information</legend>
+                    <legend>assetN Percentage Information</legend>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetOShotsDifficultPercentageInput" name="shotsPerSequence" type="text" placeholder="30" class="form-control input-md" required="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Medium</label>  
-                      <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetOShotsMediumPercentageInput" name="shotsPerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetNDifficultPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="shotsPerSequence">% Easy</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
                       <div class="col-md-2">
-                      <input   onchange="updateInformationPanel()" id="AssetOShotsEasyPercentageInput" name="shotsPerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="assetNMediumPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
                       </div>
                     </div>
-                    <legend>AssetO Days estimates</legend>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence"><br>Difficult</label>  
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetNEasyPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetN Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
                       <div class="col-md-3">
                         best
-                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultBestInput" name="shotsPerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
                        mostLikely
-                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultMostLikelyInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
                         worst
-                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultWorstInput" name="shotsPerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Medium</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumBestInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumMostLikelyInput" name="shotsPerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumWorstInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-1 control-label" for="shotsPerSequence">Easy</label>  
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyBestInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
                       </div>
                     <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyMostLikelyInput" name="shotsPerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
                     </div>
                       <div class="col-md-3">
-                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyWorstInput" name="shotsPerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetNEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+
+                 <div class="tab-pane" id="assetOInfo">
+
+                  <!-- assetO Shot input-->
+                  <legend>assetO Count</legend>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetOCountInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetO Percentage Information</legend>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetODifficultPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetOMediumPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetOEasyPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetO Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateAssetODifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetOEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
@@ -1383,9 +1365,9 @@
          <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="chart-wrapper "style="min-height:130px">
           <div class="chart-title">
-            Shots difficulty count overlay
+             difficulty count overlay
           </div>
-               <div id="chart_div" style="width: 100%; height: 120px;"></div>
+               <div id="chart_div" style="width: 100%; height: 350px;"></div>
 
          
 
@@ -1393,17 +1375,17 @@
       <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Shots subtypes %/count
+             subtypes %/count
           </div>
-             <div id="piechart" style="width: 340px; height: 250px;"></div>
+             <div id="piechart" style="width: 400px; height: 350px;"></div>
         </div>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Shots  Types %/count
+              Types %/count
           </div>
-             <div id="piechart2" style="width: 340px; height: 250px;"></div>
+             <div id="piechart2" style="width: 400px; height: 350px;"></div>
 
          
 
@@ -1412,9 +1394,9 @@
       <div class="col-sm-12 col-md-12 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Shots subtypes man days %/count
+             subtypes man days %/count
           </div>
-             <div id="piechart3" style="width: 340px; height: 250px;"></div>
+             <div id="piechart3" style="width: 400px; height: 350px;"></div>
 
          
 

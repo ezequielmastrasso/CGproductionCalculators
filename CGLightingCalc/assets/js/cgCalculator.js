@@ -160,4 +160,25 @@ function daysPercentage (yearWorkingDays, holidayDaysEntitled){
         // key:anotherKey value:anotherValue
       }
       return dict
+  }
+
+
+  function calculateAsset2 (identifier,totalTypeCount, subTypePercent, best, mostLikely, worst, teamCapacity){
+      var dict = {};
+      dict.count=(totalTypeCount*subTypePercent)/100
+      dict.id=identifier;
+      dict.mean = threePointWeighted(best, mostLikely, worst);
+      dict.variance = variance(best, worst);
+      dict.meanTotal = (dict.mean*dict.count);
+      dict.meanCriticalPath = (dict.mean*dict.count)/teamCapacity;
+      dict.criticalPathVarianceTotal =dict.variance*dict.count;
+      console.log("-------------Calculating Asset-------------")
+      console.log(identifier + "  - count = " +dict.count);
+      console.log("estimates = " + best + " / "+ mostLikely + " / "+ worst + " / ");
+      for (var item in dict) {
+        console.log(item + " = " + dict[item]);
+        // Output
+        // key:anotherKey value:anotherValue
+      }
+      return dict
   } 
