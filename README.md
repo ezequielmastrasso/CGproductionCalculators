@@ -11,8 +11,9 @@ Often enough this is true in lighting when the lighters are working on several s
 You can however use the busy/idle parameter to give tasks handover/waiting time, and avoid overworking the resources (see Busy Idle time below).  
 
 ##### Temp testing url address:
-http://ezequielm.com/lightingCalc/singleAssetCalc.html  
 http://ezequielm.com/lightingCalc/lightingCalc.html  
+http://ezequielm.com/lightingCalc/assetCalc.html  
+http://ezequielm.com/lightingCalc/singleAssetCalc.html  
 
 ##### Description:  
 Instructions:  
