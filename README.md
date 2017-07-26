@@ -1,6 +1,6 @@
 # CGproductionCalculators
 Pert based production calculators for CG productions with probabilities.  
-Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.
+Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.  
 Use Chrome browser until I figure out why the date calculator function is not working in firefox!
 
 ##### Instructions:  
