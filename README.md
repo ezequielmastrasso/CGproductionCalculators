@@ -15,9 +15,9 @@ http://ezequielm.com/lightingCalc/lightingCalc.html
 http://ezequielm.com/lightingCalc/assetCalc.html  
 http://ezequielm.com/lightingCalc/singleAssetCalc.html   
 
-![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotAssets.jpg)
-![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotLighting.jpg)
-![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotSingleAsset.jpg)
+![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenshots/screenShotAssets.jpg)
+![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenshots/screenShotLighting.jpg)
+![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenshots/screenShotSingleAsset.jpg)
 
 ##### Assumptions and caveats:  
 Accounts for holidays, sick days, team leads/artists/juniors % capacity, busy idle time, and amount hours of daily reviews, on a per day basis.  
