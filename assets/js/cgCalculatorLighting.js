@@ -372,7 +372,7 @@ function updateInformationPanel (){
                                           renderEstimateChildRerendering,
                                           farmCapacity,
                                           renderAverageFramesPerShot)  
-    criticalPathMean=renderUnique.meanCriticalPath+renderEstablishing.meanCriticalPath+renderMaster.meanCriticalPath+renderChild.meanCriticalPath
+    renderCriticalPathMean=renderUnique.meanCriticalPath+renderEstablishing.meanCriticalPath+renderMaster.meanCriticalPath+renderChild.meanCriticalPath
     
     console.log('renderAverageFramesPerShot = ' + renderAverageFramesPerShot)
 
@@ -404,12 +404,12 @@ function updateInformationPanel (){
     console.log('Child Hours total  = ' + renderChild.meanTotal/60)
     console.log('Child Days total  = ' + (renderChild.meanTotal/60)/24)
 
-    console.log('Total Render in Minutes = ' + criticalPathMean)
-    writeToPage("totalMinutesRenderInfo",criticalPathMean.toFixed(0));
-    console.log('Total Render in Hours = ' + criticalPathMean/60)
-    console.log('Total Render in Days = ' + (criticalPathMean/60)/24)
-    writeToPage("totalHoursRenderInfo",((criticalPathMean/60)).toFixed(0));
-    writeToPage("totalDaysRenderInfo",((criticalPathMean/60)/24).toFixed(0));
+    console.log('Total Render in Minutes = ' + renderCriticalPathMean)
+    writeToPage("totalMinutesRenderInfo",renderCriticalPathMean.toFixed(0));
+    console.log('Total Render in Hours = ' + renderCriticalPathMean/60)
+    console.log('Total Render in Days = ' + (renderCriticalPathMean/60)/24)
+    writeToPage("totalHoursRenderInfo",((renderCriticalPathMean/60)).toFixed(0));
+    writeToPage("totalDaysRenderInfo",((renderCriticalPathMean/60)/24).toFixed(0));
     
     writeToPage("uniqueTotalMinutesRenderInfo",renderUnique.meanTotal.toFixed(0));
     writeToPage("establishingTotalMinutesRenderInfo",renderEstablishing.meanTotal.toFixed(0));
@@ -417,6 +417,24 @@ function updateInformationPanel (){
     writeToPage("childTotalMinutesRenderInfo",renderChild.meanTotal.toFixed(0));
     
 
+    var renderTotalCriticalPathVariance=renderUnique.criticalPathVarianceTotal+
+                                    renderEstablishing.criticalPathVarianceTotal+
+                                    renderMaster.criticalPathVarianceTotal+
+                                    renderChild.criticalPathVarianceTotal;
+    var renderCriticalPathStandardDeviation=Math.sqrt(renderTotalCriticalPathVariance,2);
+    
+
+
+
+    renderPercent95=1.645*renderCriticalPathStandardDeviation+renderCriticalPathMean
+    renderPercent80=0.85*renderCriticalPathStandardDeviation+renderCriticalPathMean
+    renderPercent50=0.5*renderCriticalPathStandardDeviation+renderCriticalPathMean
+    console.log(percent95)
+    console.log(percent80)
+    writeToPage("the50Render",((renderPercent50/60)/24).toFixed(1)+ " days");
+    writeToPage("the80Render",((renderPercent80/60)/24).toFixed(1)+ " days");
+    writeToPage("the95Render",((renderPercent95/60)/24).toFixed(1)+ " days");
+    
 
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
