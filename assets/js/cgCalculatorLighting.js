@@ -323,7 +323,6 @@ function updateInformationPanel (){
     var renderEstimateChildWorst =  getInputValue("renderEstimateChildWorstInput");
 
     var renderFarmNodesCount =  getInputValue("renderFarmNodesCountInput");
-    var renderFarmCoresPerNode =  getInputValue("renderFarmCoresPerNodeInput");
     var renderFarmDownTime =  getInputValue("renderFarmDownTimeInput");
     var renderFarmBusyIdle =  getInputValue("renderFarmBusyIdleInput");
     
