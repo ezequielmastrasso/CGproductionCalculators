@@ -57,13 +57,13 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 
 ##### Shots Lighting:  
 For shots Lighting the critical path will be giving by the longest Artist task list.  
-This could be approximatted* by calculating the amount of hero, establishing,  
+This could be approximatted* by calculating the amount of unique, establishing,  
 master, and child shots that each artist will have in their queue.  
 
         Critical path mean=
-        (heroDifficultMean(heroDifficultCount/teamCapacity)+
-        (heroMediumMean(heroMediumCount/teamCapacity)+
-        (heroEasyMean(heroEasyCount/teamCapacity)+
+        (uniqueDifficultMean(uniqueDifficultCount/teamCapacity)+
+        (uniqueMediumMean(uniqueMediumCount/teamCapacity)+
+        (uniqueEasyMean(uniqueEasyCount/teamCapacity)+
         (establishingDifficultMean(establishingDifficultCount/teamCapacity)+
         (establishingMediumMean(establishingMediumCount/teamCapacity)+
         (establishingEasyMean(establishingEasyCount/teamCapacity)+
@@ -85,4 +85,4 @@ Approximated by:
 ### Notice:
 Obviusly, having all the artist with the same queue (aka: as many identical critical paths as artists) will decrease the % of probabilites of finishing, but this fact is omitted ATM
 However The info box will display a rough estimation of possible overlapping % tasks calculated as:
-(85% childShots)+(85%masterShots-EstablishingShotsCount)+(90%Establishing+90%Hero)
+(85% childShots)+(85%masterShots-EstablishingShotsCount)+(90%Establishing+90%unique)
