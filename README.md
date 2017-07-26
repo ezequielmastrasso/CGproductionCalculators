@@ -3,8 +3,7 @@ Pert based production calculators for CG productions with probabilities.
 Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.
 Use Chrome browser until I figure out why the date calculator function is not working in firefox!
 
-##### Description:  
-####### Instructions:  
+##### Instructions:  
 Browse through all the inputs boxes tabs (on the left) before entering your inputs. Get familiar with all the inputs required, lingo and definitions.  
 Enter all your data about your team, working environment, holidays, asset types %, and best/mostLikely/worst estimates.  
 This will give you the 80% chances amount of working days required, and the 95% percent chances of success working days.  
