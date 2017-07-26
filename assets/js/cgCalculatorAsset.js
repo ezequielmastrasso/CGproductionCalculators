@@ -999,21 +999,21 @@ function updateInformationPanel (){
         
       var data4 = google.visualization.arrayToDataTable([
         ['Genre', 'difficult',{ role: 'style' }, 'Medium',{ role: 'style' }, 'Easy',{ role: 'annotation' } ,{ role: 'style' }],
-        ['Main Chars', assetADifficult.count, '#cd5332', assetAMedium.count, '#9c442d', assetAEasy.count, "Total: "+assetACount, '#784438'],
-        ['Main Chars var.', assetBDifficult.count, '#9e608d', assetBMedium.count, '#75546c', assetBEasy.count, "Total: "+assetBCount, '#614e5f'],
-        ['Sec. Chars', assetCDifficult.count, '#4976b4', assetCMedium.count, '#486181', assetCEasy.count, "Total: "+assetCCount, '#47576a'],
-        ['Sec. Chars Var.', assetDDifficult.count, '#85a56c', assetDMedium.count, '#50795b', assetDEasy.count, "Total: "+assetDCount, '#4c6453'],
-        ['Inci. Chars', assetEDifficult.count, '#cd5332', assetEMedium.count, '#9c442d', assetEEasy.count, "Total: "+assetECount, '#784438'],
-        ['Inci. Chars var.', assetFDifficult.count, '#9e608d', assetFMedium.count, '#75546c', assetFEasy.count, "Total: "+assetFCount, '#614e5f'],
-        ['Crowd Chars', assetGDifficult.count, '#4976b4', assetGMedium.count, '#486181', assetGEasy.count, "Total: "+assetGCount, '#47576a'],
-        ['Crowd Chars var.', assetHDifficult.count, '#85a56c', assetHMedium.count, '#50795b', assetHEasy.count, "Total: "+assetHCount, '#4c6453'],
-        ['Sets', assetIDifficult.count, '#cd5332', assetIMedium.count, '#9c442d', assetIEasy.count, "Total: "+assetICount, '#784438'],
-        ['Set xtra Elem.', assetJDifficult.count, '#9e608d', assetJMedium.count, '#75546c', assetJEasy.count, "Total: "+assetJCount, '#614e5f'],
-        ['Set Foliage', assetKDifficult.count, '#4976b4', assetKMedium.count, '#486181', assetKEasy.count, "Total: "+assetKCount, '#47576a'],
-        ['Set foliage var.', assetLDifficult.count, '#85a56c', assetLMedium.count, '#50795b', assetLEasy.count, "Total: "+assetLCount, '#4c6453'],
-        ['Props', assetMDifficult.count, '#cd5332', assetMMedium.count, '#9c442d', assetMEasy.count, "Total: "+assetMCount, '#784438'],
-        ['Props Var.', assetNDifficult.count, '#9e608d', assetNMedium.count, '#75546c', assetNEasy.count, "Total: "+assetNCount, '#614e5f'],
-        ['Vehicles', assetODifficult.count, '#4976b4', assetOMedium.count, '#486181', assetOEasy.count, "Total: "+assetOCount, '#47576a']
+        ['Main Chars', assetADifficult.meanTotal, '#cd5332', assetAMedium.meanTotal, '#9c442d', assetAEasy.meanTotal, "Total: "+assetACount, '#784438'],
+        ['Main Chars var.', assetBDifficult.meanTotal, '#9e608d', assetBMedium.meanTotal, '#75546c', assetBEasy.meanTotal, "Total: "+assetBCount, '#614e5f'],
+        ['Sec. Chars', assetCDifficult.meanTotal, '#4976b4', assetCMedium.meanTotal, '#486181', assetCEasy.meanTotal, "Total: "+assetCCount, '#47576a'],
+        ['Sec. Chars Var.', assetDDifficult.meanTotal, '#85a56c', assetDMedium.meanTotal, '#50795b', assetDEasy.meanTotal, "Total: "+assetDCount, '#4c6453'],
+        ['Inci. Chars', assetEDifficult.meanTotal, '#cd5332', assetEMedium.meanTotal, '#9c442d', assetEEasy.meanTotal, "Total: "+assetECount, '#784438'],
+        ['Inci. Chars var.', assetFDifficult.meanTotal, '#9e608d', assetFMedium.meanTotal, '#75546c', assetFEasy.meanTotal, "Total: "+assetFCount, '#614e5f'],
+        ['Crowd Chars', assetGDifficult.meanTotal, '#4976b4', assetGMedium.meanTotal, '#486181', assetGEasy.meanTotal, "Total: "+assetGCount, '#47576a'],
+        ['Crowd Chars var.', assetHDifficult.meanTotal, '#85a56c', assetHMedium.meanTotal, '#50795b', assetHEasy.meanTotal, "Total: "+assetHCount, '#4c6453'],
+        ['Sets', assetIDifficult.meanTotal, '#cd5332', assetIMedium.meanTotal, '#9c442d', assetIEasy.meanTotal, "Total: "+assetICount, '#784438'],
+        ['Set xtra Elem.', assetJDifficult.meanTotal, '#9e608d', assetJMedium.meanTotal, '#75546c', assetJEasy.meanTotal, "Total: "+assetJCount, '#614e5f'],
+        ['Set Foliage', assetKDifficult.meanTotal, '#4976b4', assetKMedium.meanTotal, '#486181', assetKEasy.meanTotal, "Total: "+assetKCount, '#47576a'],
+        ['Set foliage var.', assetLDifficult.meanTotal, '#85a56c', assetLMedium.meanTotal, '#50795b', assetLEasy.meanTotal, "Total: "+assetLCount, '#4c6453'],
+        ['Props', assetMDifficult.meanTotal, '#cd5332', assetMMedium.meanTotal, '#9c442d', assetMEasy.meanTotal, "Total: "+assetMCount, '#784438'],
+        ['Props Var.', assetNDifficult.meanTotal, '#9e608d', assetNMedium.meanTotal, '#75546c', assetNEasy.meanTotal, "Total: "+assetNCount, '#614e5f'],
+        ['Vehicles', assetODifficult.meanTotal, '#4976b4', assetOMedium.meanTotal, '#486181', assetOEasy.meanTotal, "Total: "+assetOCount, '#47576a']
 
       ]);
 
