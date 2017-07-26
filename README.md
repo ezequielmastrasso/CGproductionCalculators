@@ -1,6 +1,15 @@
 # CGproductionCalculators
 Pert based production calculators for CG productions with probabilities.  
-Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.  
+Built on Keen io, Keen Dashboard, Jquery, JS, JQuery, google charts, and d3.
+##### Description:  
+Instructions:  
+Browse through all the inputs boxes tabs (on the left) before entering your inputs. Get familiar with all the inputs required, lingo and definitions.  
+Enter all your data about your team, working environment, holidays, asset types %, and best/mostLikely/worst estimates.  
+This will give you the 80% chances amount of working days required, and the 95% percent chances of success working days.  
+Optionally you can enter two dates (start and end) and a percent will be calculated between them.  
+Notice that the date calculation ATM does not account for locale bank holidays, Christmas or similar religious breaks, etc.  
+See Limitations below in order to understand the calculator internals, the risk of not having slack or lag between tasks and as many critical paths as artists.  
+
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotAssets.jpg)
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotLighting.jpg)
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotSingleAsset.jpg)
@@ -15,15 +24,7 @@ You can however use the busy/idle parameter to give tasks handover/waiting time,
 ##### Temp testing url address:
 http://ezequielm.com/lightingCalc/lightingCalc.html  
 http://ezequielm.com/lightingCalc/assetCalc.html  
-http://ezequielm.com/lightingCalc/singleAssetCalc.html  
-
-##### Description:  
-Instructions:  
-Browse through all the inputs boxes tabs (on the left) before entering your inputs. Get familiar with all the inputs required, lingo and definitions.  
-Enter all your data about your team, working environment, holidays, asset types %, and best/mostLikely/worst estimates.  
-This will give you the 80% chances amount of working days required, and the 95% percent chances of success working days.  
-Optionally you can enter two dates (start and end) and a percent will be calculated between them.  
-Notice that this date calculation ATM does not account for locale bank holidays, Christmas or similar religious breaks, etc.  
+http://ezequielm.com/lightingCalc/singleAssetCalc.html   
 
 ##### Busy/Idle
 Wait Time = %busy / %idle (or b/(100-b) where b = % utilized)  
@@ -85,11 +86,3 @@ Approximated by:
 Obviusly, having all the artist with the same queue (aka: as many identical critical paths as artists) will decrease the % of probabilites of finishing, but this fact is omitted ATM
 However The info box will display a rough estimation of possible overlapping % tasks calculated as:
 (85% childShots)+(85%masterShots-EstablishingShotsCount)+(90%Establishing+90%Hero)
-
-
-
-www.ezequielm.com
-photos.ezequielm.com
-Ezequiel Mastrasso
-ezequielm@gmail.com
-+353 83 0030034
