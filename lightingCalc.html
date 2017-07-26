@@ -593,7 +593,7 @@
 
         <div class="chart-wrapper">
           <div class="chart-title">
-            Shots Render Estimates
+            Shots Render Estimates (assumed linear scalability)
           </div>
           <div class="chart-stage">
             <div class="row">
@@ -601,7 +601,6 @@
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#renderTimes" data-toggle="tab">renderTimes</a></li>
-                    <li><a href="#baseline" data-toggle="tab">baseline</a></li>
                     <li><a href="#farm" data-toggle="tab">farm</a></li>
                     <li><a href="#extraInfo" data-toggle="tab">extra info</a></li>
                   </ul>
@@ -674,45 +673,26 @@
                     
 
                  </div>
-                  <div class="tab-pane" id="baseline">
-                    <!-- Unique Shot input-->
-                    <legend>Render baseline 1 node</legend>
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotCounttt">render time (in mins)</label>  
-                          <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="renderBaselineMinutesInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
-                            
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotsPerSequence">cores/card</label>  
-                          <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="renderBaselineCoresInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
-                          </div>
-                        </div>
-                    
-
-                 </div>
                   <div class="tab-pane" id="farm">
                     <!-- Unique Shot input-->
                     <legend>Farm Details</legend>
                     <div class="form-group">
                           <label class="col-md-4 control-label" for="shotCounttt">nodes count</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="renderFarmNodesCountInput" name="shotCounttt" type="text" placeholder="240" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmNodesCountInput" name="shotCounttt" type="text" placeholder="100" class="form-control input-md" required="">
                             
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="shotsPerSequence">cores/card per node</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="renderFarmCoresPerNodeInput" name="shotsPerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmCoresPerNodeInput" name="shotsPerSequence" type="text" placeholder="32" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="shotsPerSequence">linear scalability</label>  
+                          <label class="col-md-4 control-label" for="shotsPerSequence">down time</label>  
                           <div class="col-md-2">
-                          <input   onchange="updateInformationPanel()"   id="renderFarmLinearScalabilityInput" name="shotsPerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                          <input   onchange="updateInformationPanel()"   id="renderFarmDownTimeInput" name="shotsPerSequence" type="text" placeholder=".10" class="form-control input-md" required="">
                           </div>
                         </div>
                         <div class="form-group">
@@ -761,9 +741,8 @@
           </div>
         </div>
       </div>
-<div class="row" >
          <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:235px">
+        <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
             % probabilities on your proposed end date<br>
             <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="probEndDateInfo"role="button"></a><br>
@@ -774,7 +753,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-3 col-lg-2">
-        <div class="chart-wrapper" style="min-height:235px">
+        <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
             some useful stats
           </div>
@@ -789,7 +768,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:235px">
+        <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
             80% probabilities of finishing in (working days)
           </div>
@@ -802,7 +781,6 @@
       </div>
 
 
-    </div>
 </div>
 
 
@@ -857,7 +835,7 @@
     <div class="row" >
          <div class="col-sm-12 col-md-12 col-lg-12">
         
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-sm-12 col-md-4 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
             Frame Count
@@ -868,7 +846,7 @@
 
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-sm-12 col-md-4 col-lg-4">
         <div class="chart-wrapper">
           <div class="chart-title">
             farmNode Days
@@ -877,6 +855,24 @@
 
          
 
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-4">
+        <div class="chart-wrapper" style="min-height:310px">
+          <div class="chart-title">
+            some useful Render stats
+          </div>
+          Total days<a href="#" class="btn btn-primary btn-lg disabled" id="totalDaysRenderInfo"role="button"></a><br>
+          Total hours<a href="#" class="btn btn-primary btn-lg disabled" id="totalHoursRenderInfo"role="button"></a><br>
+          Total minutes<a href="#" class="btn btn-primary btn-lg disabled" id="totalMinutesRenderInfo"role="button"></a><br>
+           <div class="chart-title">
+            per type
+          </div>
+          unique Total minutes<a href="#" class="btn btn-primary btn-lg disabled" id="uniqueTotalMinutesRenderInfo"role="button"></a><br>
+          Establ Total minutes<a href="#" class="btn btn-primary btn-lg disabled" id="establishingTotalMinutesRenderInfo"role="button"></a><br>
+          Master Total minutes<a href="#" class="btn btn-primary btn-lg disabled" id="masterTotalMinutesRenderInfo"role="button"></a><br>
+          Child Total minutes<a href="#" class="btn btn-primary btn-lg disabled" id="childTotalMinutesRenderInfo"role="button"></a><br>
+          
         </div>
       </div>
       

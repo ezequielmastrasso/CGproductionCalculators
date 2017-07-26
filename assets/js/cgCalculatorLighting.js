@@ -322,13 +322,9 @@ function updateInformationPanel (){
     var renderEstimateChildMostLikely =  getInputValue("renderEstimateChildMostLikelyInput");
     var renderEstimateChildWorst =  getInputValue("renderEstimateChildWorstInput");
 
-    var renderBaselineMinutes =  getInputValue("renderBaselineMinutesInput");
-
-    var renderBaselineCores =  getInputValue("renderBaselineCoresInput");
-
     var renderFarmNodesCount =  getInputValue("renderFarmNodesCountInput");
     var renderFarmCoresPerNode =  getInputValue("renderFarmCoresPerNodeInput");
-    var renderFarmLinearScalability =  getInputValue("renderFarmLinearScalabilityInput");
+    var renderFarmDownTime =  getInputValue("renderFarmDownTimeInput");
     var renderFarmBusyIdle =  getInputValue("renderFarmBusyIdleInput");
     
     var renderEstimateUniqueRerendering =  getInputValue("renderEstimateUniqueRerenderingInput");
@@ -338,28 +334,11 @@ function updateInformationPanel (){
 
     var renderAverageFramesPerShot =  getInputValue("renderAverageFramesPerShotInput");
     
-    
-    //CALCULATE THIS!
-    /*TMP Calculation to do
-    Baseline Render time				240mins
-    baselineCores         				8			
-    baselineCoreRenderTime       	30
-    linear scalability		        0.7
 
-    farmNodesCores				        32
-    coreDifference	          		24
-
-    renderTime=0    baseLineRenderTime/baselineCores
-    cores=0
-    for farmCore in farmCores:
-      if cores<baselineCores:
-        renderTime=renderTime+baselineCoreRenderTime
-        cores+=1
-      else:
-          renderTime=renderTime+(baselineCoreRenderTime*0.7)
-          cores+=1
-    */
-    var farmCapacity=100;
+    console.log("renderFarmDownTime",1-renderFarmDownTime )
+    console.log("renderFarmBusyIdle",renderFarmBusyIdle )
+    var farmCapacity=renderFarmNodesCount*(1-renderFarmDownTime)*(renderFarmBusyIdle);
+    console.log("farmCapacity",farmCapacity )
 
     var renderUnique=calculateAssetRender("renderUnique",
                                           uniqueShotsCount,
@@ -426,9 +405,17 @@ function updateInformationPanel (){
     console.log('Child Days total  = ' + (renderChild.meanTotal/60)/24)
 
     console.log('Total Render in Minutes = ' + criticalPathMean)
+    writeToPage("totalMinutesRenderInfo",criticalPathMean.toFixed(0));
     console.log('Total Render in Hours = ' + criticalPathMean/60)
     console.log('Total Render in Days = ' + (criticalPathMean/60)/24)
-
+    writeToPage("totalHoursRenderInfo",((criticalPathMean/60)).toFixed(0));
+    writeToPage("totalDaysRenderInfo",((criticalPathMean/60)/24).toFixed(0));
+    
+    writeToPage("uniqueTotalMinutesRenderInfo",renderUnique.meanTotal.toFixed(0));
+    writeToPage("establishingTotalMinutesRenderInfo",renderEstablishing.meanTotal.toFixed(0));
+    writeToPage("masterTotalMinutesRenderInfo",renderMaster.meanTotal.toFixed(0));
+    writeToPage("childTotalMinutesRenderInfo",renderChild.meanTotal.toFixed(0));
+    
 
 
     google.charts.load('current', {'packages':['corechart']});
@@ -510,7 +497,7 @@ function updateInformationPanel (){
 
         
 
-       var options = {'chartArea': {'width': '100%', 'height': '80%'},
+       var options = {'chartArea': {'width': '100%', 'height': '90%'},
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               fontSize: 10,
@@ -521,7 +508,7 @@ function updateInformationPanel (){
               },
               colors: ['#cd5332', '#9c442d', '#784438', '#9e608d', '#75546c', '#614e5f','#4976b4','#486181','#47576a','#85a56c','#50795b','#4c6453'],
     };
-       var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
+       var options2 = {'chartArea': {'width': '100%', 'height': '90%'},
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
                         fontSize: 10,
@@ -566,6 +553,7 @@ function updateInformationPanel (){
       ]);
 
       var options = {
+        'chartArea': {'width': '80%', 'height': '70%'},
         legend: { position: 'top', maxLines: 3, fontSize: 1},
         bar: { groupWidth: '75%' },
         backgroundColor: '#3d3d3d',

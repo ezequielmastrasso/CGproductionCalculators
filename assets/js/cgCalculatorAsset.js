@@ -965,7 +965,7 @@ function updateInformationPanel (){
           
         ]);
 
-       var options = {'chartArea': {'width': '100%', 'height': '80%'},
+       var options = {'chartArea': {'width': '100%', 'height': '90%'},
               legend: { position: 'top', maxLines: 3 },
               legend: { textStyle: { color: 'white' }},
               fontSize: 10,
@@ -976,7 +976,7 @@ function updateInformationPanel (){
               },
                colors: ['#cd5332', '#9c442d', '#784438', '#9e608d', '#75546c', '#614e5f','#4976b4','#486181','#47576a','#85a56c','#50795b','#4c6453'],
     };
-       var options2 = {'chartArea': {'width': '100%', 'height': '80%'},
+       var options2 = {'chartArea': {'width': '100%', 'height': '90%'},
                 legend: { position: 'top', maxLines: 3 },
                 backgroundColor: '#3d3d3d',
                         fontSize: 10,
@@ -1018,6 +1018,7 @@ function updateInformationPanel (){
       ]);
 
       var options = {
+        'chartArea': {'width': '80%', 'height': '90%'},
         legend: { position: 'top', maxLines: 3, fontSize: 1},
         bar: { groupWidth: '75%' },
         colors: ['#A0A0A0', '#A0A0A0', '#A0A0A0'],
