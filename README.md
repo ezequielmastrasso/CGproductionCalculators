@@ -10,6 +10,11 @@ Optionally you can enter two dates (start and end) and a percent will be calcula
 Notice that the date calculation ATM does not account for locale bank holidays, Christmas or similar religious breaks, etc.  
 See Limitations below in order to understand the calculator internals, the risk of not having slack or lag between tasks and as many critical paths as artists.  
 
+##### Temp testing url address:
+http://ezequielm.com/lightingCalc/lightingCalc.html  
+http://ezequielm.com/lightingCalc/assetCalc.html  
+http://ezequielm.com/lightingCalc/singleAssetCalc.html   
+
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotAssets.jpg)
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotLighting.jpg)
 ![My image](https://raw.githubusercontent.com/ezequielmastrasso/CGproductionCalculators/master/screenShotSingleAsset.jpg)
@@ -20,11 +25,6 @@ When using this, i know the scope, the team but we don't know the actual tasks a
 The calculator Assumes tasks are spread across artist equally, and there will be no float, slack, lead or lag between tasks. See limitations below.  
 Often enough this is true in lighting when the lighters are working on several shots at the same time, although might not be the case for other departments.  
 You can however use the busy/idle parameter to give tasks handover/waiting time, and avoid overworking the resources (see Busy Idle time below).  
-
-##### Temp testing url address:
-http://ezequielm.com/lightingCalc/lightingCalc.html  
-http://ezequielm.com/lightingCalc/assetCalc.html  
-http://ezequielm.com/lightingCalc/singleAssetCalc.html   
 
 ##### Busy/Idle
 Wait Time = %busy / %idle (or b/(100-b) where b = % utilized)  
