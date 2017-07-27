@@ -631,7 +631,45 @@ function updateInformationPanel (){
                                     assetOEasyMostLikely,
                                     assetOEasyWorst,
                                     teamCapacity);
+    
+    var assetPCount=getInputValue("assetPCountInput");
 
+    var assetPDifficultPercent=getInputValue("assetPDifficultPercentageInput");
+    var assetPDifficultBest=getInputValue("estimateAssetPDifficultBestInput");
+    var assetPDifficultMostLikely=getInputValue("estimateAssetPDifficultMostLikelyInput");
+    var assetPDifficultWorst=getInputValue("estimateAssetPDifficultWorstInput");
+
+    var assetPMediumPercent=getInputValue("assetPMediumPercentageInput");
+    var assetPMediumBest=getInputValue("estimateAssetPMediumBestInput");
+    var assetPMediumMostLikely=getInputValue("estimateAssetPMediumMostLikelyInput");
+    var assetPMediumWorst=getInputValue("estimateAssetPMediumWorstInput");
+
+    var assetPEasyPercent=getInputValue("assetPEasyPercentageInput");
+    var assetPEasyBest=getInputValue("estimateAssetPEasyBestInput");
+    var assetPEasyMostLikely=getInputValue("estimateAssetPEasyMostLikelyInput");
+    var assetPEasyWorst=getInputValue("estimateAssetPEasyWorstInput");
+    
+    var assetPDifficult=calculateAsset2("assetP",
+                                    assetPCount,
+                                    assetPDifficultPercent,
+                                    assetPDifficultBest,
+                                    assetPDifficultMostLikely,
+                                    assetPDifficultWorst,
+                                    teamCapacity);
+    var assetPMedium=calculateAsset2("assetP",
+                                    assetPCount,
+                                    assetPMediumPercent,
+                                    assetPMediumBest,
+                                    assetPMediumMostLikely,
+                                    assetPMediumWorst,
+                                    teamCapacity);
+    var assetPEasy=calculateAsset2("assetP",
+                                    assetPCount,
+                                    assetPEasyPercent,
+                                    assetPEasyBest,
+                                    assetPEasyMostLikely,
+                                    assetPEasyWorst,
+                                    teamCapacity);
 
     
 
@@ -685,6 +723,9 @@ function updateInformationPanel (){
     var criticalPathAssetO = assetODifficult.meanCriticalPath+
                               assetOMedium.meanCriticalPath+
                               assetOEasy.meanCriticalPath;
+    var criticalPathAssetP = assetPDifficult.meanCriticalPath+
+                              assetPMedium.meanCriticalPath+
+                              assetPEasy.meanCriticalPath;
 
     criticalPathMean=criticalPathAssetA+
                       criticalPathAssetB+
@@ -700,7 +741,7 @@ function updateInformationPanel (){
                       criticalPathAssetL+
                       criticalPathAssetM+
                       criticalPathAssetN+
-                      criticalPathAssetO;
+                      criticalPathAssetP;
     console.log("criticalPathMean: ", criticalPathMean)
     writeToPage("criticalPathMean",criticalPathMean.toFixed(2));
 
@@ -750,7 +791,10 @@ function updateInformationPanel (){
                         assetNEasy.meanTotal+
                         assetODifficult.meanTotal+
                         assetOMedium.meanTotal+
-                        assetOEasy.meanTotal;
+                        assetOEasy.meanTotal+
+                        assetPDifficult.meanTotal+
+                        assetPMedium.meanTotal+
+                        assetPEasy.meanTotal;
                       
     var projectManDays =totalAssetMean;  //totalmean/teamCapacity
     writeToPage("projectManDaysInfo",projectManDays.toFixed(2));
@@ -803,7 +847,10 @@ function updateInformationPanel (){
                               assetNEasy.criticalPathVarianceTotal+
                               assetODifficult.criticalPathVarianceTotal+
                               assetOMedium.criticalPathVarianceTotal+
-                              assetOEasy.criticalPathVarianceTotal;
+                              assetOEasy.criticalPathVarianceTotal+
+                              assetPDifficult.criticalPathVarianceTotal+
+                              assetPMedium.criticalPathVarianceTotal+
+                              assetPEasy.criticalPathVarianceTotal;
     writeToPage("criticalPathVariance",totalCriticalPathVariance.toFixed(4));
 
     
@@ -865,24 +912,27 @@ function updateInformationPanel (){
           ['Sets Difficult',     assetIDifficult.count],
           ['Sets Medium',     assetIMedium.count],
           ['Sets Easy',     assetIEasy.count],
-          ['Set extra Elm. Difficult',     assetJDifficult.count],
-          ['Set extra Elm. Medium',     assetJMedium.count],
-          ['Set extra Elm. Easy',     assetJEasy.count],
-          ['Set Foliage Difficult',     assetKDifficult.count],
-          ['Set Foliage Medium',     assetKMedium.count],
-          ['Set Foliage Easy',     assetKEasy.count],
-          ['Set Foliage var. Difficult',     assetLDifficult.count],
-          ['Set Foliage var. Medium',     assetLMedium.count],
-          ['Set Foliage var. Easy',     assetLEasy.count],
-          ['Props Difficult',     assetMDifficult.count],
-          ['Props Medium',     assetMMedium.count],
-          ['Props Easy',     assetMEasy.count],
-          ['Props var. Difficult',     assetNDifficult.count],
-          ['Props var. Medium',     assetNMedium.count],
-          ['Props var. Easy',     assetNEasy.count],
-          ['Vehicles Difficult',     assetODifficult.count],
-          ['Vehicles Medium',     assetOMedium.count],
-          ['Vehicles Easy',     assetOEasy.count],
+          ['Set var. Difficult',     assetJDifficult.count],
+          ['Set var. Medium',     assetJMedium.count],
+          ['Set var. Easy',     assetJEasy.count],
+          ['Set extra Elm. Difficult',     assetKDifficult.count],
+          ['Set extra Elm. Medium',     assetKMedium.count],
+          ['Set extra Elm. Easy',     assetKEasy.count],
+          ['Set Foliage Difficult',     assetLDifficult.count],
+          ['Set Foliage Medium',     assetLMedium.count],
+          ['Set Foliage Easy',     assetLEasy.count],
+          ['Set Foliage var. Difficult',     assetMDifficult.count],
+          ['Set Foliage var. Medium',     assetMMedium.count],
+          ['Set Foliage var. Easy',     assetMEasy.count],
+          ['Props Difficult',     assetNDifficult.count],
+          ['Props Medium',     assetNMedium.count],
+          ['Props Easy',     assetNEasy.count],
+          ['Props var. Difficult',     assetODifficult.count],
+          ['Props var. Medium',     assetOMedium.count],
+          ['Props var. Easy',     assetOEasy.count],
+          ['Vehicles Difficult',     assetPDifficult.count],
+          ['Vehicles Medium',     assetPMedium.count],
+          ['Vehicles Easy',     assetPEasy.count],
 
           
         ]);
@@ -897,12 +947,13 @@ function updateInformationPanel (){
           ['Crowd Chars.',    assetGCount],
           ['Crowd Chars. var.',    assetHCount],
           ['Sets',    assetICount],
-          ['Set Extra elmn.',    assetJCount],
-          ['Set Foliage',    assetKCount],
-          ['Set Foliage var.',    assetLCount],
-          ['Props',    assetMCount],
-          ['Props var.',    assetNCount],
-          ['vehicles',    assetOCount],
+          ['Sets var.',    assetJCount],
+          ['Set Extra elmn.',    assetKCount],
+          ['Set Foliage',    assetLCount],
+          ['Set Foliage var.',    assetMCount],
+          ['Props',    assetNCount],
+          ['Props var.',    assetOCount],
+          ['vehicles',    assetPCount],
         ]);
         var data3 = google.visualization.arrayToDataTable([
           ['Shots', 'Percentage'],
@@ -933,24 +984,27 @@ function updateInformationPanel (){
           ['Sets Difficult',     assetIDifficult.meanTotal],
           ['Sets Medium',     assetIMedium.meanTotal],
           ['Sets Easy',     assetIEasy.meanTotal],
-          ['Set extra Elm. Difficult',     assetJDifficult.meanTotal],
-          ['Set extra Elm. Medium',     assetJMedium.meanTotal],
-          ['Set extra Elm. Easy',     assetJEasy.meanTotal],
-          ['Set Foliage Difficult',     assetKDifficult.meanTotal],
-          ['Set Foliage Medium',     assetKMedium.meanTotal],
-          ['Set Foliage Easy',     assetKEasy.meanTotal],
-          ['Set Foliage var. Difficult',     assetLDifficult.meanTotal],
-          ['Set Foliage var. Medium',     assetLMedium.meanTotal],
-          ['Set Foliage var. Easy',     assetLEasy.meanTotal],
-          ['Props Difficult',     assetMDifficult.meanTotal],
-          ['Props Medium',     assetMMedium.meanTotal],
-          ['Props Easy',     assetMEasy.meanTotal],
-          ['Props var. Difficult',     assetNDifficult.meanTotal],
-          ['Props var. Medium',     assetNMedium.meanTotal],
-          ['Props var. Easy',     assetNEasy.meanTotal],
-          ['Vehicles Difficult',     assetODifficult.meanTotal],
-          ['Vehicles Medium',     assetOMedium.meanTotal],
-          ['Vehicles Easy',     assetOEasy.meanTotal],
+          ['Set var. Difficult',     assetJDifficult.meanTotal],
+          ['Set var. Medium',     assetJMedium.meanTotal],
+          ['Set var. Easy',     assetJEasy.meanTotal],
+          ['Set extra Elm. Difficult',     assetKDifficult.meanTotal],
+          ['Set extra Elm. Medium',     assetKMedium.meanTotal],
+          ['Set extra Elm. Easy',     assetKEasy.meanTotal],
+          ['Set Foliage Difficult',     assetLDifficult.meanTotal],
+          ['Set Foliage Medium',     assetLMedium.meanTotal],
+          ['Set Foliage Easy',     assetLEasy.meanTotal],
+          ['Set Foliage var. Difficult',     assetMDifficult.meanTotal],
+          ['Set Foliage var. Medium',     assetMMedium.meanTotal],
+          ['Set Foliage var. Easy',     assetMEasy.meanTotal],
+          ['Props Difficult',     assetNDifficult.meanTotal],
+          ['Props Medium',     assetNMedium.meanTotal],
+          ['Props Easy',     assetNEasy.meanTotal],
+          ['Props var. Difficult',     assetODifficult.meanTotal],
+          ['Props var. Medium',     assetOMedium.meanTotal],
+          ['Props var. Easy',     assetOEasy.meanTotal],
+          ['Vehicles Difficult',     assetPDifficult.meanTotal],
+          ['Vehicles Medium',     assetPMedium.meanTotal],
+          ['Vehicles Easy',     assetPEasy.meanTotal],
           
         ]);
 
@@ -997,12 +1051,13 @@ function updateInformationPanel (){
         ['Crowd Chars', assetGDifficult.meanTotal, '#4976b4', assetGMedium.meanTotal, '#486181', assetGEasy.meanTotal, "Total: "+assetGCount, '#47576a'],
         ['Crowd Chars var.', assetHDifficult.meanTotal, '#85a56c', assetHMedium.meanTotal, '#50795b', assetHEasy.meanTotal, "Total: "+assetHCount, '#4c6453'],
         ['Sets', assetIDifficult.meanTotal, '#cd5332', assetIMedium.meanTotal, '#9c442d', assetIEasy.meanTotal, "Total: "+assetICount, '#784438'],
-        ['Set xtra Elem.', assetJDifficult.meanTotal, '#9e608d', assetJMedium.meanTotal, '#75546c', assetJEasy.meanTotal, "Total: "+assetJCount, '#614e5f'],
-        ['Set Foliage', assetKDifficult.meanTotal, '#4976b4', assetKMedium.meanTotal, '#486181', assetKEasy.meanTotal, "Total: "+assetKCount, '#47576a'],
-        ['Set foliage var.', assetLDifficult.meanTotal, '#85a56c', assetLMedium.meanTotal, '#50795b', assetLEasy.meanTotal, "Total: "+assetLCount, '#4c6453'],
-        ['Props', assetMDifficult.meanTotal, '#cd5332', assetMMedium.meanTotal, '#9c442d', assetMEasy.meanTotal, "Total: "+assetMCount, '#784438'],
-        ['Props Var.', assetNDifficult.meanTotal, '#9e608d', assetNMedium.meanTotal, '#75546c', assetNEasy.meanTotal, "Total: "+assetNCount, '#614e5f'],
-        ['Vehicles', assetODifficult.meanTotal, '#4976b4', assetOMedium.meanTotal, '#486181', assetOEasy.meanTotal, "Total: "+assetOCount, '#47576a']
+        ['Sets var.', assetJDifficult.meanTotal, '#9e608d', assetJMedium.meanTotal, '#75546c', assetJEasy.meanTotal, "Total: "+assetJCount, '#614e5f'],
+        ['Set xtra Elem.', assetKDifficult.meanTotal, '#4976b4', assetKMedium.meanTotal, '#486181', assetKEasy.meanTotal, "Total: "+assetKCount, '#47576a'],
+        ['Set Foliage', assetLDifficult.meanTotal, '#85a56c', assetLMedium.meanTotal, '#50795b', assetLEasy.meanTotal, "Total: "+assetLCount, '#4c6453'],
+        ['Set foliage var.', assetMDifficult.meanTotal, '#cd5332', assetMMedium.meanTotal, '#9c442d', assetMEasy.meanTotal, "Total: "+assetMCount, '#784438'],
+        ['Props', assetNDifficult.meanTotal, '#9e608d', assetNMedium.meanTotal, '#75546c', assetNEasy.meanTotal, "Total: "+assetNCount, '#614e5f'],
+        ['Props Var.', assetODifficult.meanTotal, '#4976b4', assetOMedium.meanTotal, '#486181', assetOEasy.meanTotal, "Total: "+assetOCount, '#47576a'],
+        ['Vehicles', assetPDifficult.meanTotal, '#4976b4', assetPMedium.meanTotal, '#486181', assetPEasy.meanTotal, "Total: "+assetPCount, '#47576a'],
 
       ]);
 

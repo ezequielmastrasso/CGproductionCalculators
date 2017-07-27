@@ -205,12 +205,13 @@
                     <li><a href="#assetGInfo" data-toggle="tab">Crowd Characters</a></li>
                     <li><a href="#assetHInfo" data-toggle="tab">Crowd Chars variants</a></li>
                     <li><a href="#assetIInfo" data-toggle="tab">Sets</a></li>
-                    <li><a href="#assetJInfo" data-toggle="tab">Set Extra Elements</a></li>
-                    <li><a href="#assetKInfo" data-toggle="tab">set foliage (p/item)</a></li>
-                    <li><a href="#assetLInfo" data-toggle="tab">set foliage variants</a></li>
-                    <li><a href="#assetMInfo" data-toggle="tab">Props</a></li>
-                    <li><a href="#assetNInfo" data-toggle="tab">Props Variants</a></li>
-                    <li><a href="#assetOInfo" data-toggle="tab">Vehicles</a></li>
+                    <li><a href="#assetJInfo" data-toggle="tab">Sets Variants</a></li>
+                    <li><a href="#assetKInfo" data-toggle="tab">Set Extra Elements</a></li>
+                    <li><a href="#assetLInfo" data-toggle="tab">set foliage (p/item)</a></li>
+                    <li><a href="#assetMInfo" data-toggle="tab">set foliage variants</a></li>
+                    <li><a href="#assetNInfo" data-toggle="tab">Props</a></li>
+                    <li><a href="#assetOInfo" data-toggle="tab">Props Variants</a></li>
+                    <li><a href="#assetPInfo" data-toggle="tab">Vehicles</a></li>
                   </ul>
                 </div>
               </div>
@@ -1278,6 +1279,77 @@
                     </div>
                       <div class="col-md-3">
                       <input   onchange="updateInformationPanel()" id="estimateAssetOEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                 </div>
+
+                 <div class="tab-pane" id="assetPInfo">
+
+                  <!-- assetO Shot input-->
+                  <legend>assetP Count</legend>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">Count</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetPCountInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetP Percentage Information</legend>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Difficult</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetPDifficultPercentageInput" name="PerSequence" type="text" placeholder="20" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Medium</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetPMediumPercentageInput" name="PerSequence" type="text" placeholder="50" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="PerSequence">% Easy</label>  
+                      <div class="col-md-2">
+                      <input   onchange="updateInformationPanel()" id="assetPEasyPercentageInput" name="PerSequence" type="text" placeholder="30" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <legend>assetP Days estimates</legend>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence"><br>Difficult</label>  
+                      <div class="col-md-3">
+                        best
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPDifficultBestInput" name="PerSequence" type="text" placeholder="3" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                       mostLikely
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPDifficultMostLikelyInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                        worst
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPDifficultWorstInput" name="PerSequence" type="text" placeholder="10" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence">Medium</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPMediumBestInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPMediumMostLikelyInput" name="PerSequence" type="text" placeholder="4" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPMediumWorstInput" name="PerSequence" type="text" placeholder="8" class="form-control input-md" required="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-1 control-label" for="PerSequence">Easy</label>  
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPEasyBestInput" name="PerSequence" type="text" placeholder="1" class="form-control input-md" required="">
+                      </div>
+                    <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPEasyMostLikelyInput" name="PerSequence" type="text" placeholder="2" class="form-control input-md" required="">
+                    </div>
+                      <div class="col-md-3">
+                      <input   onchange="updateInformationPanel()" id="estimateAssetPEasyWorstInput" name="PerSequence" type="text" placeholder="5" class="form-control input-md" required="">
                       </div>
                     </div>
                  </div>
