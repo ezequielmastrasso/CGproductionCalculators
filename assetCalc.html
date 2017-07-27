@@ -43,30 +43,7 @@
 
   <div class="container-fluid">
     <div class="row">
-       <div class="col-sm-12 col-md-3 col-lg-2">
-        <div class="chart-wrapper" style="min-height:510px;padding:15px">
-       <div class="chart-title">
-            start Date
-          </div>
-       <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        
-        <input onchange="updateInformationPanel()" class="form-control" id="startDate" name="date" placeholder="07/03/2017" type="text" style="min-width:120px"/>
-       </div>
-      <div class="chart-title">
-            end Date
-          </div>
-      <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        <input onchange="updateInformationPanel()" class="form-control" id="endDate" name="date" placeholder="06/14/2018" type="text" style="min-width:120px"/>
-       </div>
-</div>
+       
 </div>
       <div class="col-sm-12 col-md-6 col-lg-3" >
 
@@ -1312,42 +1289,44 @@
           </div>
         </div>
       </div>
-
-
-
-<div class="row" >
-         <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:235px">
+      <div class="col-sm-12 col-md-3 col-lg-2">
+        <div class="chart-wrapper" style="min-height:510px">
           <div class="chart-title">
-            % probabilities on your end date<br>
-            <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="probEndDateInfo"role="button"></a><br>
-          </div>
-                      start to end working days:<a href="#" class="btn btn-primary btn-lg disabled" id="proposedDuration"role="button"></a><br>
-          criticalPathMean<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathMean"role="button"></a><br>
-          total weighted mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button"></a><br>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:235px">
-          <div class="chart-title">
-            some useful stats
+            stats for nerds
           </div>
           team m/day Capacity<a href="#" class="btn btn-primary btn-lg disabled" id="teamCapacityInfo"role="button"></a><br>
-          project m/days<a href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button"></a><br>
           totalTeamHolidaysInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamHolidaysInfo"role="button"></a><br>         
           team sick p/year<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamSickDaysInfo"role="button"></a><br>         
-
-          Z<a href="#" class="btn btn-primary btn-lg disabled" id="Z"role="button"></a><br>         
+          criticalPathMean<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathMean"role="button"></a><br>
+          total weighted mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button"></a><br>
           criticalPathVariance<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathVariance"role="button"></a><br>         
           criticalPathStndDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathStndDeviation"role="button"></a><br>         
         </div>
       </div>
-      <div class="col-sm-12 col-md-3 col-lg-3">
-        <div class="chart-wrapper" style="min-height:235px">
+
+
+
+<div class="row" >
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="chart-wrapper" style="min-height:90px">
+          <div class="chart-title">
+            project m/days (working days, 1 artist)
+          </div>
+          <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button"></a><br>
+      </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="chart-wrapper" style="min-height:90px">
           <div class="chart-title">
             80% probabilities of finishing in (working days)
           </div>
           <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="the80"role="button"></a><br>
+      </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="chart-wrapper" style="min-height:90px">
+          
+          
           <div class="chart-title">
             95% probabilities of finishing in (working days)
           </div>
@@ -1356,7 +1335,7 @@
       </div>
 
     </div>
-</div>
+
 
 
      

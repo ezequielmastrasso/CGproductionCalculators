@@ -638,8 +638,6 @@ function updateInformationPanel (){
 
 
 
-    var startingDate  =0;
-    var endDate  =0;
 
     //criticalPathMeans
     var criticalPathAssetA = assetADifficult.meanCriticalPath+
@@ -759,12 +757,7 @@ function updateInformationPanel (){
     writeToPage("totalMeanInfo",projectManDays.toFixed(2));
     
 
-    var startDate = getInputDate("startDate");
-    var proposedDate = getInputDate("endDate");
-
-    proposedDuration= dateDifference(startDate,proposedDate);
-    writeToPage("proposedDuration",proposedDuration);   
-    console.log("proposedDuration",proposedDuration);
+    
 
     totalCriticalPathVariance=assetADifficult.criticalPathVarianceTotal+
                               assetAMedium.criticalPathVarianceTotal+
@@ -816,11 +809,7 @@ function updateInformationPanel (){
     
     criticalPathStandardDeviation=Math.sqrt(totalCriticalPathVariance,2);
     writeToPage("criticalPathStndDeviation",criticalPathStandardDeviation.toFixed(4));
-    var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
-    writeToPage("Z",Z.toFixed(4));
-    probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
-    console.log("probabilities",probabilities.toFixed(4));
-    writeToPage("probEndDateInfo",(probabilities*100).toFixed(4)+"%");
+
 
 
     //0.9495
