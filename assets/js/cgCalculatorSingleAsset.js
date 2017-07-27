@@ -146,12 +146,6 @@ function updateInformationPanel (){
     writeToPage("totalTeamHolidaysInfo",totalTeamHolidays);
     var totalTeamSickDays=(leadArtists+artist+juniorArtists)*averageSickDays;
 
-    var startDate = getInputDate("startDate");
-    var proposedDate = getInputDate("endDate");
-
-    proposedDuration= dateDifference(startDate,proposedDate);
-    writeToPage("proposedDuration",proposedDuration);    
-    console.log("proposedDuration",proposedDuration);
     writeToPage("totalTeamSickDaysInfo",totalTeamSickDays);    
 
     
@@ -166,12 +160,7 @@ function updateInformationPanel (){
     writeToPage("criticalPathVariance",criticalPathVariance.toFixed(4));
     writeToPage("criticalPathStndDeviation",criticalPathStandardDeviation.toFixed(4));
 
-    var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
-    writeToPage("Z",Z.toFixed(4));
 
-    probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
-    console.log("probabilities",probabilities);
-    writeToPage("probEndDateInfo",probabilities.toFixed(4)*100+"%");
 
     //0.9495
     //0.9505
