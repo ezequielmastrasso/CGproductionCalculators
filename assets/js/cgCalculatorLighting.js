@@ -233,7 +233,6 @@ function updateInformationPanel (){
 
     
     criticalPathMean=criticalPathUniqueShots+criticalPathEstablishingShots+criticalPathMasterShots+criticalPathChildShots;
-    console.log("criticalPathUnique---: ", criticalPathUniqueShots)
     console.log("criticalPathEstablishing: ", criticalPathEstablishingShots)
     console.log("criticalPathMaster: ", criticalPathMasterShots)
     console.log("criticalPathChild: ", criticalPathChildShots)
@@ -260,12 +259,6 @@ function updateInformationPanel (){
     
     document.getElementById("projectManDaysInfo").innerHTML=projectManDays.toFixed(2);;
 
-    var startDate = getInputDate("startDate");
-    var proposedDate = getInputDate("endDate");
-
-    proposedDuration= dateDifference(startDate,proposedDate);
-    writeToPage("proposedDuration",proposedDuration);   
-    console.log("proposedDuration",proposedDuration);
 
     totalCriticalPathVariance=shotsUniqueDifficult.criticalPathVarianceTotal+
                       shotsUniqueMedium.criticalPathVarianceTotal+
@@ -285,12 +278,7 @@ function updateInformationPanel (){
 
     criticalPathStandardDeviation=Math.sqrt(totalCriticalPathVariance,2);
     writeToPage("criticalPathStndDeviation",criticalPathStandardDeviation.toFixed(4));
-    var Z=(proposedDuration-criticalPathMean)/criticalPathStandardDeviation;
-    writeToPage("Z",Z.toFixed(4));
-    probabilities=normalDistribution(proposedDuration,criticalPathMean,criticalPathStandardDeviation)
-    console.log("probabilities",probabilities.toFixed(4));
-    writeToPage("probEndDateInfo",(probabilities*100).toFixed(4)+"%");
-
+    
     //0.9495
     //0.9505
     //95%: 1.645

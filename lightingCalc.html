@@ -43,32 +43,7 @@
 
   <div class="container-fluid">
     <div class="row">
-       <div class="col-sm-12 col-md-3 col-lg-2">
-        <div class="chart-wrapper" style="min-height:310px;padding:15px">
-       <div class="chart-title">
-            start Date
-          </div>
-       <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        
-        <input onchange="updateInformationPanel()" class="form-control" id="startDate" name="date" placeholder="03/01/2018" type="text" style="min-width:120px"/>
-       </div>
-      <div class="chart-title">
-            end Date
-          </div>
-      <div class="input-group">
-        <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-        <input onchange="updateInformationPanel()" class="form-control" id="endDate" name="date" placeholder="12/23/2019" type="text" style="min-width:120px"/>
-       </div>
-</div>
-</div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-4">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -379,7 +354,7 @@
       </div>
 
 
-      <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="col-sm-12 col-md-6 col-lg-5">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -589,7 +564,7 @@
       </div>
 
 
-      <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="col-sm-12 col-md-6 col-lg-6">
 
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -735,28 +710,17 @@
           </div>
         </div>
       </div>
-         <div class="col-sm-12 col-md-3 col-lg-3">
+      <div class="col-sm-12 col-md-3 col-lg-3">
         <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
-            % probabilities on your proposed end date<br>
-            <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="probEndDateInfo"role="button"></a><br>
-          </div>
-                      working days from start to end dates:<a href="#" class="btn btn-primary btn-lg disabled" id="proposedDuration"role="button"></a><br>
-          criticalPathMean<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathMean"role="button"></a><br>
-          total weighted mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button"></a><br>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3 col-lg-2">
-        <div class="chart-wrapper" style="min-height:310px">
-          <div class="chart-title">
-            some useful stats
+            stats for nerds
           </div>
           team m/day Capacity<a href="#" class="btn btn-primary btn-lg disabled" id="teamCapacityInfo"role="button"></a><br>
-          project m/days<a href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button"></a><br>
+          criticalPathMean<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathMean"role="button"></a><br>
+          total weighted mean<a href="#" class="btn btn-primary btn-lg disabled" id="totalMeanInfo"role="button"></a><br>
           totalTeamHolidaysInfo<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamHolidaysInfo"role="button"></a><br>         
           team sick p/year<a href="#" class="btn btn-primary btn-lg disabled" id="totalTeamSickDaysInfo"role="button"></a><br>         
 
-          Z<a href="#" class="btn btn-primary btn-lg disabled" id="Z"role="button"></a><br>         
           criticalPathVariance<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathVariance"role="button"></a><br>         
           criticalPathStndDeviation<a href="#" class="btn btn-primary btn-lg disabled" id="criticalPathStndDeviation"role="button"></a><br>         
         </div>
@@ -764,11 +728,15 @@
       <div class="col-sm-12 col-md-3 col-lg-3">
         <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
-            80% probabilities of finishing in (working days)
+            project m/days (working days, 1 artist)
+          </div>
+          <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="projectManDaysInfo"role="button"></a><br>
+          <div class="chart-title">
+            80% probabilities of finishing in (team working days)
           </div>
           <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="the80"role="button"></a><br>
           <div class="chart-title">
-            95% probabilities of finishing in (working days)
+            95% probabilities of finishing in (team working days)
           </div>
           <a style="font-size:25px;background-color: black" href="#" class="btn btn-primary btn-lg disabled" id="the95"role="button"></a><br>
         </div>
@@ -834,7 +802,7 @@
           <div class="chart-title">
             Frame Count
           </div>
-             <div id="renderPiechart2" style="width: 340px; height: 250px;"></div>
+             <div id="renderPiechart2" style="width: 310px; height: 250px;"></div>
 
          
 
@@ -845,7 +813,7 @@
           <div class="chart-title">
             farmNode Days
           </div>
-             <div id="renderPiechart3" style="width: 340px; height: 250px;"></div>
+             <div id="renderPiechart3" style="width: 310px; height: 250px;"></div>
 
          
 
@@ -854,7 +822,7 @@
       <div class="col-sm-12 col-md-3 col-lg-2">
         <div class="chart-wrapper" style="min-height:310px">
           <div class="chart-title">
-            some useful Render stats
+            stats for nerds
           </div>
           Total days<a href="#" class="btn btn-primary btn-lg disabled" id="totalDaysRenderInfo"role="button"></a><br>
           Total hours<a href="#" class="btn btn-primary btn-lg disabled" id="totalHoursRenderInfo"role="button"></a><br>
