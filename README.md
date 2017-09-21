@@ -78,8 +78,16 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 ##### Common Options:
 |	|	|
 |---	|---	|
-|<img src="documentation/images/01.png" width="500">|Pretty self-Explanatory  	|
-|<img src="documentation/images/02.png" width="500">|Amount of Artist in the That Department.  
-Lead, artists and Junior Artists.|
-
+|<img src="documentation/images/01.png" width="200">|Pretty self-Explanatory  	|
+|<img src="documentation/images/02.png" width="200">|Amount of Artist in the That Department.  Lead, artists and Junior Artists.|
+|<img src="documentation/images/04.png" width="200">|  	|
+|<img src="documentation/images/05.png" width="200">|  	|
+|<img src="documentation/images/06.png" width="200">|  	|
+|<img src="documentation/images/07.png" width="200">|  	|
+|<img src="documentation/images/08.png" width="200">|  	|
+|<img src="documentation/images/09.png" width="200">|  	|
+|<img src="documentation/images/10.png" width="200">|  	|
+|<img src="documentation/images/12.png" width="200">|  	|
+|<img src="documentation/images/13.png" width="200">|  	|
+|<img src="documentation/images/14.png" width="200">|  	|
 
