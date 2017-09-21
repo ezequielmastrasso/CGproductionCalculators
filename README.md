@@ -78,7 +78,7 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 ##### Common Options:
 |   	|   	|
 |---	|---	|
-|<img src="Documentation/images/01.png" width="500">|Pretty self-Explanatory  	|
+|<img src="documentation/images/01.png" width="500">|Pretty self-Explanatory  	|
 |   	|   	|
 |   	|   	|
 |   	|   	|
