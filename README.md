@@ -76,8 +76,8 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 
 # Documentation:
 ##### Common Options:
-|	|	|
-|---	|---	|
+|	                                |	|
+|---	                                |---	|
 |<img src="documentation/images/01.png" width="200">    |Pretty self-Explanatory  	|
 |<img src="documentation/images/02.png" width="200">    |Amount of Artist in the That Department.  Lead, artists and Junior Artists.|
 |<img src="documentation/images/04.png" width="200">    |Certain Positions in the team, require the person to utilize a % of his time leading the team, giving notes, etc.<br>A % of his/her time should will be allocated to that.<br>|
