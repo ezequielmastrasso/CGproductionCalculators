@@ -80,8 +80,17 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 |---	|---	|
 |<img src="documentation/images/01.png" width="200">|Pretty self-Explanatory  	|
 |<img src="documentation/images/02.png" width="200">|Amount of Artist in the That Department.  Lead, artists and Junior Artists.|
-|<img src="documentation/images/04.png" width="200">|  	|
-|<img src="documentation/images/05.png" width="200">|  	|
+|<img src="documentation/images/04.png" width="200">|Certain Positions in the team, require the person to utilize a % of his time leading the team, giving notes, etc.|
+|<img src="documentation/images/05.png" width="200">|Certain Positions in the team, require the person to utilize a % of his time leading the team, giving notes, etc.
+* Leads are account to be actually working for 75% of the time.
+* Artist, at 100%
+* juniors at 75% assuming they are juniors and not as experienced as leads or artists.
+* Busy Idle/Ratio refers to the Queueing theory (the Phoenix Project), the busier the resource is the longer the waiting of tasks on his/her queue. Between 85% and 90% is allegedly the best ratio, I left it at 90%.
+* Working Hours on a single Day
+* Average Amount of hours the artist will spend on daily reviews
+* Amount of actual working days on a year, aka: 365-bankholidays-weekends
+* Entitled holidays per year for a team member
+* Average sick days taken by the artists in the studio during a year.  	|
 |<img src="documentation/images/06.png" width="200">|  	|
 |<img src="documentation/images/07.png" width="200">|  	|
 |<img src="documentation/images/08.png" width="200">|  	|
