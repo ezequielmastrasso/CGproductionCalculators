@@ -75,8 +75,8 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
         (assetEasyMean(assetEasyCount/teamCapacity)+
 
 # Documentation:
-##### Common Options:
-|	                                |	|
+
+|##### Common Options:                  |	|
 |---	                                |---	|
 |<img src="documentation/images/01.png" width="200">    |Pretty self-Explanatory  	|
 |<img src="documentation/images/02.png" width="200">    |Amount of Artist in the That Department.  Lead, artists and Junior Artists.|
@@ -84,7 +84,8 @@ Currently the actual project Duration (aka: the critical path, or the minimum ti
 |<img src="documentation/images/05.png" width="200">    |• Leads are account to be actually working for 75% of the time.<br>• Artist, at 100%<br>•Juniors at 75% assuming they are juniors and not as<br>experienced as leads or artists.<br>• Busy Idle/Ratio refers to the Queueing theory (the Phoenix Project),<br> the busier the resource is the longer the waiting of tasks on his/her queue.<br> Between 85% and 90% is allegedly the best ratio, I left it at 90%.<br>• Working Hours on a single Day<br>• Average Amount of hours the artist will spend on daily reviews<br>•Amount of actual working days on a year, aka: 365-bankholidays-weekends<br>• Entitled holidays per year for a team member<br>• Average sick days taken by the artists in the studio during a year.<br>•	Average sick days taken by the artists in the studio during a year.       |
 |<img src="documentation/images/06.png" width="200">    |Each Asset type will have this settings:<br>•	Count: amount of that asset type<br>•The asset will be divided into 3 categories:<br> difficult, medium, easy according to its weight in the script, screen time,<br> and size (for ie, a giant character will need more detail on the feet etc.<br> A cityscape set will need less closeup details, but wil have <br>a lot of work required in buildings)<br>•	Each difficulty type asset will have its own estimated days according to:<br>o	Best: the time it would need to do that tasks <br>if everything goes perfect<br>o	mostLikely: from experience, how much it takes realistically<br>o	Worst: the time it would need to do that tasks if everything terribly wrong  	|
 |<img src="documentation/images/07.png" width="200">    |This graph shows the Man days required for each type of asset and difficulty (difficulty is stacked on the same bar with a similar same color)Man days means the amount of days that would take if only 1 man was doing the job        |
-|<img src="documentation/images/08.png" width="200">    |This graphs show:<br>•	Asset Count for each type of asset and difficulty<br><br>•	Asset % for each type of asset and difficulty<br>•	Man days required for each type of asset and difficulty  	|
+|<img src="documentation/images/08.png" width="200">    |This graphs show:<br>•	Asset Count for each type of asset and difficulty<br>•	Asset % for each type of asset and difficulty<br>•	Man days required for each type of asset and difficulty  	|
+|##### Lighting Options:                                  |       |
 |<img src="documentation/images/09.png" width="200">    |  	|
 |<img src="documentation/images/10.png" width="200">    |  	|
 |<img src="documentation/images/12.png" width="200">    |  	|
